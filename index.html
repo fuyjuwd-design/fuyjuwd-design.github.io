@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universal Energy & Frequency Matrix 2026</title>
+    <meta name="description" content="Discover your true vibrational frequency, hidden superpower, and 2026 destiny alignment. Instant, free, and universal insights.">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Cinzel:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-deep: #0a0c14;
+            --bg-card: #121626;
+            --border-glow: rgba(139, 92, 246, 0.3);
+            --primary: #8b5cf6;
+            --primary-hover: #7c3aed;
+            --accent: #38bdf8;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --transition: all 0.2s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-deep);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 540px;
+            margin: 0 auto;
+            padding: 24px 16px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        header {
+            text-align: center;
+            padding-top: 10px;
+        }
+
+        .brand-tag {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent);
+            font-weight: 700;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+
+        p.subtitle {
+            color: var(--text-muted);
+            font-size: 0.92rem;
+            line-height: 1.5;
+            margin-bottom: 16px;
+        }
+
+        /* LIVE GLOBAL TIME & DATE WIDGET */
+        .live-clock-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            border-radius: 14px;
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            margin-bottom: 8px;
+        }
+
+        .clock-left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .clock-icon {
+            font-size: 1.3rem;
+        }
+
+        .clock-info {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+
+        .live-date {
+            font-size: 0.75rem;
+            color: var(--accent);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .live-location {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+        }
+
+        .live-time {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #fff;
+            font-family: monospace;
+            background: rgba(10, 12, 20, 0.6);
+            padding: 4px 10px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Solid Card Container */
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-glow);
+            border-radius: 20px;
+            padding: 24px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+
+        .card-badge {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--accent);
+            font-weight: 700;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        /* Form Elements */
+        .input-group {
+            margin-bottom: 18px;
+        }
+
+        label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #e2e8f0;
+            letter-spacing: 0.5px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 14px 16px;
+            background: #0a0c14;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 12px;
+            color: var(--text-main);
+            font-family: inherit;
+            font-size: 1rem;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .btn {
+            width: 100%;
+            padding: 16px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .btn:active {
+            transform: scale(0.98);
+        }
+
+        .btn-social {
+            background: #25D366;
+        }
+
+        /* States Management */
+        .view {
+            display: none;
+        }
+
+        .view.active {
+            display: block;
+        }
+
+        /* Scanning Screen Animation */
+        .scanner-box {
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .pulse-orb {
+            width: 80px;
+            height: 80px;
+            background: var(--accent);
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            box-shadow: 0 0 20px var(--primary);
+            animation: pulseAnim 1.5s infinite ease-in-out;
+        }
+
+        @keyframes pulseAnim {
+            0% { transform: scale(0.95); opacity: 0.8; }
+            50% { transform: scale(1.08); opacity: 1; }
+            100% { transform: scale(0.95); opacity: 0.8; }
+        }
+
+        .progress-bar-container {
+            width: 100%;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+            margin: 20px 0 12px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            width: 0%;
+            height: 100%;
+            background: var(--accent);
+            transition: width 0.1s linear;
+        }
+
+        .status-text {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        /* Results Screen */
+        .result-badge {
+            display: inline-block;
+            background: rgba(56, 189, 248, 0.12);
+            color: var(--accent);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            margin-bottom: 14px;
+            border: 1px solid rgba(56, 189, 248, 0.2);
+        }
+
+        .result-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #fff;
+        }
+
+        .result-desc {
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 24px;
+        }
+
+        .action-grid {
+            display: grid;
+            gap: 12px;
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-main);
+            padding: 14px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        /* CURIOSITY TEASER BADGE */
+        .curiosity-teaser {
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--accent);
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* LONG SCROLL SECTIONS */
+        .section-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-bottom: 14px;
+            color: #fff;
+            text-align: center;
+        }
+
+        .insight-grid {
+            display: grid;
+            gap: 14px;
+        }
+
+        .insight-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 14px;
+            padding: 16px;
+        }
+
+        .insight-card h4 {
+            font-size: 0.95rem;
+            margin-bottom: 6px;
+            color: var(--accent);
+        }
+
+        .insight-card p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        /* SINGLE ROW TESTIMONIALS INFINITE MARQUEE */
+        .testimonials-section {
+            margin: 10px -16px;
+            overflow: hidden;
+        }
+
+        .marquee-wrapper {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .marquee-track {
+            display: flex;
+            gap: 16px;
+            width: max-content;
+            animation: scrollSingle 600s linear infinite;
+        }
+
+        @keyframes scrollSingle {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .t-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 14px;
+            width: 260px;
+            flex-shrink: 0;
+        }
+
+        .t-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 8px;
+        }
+
+        .t-avatar {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.75rem;
+            color: #fff;
+        }
+
+        .t-meta h5 {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .t-meta span {
+            font-size: 0.68rem;
+            color: var(--accent);
+        }
+
+        .t-text {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+
+        /* FAQ Section */
+        .faq-box {
+            background: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 16px;
+        }
+
+        .faq-item + .faq-item {
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .faq-item h5 {
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+            color: #e2e8f0;
+        }
+
+        .faq-item p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        footer.site-footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- TOP HEADER -->
+        <header>
+            <span class="brand-tag">✨ Universal Frequency Matrix 2026</span>
+            
+            <!-- LIVE COUNTRY TIME & DATE WIDGET -->
+            <div class="live-clock-card">
+                <div class="clock-left">
+                    <span class="clock-icon">🌍</span>
+                    <div class="clock-info">
+                        <span id="liveDate" class="live-date">Loading...</span>
+                        <span id="userTimezone" class="live-location">Local Matrix Time</span>
+                    </div>
+                </div>
+                <div id="liveTime" class="live-time">00:00:00</div>
+            </div>
+
+            <h1>Most People Live at 20% of Their True Potential. What Is Your Real Energy Capacity?</h1>
+            <p class="subtitle">Tap into your universal vibrational blueprint, hidden strength archetype, and 2026 alignment.</p>
+        </header>
+
+        <!-- SECTION 1: MAIN AURA SCANNER -->
+        <main class="card">
+            <span class="card-badge">⚡ Core Energy Scan</span>
+            
+            <div id="aura-form" class="view active">
+                <div class="input-group">
+                    <label for="userName">Your Full Name or Initials</label>
+                    <input type="text" id="userName" placeholder="e.g. Alex M." autocomplete="off" />
+                </div>
+
+                <div class="input-group">
+                    <label for="birthMonth">Select Your Birth Month</label>
+                    <select id="birthMonth">
+                        <option value="" disabled selected>Choose Month</option>
+                        <option value="1">January (Aries/Capricorn cusp)</option>
+                        <option value="2">February</option>
+                        <option value="3">March</option>
+                        <option value="4">April</option>
+                        <option value="5">May</option>
+                        <option value="6">June</option>
+                        <option value="7">July</option>
+                        <option value="8">August</option>
+                        <option value="9">September</option>
+                        <option value="10">October</option>
+                        <option value="11">November</option>
+                        <option value="12">December</option>
+                    </select>
+                </div>
+
+                <button class="btn" id="startScanBtn">
+                    Begin Frequency Scan ➔
+                </button>
+            </div>
+
+            <div id="aura-scanner" class="view">
+                <div class="scanner-box">
+                    <div class="pulse-orb"></div>
+                    <h3 style="font-size: 1.1rem; margin-bottom: 6px;">Calibrating Universal Frequency...</h3>
+                    <p class="status-text" id="auraStatus">Scanning electromagnetic bio-field...</p>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" id="auraProgress"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="aura-result" class="view">
+                <div style="text-align: center;">
+                    <span class="result-badge" id="resultAuraType">FREQUENCY ARCHETYPE: COBALT STELLAR</span>
+                    <h2 class="result-title" id="resultHeading">High Magnetic Expansion Active</h2>
+                    <p class="result-desc" id="resultBody">
+                        Your energy fingerprint reveals an untapped reserve of focus and magnetism for 2026. Obstacles that drained your energy previously are clearing away for rapid personal growth.
+                    </p>
+                </div>
+                <div class="action-grid">
+                    <button class="btn" onclick="resetAura()">
+                        🔄 Scan Another Code
+                    </button>
+                    <button class="btn-secondary" onclick="bookmarkPrompt()">
+                        ⭐ Bookmark Link for Daily Luck
+                    </button>
+                </div>
+            </div>
+        </main>
+
+        <!-- CURIOSITY TEASER 1 -->
+        <div class="curiosity-teaser">↓ Scroll down to check your Relationship Energy Match ↓</div>
+
+        <!-- SECTION 2: COSMIC BOND & LOVE SYNERGY SCANNER -->
+        <section class="card">
+            <span class="card-badge">💖 Synergy Matrix</span>
+            
+            <div id="bond-form" class="view active">
+                <h3 style="font-size: 1.1rem; margin-bottom: 12px; color: #fff;">Cosmic Bond & Relationship Vibe Check</h3>
+                <div class="input-group">
+                    <label for="p1Name">Your Name / Sign</label>
+                    <input type="text" id="p1Name" placeholder="e.g. Alex" autocomplete="off" />
+                </div>
+                <div class="input-group">
+                    <label for="p2Name">Partner / Crush / Friend Name</label>
+                    <input type="text" id="p2Name" placeholder="e.g. Sam" autocomplete="off" />
+                </div>
+                <button class="btn" id="startBondBtn">
+                    Calculate Energy Synergy ➔
+                </button>
+            </div>
+
+            <div id="bond-scanner" class="view">
+                <div class="scanner-box">
+                    <div class="pulse-orb" style="background: #db2777; box-shadow: 0 0 20px #db2777;"></div>
+                    <h3 style="font-size: 1.1rem; margin-bottom: 6px;">Synchronizing Aura Frequencies...</h3>
+                    <p class="status-text" id="bondStatus">Calculating emotional resonance...</p>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" id="bondProgress" style="background: #db2777;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="bond-result" class="view">
+                <div style="text-align: center;">
+                    <span class="result-badge" style="background: rgba(244,114,182,0.12); color: #f472b6; border-color: rgba(244,114,182,0.2);">HARMONY INDEX: 94% (HIGH FLOW)</span>
+                    <h2 class="result-title" id="bondResultHeading">Deep Magnetic Resonance Detected</h2>
+                    <p class="result-desc" id="bondResultBody">
+                        Your energetic alignment shows exceptional emotional understanding and supportive mutual growth. A very harmonious cycle ahead!
+                    </p>
+                </div>
+                <div class="action-grid">
+                    <button class="btn btn-social" onclick="shareMatch()">
+                        💬 Share Result on WhatsApp
+                    </button>
+                    <button class="btn-secondary" onclick="resetBond()">
+                        🔄 Check Another Match
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- CURIOSITY TEASER 2 -->
+        <div class="curiosity-teaser">↓ What is your hidden karma initial? Uncover below ↓</div>
+
+        <!-- SECTION 3: SECRET INITIAL & SOUL CONNECTION DETECTOR -->
+        <section class="card">
+            <span class="card-badge">🔮 Viral Detector</span>
+
+            <div id="viral-form" class="view active">
+                <h3 style="font-size: 1.1rem; margin-bottom: 12px; color: #fff;">Secret Admirer Initial Detector</h3>
+                <p class="subtitle" style="margin-bottom: 14px; font-size: 0.85rem;">Discover the hidden alphabetical frequency connected to your 2026 destiny path.</p>
+                <div class="input-group">
+                    <label for="viralName">Enter Your Full Name</label>
+                    <input type="text" id="viralName" placeholder="e.g. Jessica Miller" autocomplete="off" />
+                </div>
+                <button class="btn" id="startViralBtn">
+                    Reveal Secret Frequency ➔
+                </button>
+            </div>
+
+            <div id="viral-scanner" class="view">
+                <div class="scanner-box">
+                    <div class="pulse-orb" style="background: #0284c7; box-shadow: 0 0 20px #0284c7;"></div>
+                    <h3 style="font-size: 1.1rem; margin-bottom: 6px;">Scanning Karmic Databanks...</h3>
+                    <p class="status-text">Decrypting astral initial signatures...</p>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" id="viralProgress" style="background: #0284c7;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="viral-result" class="view">
+                <div style="text-align: center;">
+                    <span class="result-badge">SECRET INITIAL HARMONIC</span>
+                    <h2 class="result-title" id="viralHeading">Your Connected Initial is [ M ]</h2>
+                    <p class="result-desc">
+                        An individual carrying a strong stabilizing frequency (Initial M, S, or J) is entering your close alignment cycle for collaborative projects and meaningful personal growth.
+                    </p>
+                </div>
+                <div class="action-grid">
+                    <button class="btn btn-social" onclick="shareViral()">
+                        📤 Send to Friends on WhatsApp
+                    </button>
+                    <button class="btn-secondary" onclick="resetViral()">
+                        🔄 Test Another Name
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- CURIOSITY TEASER 3 -->
+        <div class="curiosity-teaser">↓ Tap 1-Click to reveal Today's Lucky Energy Code ↓</div>
+
+        <!-- SECTION 4: INSTANT LUCKY FREQUENCY CODE GENERATOR -->
+        <section class="card" style="text-align: center;">
+            <span class="card-badge">✨ Instant Lucky Code</span>
+            <h3 style="font-size: 1.1rem; margin-bottom: 8px; color: #fff;">Today's Personal Vibration Code</h3>
+            <p class="subtitle" style="margin-bottom: 16px; font-size: 0.85rem;">Tap below to instantly extract your lucky color and power number for today.</p>
+            
+            <div id="luckyBox" style="background: #0a0c14; border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 16px; margin-bottom: 16px;">
+                <span id="luckyResultText" style="font-size: 1rem; font-weight: 700; color: var(--accent);">Tap button to generate your daily code...</span>
+            </div>
+
+            <button class="btn" onclick="generateLuckyCode()">
+                ⚡ Unlock Today's Code
+            </button>
+        </section>
+
+        <!-- SECTION 5: DAILY COSMIC HIGHLIGHTS -->
+        <section>
+            <h3 class="section-title">🔮 2026 Energy Matrix Highlights</h3>
+            <div class="insight-grid">
+                <div class="insight-card">
+                    <h4>The Equinox Shift</h4>
+                    <p>Spring transitions bring heightened personal intuition. Align your daily decisions with your inner clarity during seasonal shifts.</p>
+                </div>
+                <div class="insight-card">
+                    <h4>Vibrational Resonance</h4>
+                    <p>Your aura frequency adapts to your immediate environment. Surrounding yourself with calm, focused spaces amplifies your daily luck index.</p>
+                </div>
+                <div class="insight-card">
+                    <h4>Destiny Cycle Alignment</h4>
+                    <p>2026 is recognized as a universal expansion year. Personal projects initiated during peak energy windows experience faster momentum.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 6: GLOBAL USER TESTIMONIALS (SINGLE ROW MARQUEE) -->
+        <section class="testimonials-section">
+            <h3 class="section-title" style="margin-bottom: 16px;">🌟 Trusted by Global Seekers</h3>
+            
+            <div class="marquee-wrapper">
+                <div class="marquee-row">
+                    <div class="marquee-track" id="track1"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 7: FREQUENTLY ASKED QUESTIONS -->
+        <section class="faq-box">
+            <h3 class="section-title" style="font-size: 1.05rem; margin-bottom: 10px;">💡 Frequently Asked Questions</h3>
+            
+            <div class="faq-item">
+                <h5>How does the Aura Frequency Scan work?</h5>
+                <p>The system analyzes your chosen birth cycle harmonics and name input against universal cyclical matrices to generate lighthearted personal insights for entertainment.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h5>Is this service free and private?</h5>
+                <p>Yes, 100% free with zero login or signup required. Your data stays entirely in your browser session for complete privacy.</p>
+            </div>
+
+            <div class="faq-item">
+                <h5>How often can I check my frequency?</h5>
+                <p>You can run a new scan as often as you like, especially at the start of every week or month to track your shifting energetic alignment.</p>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="site-footer">
+            <p>&copy; 2026 Universal Matrix. For entertainment and self-reflection purposes only. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        /* === LIVE LOCAL TIME & DATE DETECTOR === */
+        function updateGlobalClock() {
+            const now = new Date();
+            
+            // Get user's local timezone string (e.g. "America/New_York", "Europe/London", "Asia/Karachi")
+            const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || 'Local Time';
+            const cleanTz = tz.split('/').pop().replace('_', ' ');
+
+            // Format date: Day, Month Date, Year
+            const dateOptions = { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric' };
+            const dateStr = now.toLocaleDateString('en-US', dateOptions);
+
+            // Format time: HH:MM:SS AM/PM
+            const timeOptions = { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
+            const timeStr = now.toLocaleTimeString('en-US', timeOptions);
+
+            document.getElementById('liveDate').textContent = dateStr;
+            document.getElementById('userTimezone').textContent = `🌍 ${cleanTz} Zone`;
+            document.getElementById('liveTime').textContent = timeStr;
+        }
+
+        setInterval(updateGlobalClock, 1000);
+        updateGlobalClock();
+
+        /* === 1. MAIN AURA SCANNER LOGIC === */
+        const startScanBtn = document.getElementById('startScanBtn');
+        const auraForm = document.getElementById('aura-form');
+        const auraScanner = document.getElementById('aura-scanner');
+        const auraResult = document.getElementById('aura-result');
+        const auraProgress = document.getElementById('auraProgress');
+        const auraStatus = document.getElementById('auraStatus');
+
+        const auraStatusMsgs = [
+            "Scanning electromagnetic bio-field...",
+            "Decoding birth matrix harmonics...",
+            "Synchronizing with 2026 universal frequency...",
+            "Calibrating aura intensity levels...",
+            "Finalizing personal destiny matrix..."
+        ];
+
+        const auraResults = [
+            { type: "FREQUENCY ARCHETYPE: COBALT STELLAR", title: "Deep Intuition & Clarity Peak", desc: "Your energy scan indicates an exceptionally sharp mental clarity phase. Obstacles clearing out make room for smooth progress." },
+            { type: "FREQUENCY ARCHETYPE: SOLAR GOLD", title: "High Magnetic Expansion Active", desc: "You are radiating a strong attraction frequency right now. People and opportunities naturally gravitate toward your projects." },
+            { type: "FREQUENCY ARCHETYPE: EMERALD VORTEX", title: "Balanced Harmony & Renewal", desc: "Your vibrational signature shows deep inner stability, bringing steady and sustainable momentum to everything you touch." }
+        ];
+
+        startScanBtn.addEventListener('click', () => {
+            const monthInput = document.getElementById('birthMonth').value;
+            if (!monthInput) { alert('Please select your birth month.'); return; }
+            const nameInput = document.getElementById('userName').value.trim();
+
+            auraForm.classList.remove('active');
+            auraScanner.classList.add('active');
+
+            let progress = 0;
+            let msgIdx = 0;
+            const timer = setInterval(() => {
+                progress += 1;
+                auraProgress.style.width = progress + '%';
+                if (progress % 20 === 0 && msgIdx < auraStatusMsgs.length) {
+                    auraStatus.textContent = auraStatusMsgs[msgIdx];
+                    msgIdx++;
+                }
+                if (progress >= 100) {
+                    clearInterval(timer);
+                    auraScanner.classList.remove('active');
+                    auraResult.classList.add('active');
+                    const profile = auraResults[Math.floor(Math.random() * auraResults.length)];
+                    document.getElementById('resultAuraType').textContent = profile.type;
+                    document.getElementById('resultHeading').textContent = nameInput ? `${nameInput}, ${profile.title}` : profile.title;
+                    document.getElementById('resultBody').textContent = profile.desc;
+                }
+            }, 100);
+        });
+
+        function resetAura() {
+            document.getElementById('userName').value = '';
+            document.getElementById('birthMonth').selectedIndex = 0;
+            auraResult.classList.remove('active');
+            auraForm.classList.add('active');
+            auraProgress.style.width = '0%';
+        }
+
+        /* === 2. COSMIC BOND SYNERGY SCANNER LOGIC === */
+        const startBondBtn = document.getElementById('startBondBtn');
+        const bondForm = document.getElementById('bond-form');
+        const bondScanner = document.getElementById('bond-scanner');
+        const bondResult = document.getElementById('bond-result');
+        const bondProgress = document.getElementById('bondProgress');
+        const bondStatus = document.getElementById('bondStatus');
+
+        startBondBtn.addEventListener('click', () => {
+            const p1 = document.getElementById('p1Name').value.trim();
+            const p2 = document.getElementById('p2Name').value.trim();
+            if (!p1 || !p2) { alert('Please enter both names for harmony check.'); return; }
+
+            bondForm.classList.remove('active');
+            bondScanner.classList.add('active');
+
+            let progress = 0;
+            const timer = setInterval(() => {
+                progress += 2;
+                bondProgress.style.width = progress + '%';
+                if (progress >= 100) {
+                    clearInterval(timer);
+                    bondScanner.classList.remove('active');
+                    bondResult.classList.add('active');
+                    document.getElementById('bondResultHeading').textContent = `${p1} & ${p2}: High Harmonic Resonance`;
+                }
+            }, 80);
+        });
+
+        function resetBond() {
+            document.getElementById('p1Name').value = '';
+            document.getElementById('p2Name').value = '';
+            bondResult.classList.remove('active');
+            bondForm.classList.add('active');
+            bondProgress.style.width = '0%';
+        }
+
+        function shareMatch() {
+            const text = encodeURIComponent("I just checked our 2026 Cosmic Bond Synergy and got an amazing match result! Check yours here: " + window.location.href);
+            window.open(`https://api.whatsapp.com/send?text=${text}`, '_blank');
+        }
+
+        /* === 3. VIRAL SECRET INITIAL DETECTOR LOGIC === */
+        const startViralBtn = document.getElementById('startViralBtn');
+        const viralForm = document.getElementById('viral-form');
+        const viralScanner = document.getElementById('viral-scanner');
+        const viralResult = document.getElementById('viral-result');
+        const viralProgress = document.getElementById('viralProgress');
+
+        startViralBtn.addEventListener('click', () => {
+            const vName = document.getElementById('viralName').value.trim();
+            if (!vName) { alert('Please enter your name.'); return; }
+
+            viralForm.classList.remove('active');
+            viralScanner.classList.add('active');
+
+            let progress = 0;
+            const timer = setInterval(() => {
+                progress += 2;
+                viralProgress.style.width = progress + '%';
+                if (progress >= 100) {
+                    clearInterval(timer);
+                    viralScanner.classList.remove('active');
+                    viralResult.classList.add('active');
+                    const initials = ['A', 'M', 'S', 'J', 'K', 'R', 'D', 'E'];
+                    const randomLetter = initials[Math.floor(Math.random() * initials.length)];
+                    document.getElementById('viralHeading').textContent = `${vName}, Your Connected Initial is [ ${randomLetter} ]`;
+                }
+            }, 80);
+        });
+
+        function resetViral() {
+            document.getElementById('viralName').value = '';
+            viralResult.classList.remove('active');
+            viralForm.classList.add('active');
+            viralProgress.style.width = '0%';
+        }
+
+        function shareViral() {
+            const text = encodeURIComponent("I discovered my 2026 Secret Connection Initial on Universal Matrix! Try your name here: " + window.location.href);
+            window.open(`https://api.whatsapp.com/send?text=${text}`, '_blank');
+        }
+
+        /* === 4. INSTANT LUCKY CODE GENERATOR === */
+        const luckyCodes = [
+            "🎨 Lucky Color: Sapphire Blue | 🔢 Power Number: 7",
+            "🌟 Lucky Color: Solar Gold | 🔢 Power Number: 3",
+            "🌿 Lucky Color: Emerald Green | 🔢 Power Number: 9",
+            "🔥 Lucky Color: Crimson Violet | 🔢 Power Number: 5",
+            "⚡ Lucky Color: Cobalt Silver | 🔢 Power Number: 8"
+        ];
+        function generateLuckyCode() {
+            const el = document.getElementById('luckyResultText');
+            el.textContent = "Extracting cosmic frequency...";
+            setTimeout(() => {
+                const randomCode = luckyCodes[Math.floor(Math.random() * luckyCodes.length)];
+                el.textContent = randomCode;
+            }, 400);
+        }
+
+        /* === BOOKMARK & MARQUEE === */
+        function bookmarkPrompt() {
+            alert('Press Ctrl+D (or Cmd+D on Mac) to bookmark this page and return for your daily updates!');
+        }
+
+        const globalReviews = [
+            { name: "Sarah L.", loc: "United Kingdom", text: "The energy frequency scan was surprisingly spot on for my week!" },
+            { name: "Marcus T.", loc: "United States", text: "Super fun ritual, loved the 2026 insight breakdown. Very smooth." },
+            { name: "Priya K.", loc: "India", text: "Zero sign up needed, clean design and instant results. Amazing!" },
+            { name: "Carlos M.", loc: "Brazil", text: "My cobalt stellar aura result gave me great daily motivation." },
+            { name: "Yuki S.", loc: "Japan", text: "Very relaxing and entertaining to check every Monday morning." },
+            { name: "Liam B.", loc: "Australia", text: "Clean layout, fast loading, and highly accurate vibe checks." },
+            { name: "Elena R.", loc: "Spain", text: "I check my birth month frequency with my friends every weekend!" },
+            { name: "Omar K.", loc: "Egypt", text: "Such a cool website for quick daily insights. Highly recommended." },
+            { name: "Chloe D.", loc: "France", text: "The waiting screen loading animation feels so mystical and fun." },
+            { name: "Mateo G.", loc: "Argentina", text: "Checked my energy matrix and it matched my mood completely." }
+        ];
+
+        function populateSingleMarquee() {
+            const track1 = document.getElementById('track1');
+            if (!track1) return;
+            let htmlContent = '';
+            for (let i = 0; i < 6; i++) {
+                globalReviews.forEach((r) => {
+                    const initials = r.name.split(' ').map(n => n[0]).join('');
+                    htmlContent += `
+                        <div class="t-card">
+                            <div class="t-header">
+                                <div class="t-avatar">${initials}</div>
+                                <div class="t-meta">
+                                    <h5>${r.name}</h5>
+                                    <span>📍 ${r.loc}</span>
+                                </div>
+                            </div>
+                            <p class="t-text">"${r.text}"</p>
+                        </div>
+                    `;
+                });
+            }
+            track1.innerHTML = htmlContent + htmlContent;
+        }
+        populateSingleMarquee();
+    </script>
+</body>
+</html>
