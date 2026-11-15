@@ -47,7 +47,7 @@
         }
 
         /* CLEAR & BOLD PARAGRAPHS FORMULA */
-        p, span, label, input, select, button, .t-text, .faq-answer, .expert-bio, .result-desc {
+        p, span, label, input, select, button, .t-text, .expert-bio, .result-desc {
             font-family: var(--font-body) !important;
             font-weight: 700 !important;
         }
@@ -353,16 +353,6 @@
         .t-meta span { font-size: 0.72rem; color: #7c3aed; font-weight: 800; }
         .t-text { font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; font-weight: 700 !important; }
 
-        .faq-box { background: #ffffff; border: 2px solid #cbd5e1; border-radius: 16px; padding: 16px; box-shadow: 0 4px 10px rgba(15, 23, 42, 0.05); }
-        .faq-item { border-bottom: 1px solid #cbd5e1; }
-        .faq-item:last-child { border-bottom: none; }
-        .faq-question {
-            width: 100%; background: none; border: none; padding: 14px 4px; text-align: left; font-size: 0.98rem; font-weight: 900 !important; color: var(--text-main); cursor: pointer; display: flex; align-items: center; justify-content: space-between;
-        }
-        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease; font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; font-weight: 700 !important; padding: 0 4px; }
-        .faq-item.active .faq-answer { max-height: 150px; padding-bottom: 14px; }
-        .faq-item.active .faq-icon { transform: rotate(45deg); color: #7c3aed; }
-
         footer.site-footer { text-align: center; padding: 16px; font-size: 0.82rem; color: var(--text-muted); font-weight: 800; border-top: 2px solid #cbd5e1; margin-top: 10px; }
     </style>
 </head>
@@ -430,7 +420,6 @@
                 </div>
                 <div class="action-grid">
                     <button class="btn" style="background:#7c3aed;" onclick="resetAura()">🔄 Check Again</button>
-                    <button class="btn-secondary" onclick="bookmarkPrompt()">⭐ Bookmark for Daily Luck</button>
                 </div>
             </div>
         </main>
@@ -824,61 +813,6 @@
             </div>
         </section>
 
-        <!-- SECTION: 10 ACCORDION FREQUENTLY ASKED QUESTIONS -->
-        <section class="faq-box">
-            <h3 class="section-title" style="font-size: 1.2rem; margin-bottom: 10px;">💡 Frequently Asked Questions</h3>
-            
-            <div class="faq-item">
-                <button class="faq-question"><span>1. Are these checks free to use?</span><span class="faq-icon">+</span></button>
-                <div class="faq-answer">Yes! All energy checks, love matches, and lucky code generators are 100% free with no hidden charges.</div>
-            </div>
-            
-            <div class="faq-item">
-                <button class="faq-question"><span>2. Do I need to create an account?</span><span class="faq-icon">+</span></button>
-                <div class="faq-answer">No signup or login is needed. You can use all features instantly in your browser.</div>
-            </div>
-
-            <div class="faq-item">
-                <button class="faq-question"><span>3. Is my personal info private?</span><span class="faq-icon">+</span></button>
-                <div class="faq-answer">Completely private! Everything runs right inside your phone or computer. We don't save any names.</div>
-            </div>
-
-            <div class="faq-item">
-                <button class="faq-question"><span>4. How do I check my relationship compatibility?</span><span class="faq-icon">+</span></button>
-                <div class="faq-answer">Just type your name and your crush or friend's name in the Compatibility card and tap check!</div>
-            </div>
-
-            <div class="faq-item">
-                <button class="faq-question"><span>5. Can I use this every day?</span><span class="faq-icon">+</span></button>
-                <div class="faq-answer">Yes, you can come back every single day to check your new daily lucky code and energy vibe.</div>
-            </div>
-
-            <div class="faq-item">
-                <button class="faq-question"><span>6. How do I share results with friends?</span><span class="faq-icon">+</span></button>
-                <div class="faq-answer">Every result has a green WhatsApp button so you can instantly share your results with your best friends.</div>
-            </div>
-
-            <div class="faq-item">
-                <button class="faq-question"><span>7. What is the Secret Initial finder?</span><span class="faq-icon">+</span></button>
-                <div class="faq-answer">It's a fun interactive tool that shows you a playful secret letter of someone who might be thinking about you.</div>
-            </div>
-
-            <div class="faq-item">
-                <button class="faq-question"><span>8. Are these results accurate?</span><span class="faq-icon">+</span></button>
-                <div class="faq-answer">These tools are designed purely for entertainment, fun, and positive daily motivation.</div>
-            </div>
-
-            <div class="faq-item">
-                <button class="faq-question"><span>9. Does this work on mobile phones?</span><span class="faq-icon">+</span></button>
-                <div class="faq-answer">Yes! It is fully optimized for smooth, fast scrolling on all Android and iPhone devices.</div>
-            </div>
-
-            <div class="faq-item">
-                <button class="faq-question"><span>10. Who created this platform?</span><span class="faq-icon">+</span></button>
-                <div class="faq-answer">It was built to give users worldwide a fast, clean, and enjoyable daily entertainment experience.</div>
-            </div>
-        </section>
-
         <!-- FOOTER -->
         <footer class="site-footer">
             <p>&copy; 2026 Daily Vibe Check. For entertainment purposes only. All rights reserved.</p>
@@ -901,16 +835,6 @@
             const text = encodeURIComponent(`I just checked my Zodiac Forecast on Vibe Check: "${title}". Check yours here: ` + window.location.href);
             window.open(`https://api.whatsapp.com/send?text=${text}`, '_blank');
         }
-
-        const faqQuestions = document.querySelectorAll('.faq-question');
-        faqQuestions.forEach(question => {
-            question.addEventListener('click', () => {
-                const item = question.parentElement;
-                const isActive = item.classList.contains('active');
-                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
-                if (!isActive) { item.classList.add('active'); }
-            });
-        });
 
         function updateGlobalClock() {
             const now = new Date();
@@ -1188,8 +1112,6 @@
                 appendChatMessage(reply, 'incoming');
             }, 350);
         }
-
-        function bookmarkPrompt() { alert('Press Ctrl+D (or Cmd+D on Mac) to bookmark this page and return for your daily updates!'); }
 
         const globalReviews = [
             { name: "Sarah L.", loc: "United Kingdom", text: "The compatibility match is super fun and accurate!" },
