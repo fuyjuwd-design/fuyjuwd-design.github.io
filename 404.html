@@ -4,17 +4,16 @@
     <meta charset="UTF-8">
     <title>Redirecting...</title>
     <script>
-        // Yeh script URL check karegi aur agar /claim-angel-number hoga toh wahan bhej degi
+        // Clean URL check
         var path = window.location.pathname;
         if (path.includes("claim-angel-number")) {
-            window.location.replace("/index.html#claim-angel-number");
+            window.location.replace("/index.html?card=angel");
         } else {
             window.location.replace("/index.html");
         }
     </script>
 </head>
 <body>
-    <p>Redirecting...</p>
+    <p>Redirecting to your cosmic experience...</p>
 </body>
 </html>
-
