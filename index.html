@@ -5,14 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daily Vibe & Compatibility Check 2026</title>
     <meta name="description" content="Discover your daily tarot reading, love compatibility match, secret initial, and energy vibe. Instant, fun, and 100% free.">
-    <!-- Google Fonts -->
-    <link href="[https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Cinzel:wght@600;700&display=swap](https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Cinzel:wght@600;700&display=swap)" rel="stylesheet">
+    <!-- Google Fonts - Professional Mystical Font Pairing Formula -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg-deep: #f2f1ec;
             --text-main: #0f172a;
             --text-muted: #334155;
             --transition: all 0.2s ease;
+            --font-heading: 'Cormorant Garamond', serif;
+            --font-body: 'Plus Jakarta Sans', sans-serif;
         }
 
         * {
@@ -22,7 +24,7 @@
         }
 
         body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-family: var(--font-body);
             background: radial-gradient(circle at 50% 0%, rgba(109, 40, 217, 0.08) 0%, rgba(225, 29, 72, 0.04) 40%, var(--bg-deep) 80%);
             background-attachment: fixed;
             color: var(--text-main);
@@ -31,6 +33,20 @@
             flex-direction: column;
             justify-content: space-between;
             overflow-x: hidden;
+        }
+
+        /* FONT PAIRING FORMULA: HEADINGS & TITLES */
+        h1, h2, h3, h4, h5, h6, 
+        .expert-name, 
+        .result-title, 
+        .card-front {
+            font-family: var(--font-heading) !important;
+            letter-spacing: 0.5px;
+        }
+
+        /* FONT PAIRING FORMULA: PARAGRAPHS & BODY TEXT */
+        p, span, label, input, select, button, .t-text, .faq-answer, .expert-bio {
+            font-family: var(--font-body) !important;
         }
 
         .container {
@@ -58,7 +74,7 @@
         }
 
         .brand-tag {
-            font-size: 0.75rem;
+            font-size: 0.78rem;
             text-transform: uppercase;
             letter-spacing: 2px;
             color: #6d28d9;
@@ -68,17 +84,16 @@
         }
 
         h1 {
-            font-family: 'Cinzel', serif;
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             font-weight: 700;
             color: var(--text-main);
             margin-bottom: 8px;
-            line-height: 1.3;
+            line-height: 1.25;
         }
 
         p.subtitle {
             color: var(--text-muted);
-            font-size: 0.92rem;
+            font-size: 0.95rem;
             line-height: 1.5;
             font-weight: 600;
             margin-bottom: 14px;
@@ -192,7 +207,7 @@
         .chip:hover { background: #7c3aed; color: white; border-color: #7c3aed; }
         .chat-input-area { padding: 12px 16px; background: #ffffff; border-top: 1px solid #cbd5e1; display: flex; gap: 8px; }
         .chat-input-area input {
-            flex: 1; padding: 10px 14px; border: 1px solid #cbd5e1; border-radius: 10px; font-family: inherit; font-size: 0.9rem; outline: none;
+            flex: 1; padding: 10px 14px; border: 1px solid #cbd5e1; border-radius: 10px; font-size: 0.9rem; outline: none;
         }
         .chat-input-area input:focus { border-color: #7c3aed; box-shadow: 0 0 0 2px rgba(124, 58, 237, 0.15); }
         .chat-send-btn { background: #7c3aed; color: white; border: none; padding: 0 16px; border-radius: 10px; font-weight: 700; cursor: pointer; }
@@ -207,7 +222,7 @@
         .tarot-card-section label { color: #f8fafc; }
 
         input, select {
-            width: 100%; padding: 12px 14px; background: #ffffff; border: 1px solid #94a3b8; border-radius: 10px; color: var(--text-main); font-family: inherit; font-size: 0.95rem; font-weight: 600;
+            width: 100%; padding: 12px 14px; background: #ffffff; border: 1px solid #94a3b8; border-radius: 10px; color: var(--text-main); font-size: 0.95rem; font-weight: 600;
         }
         .tarot-card-section input { background: rgba(255, 255, 255, 0.1); color: white; border-color: #a855f7; }
 
@@ -241,8 +256,8 @@
         .result-badge {
             display: inline-block; background: rgba(15, 23, 42, 0.08); color: var(--text-main); padding: 5px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 800; margin-bottom: 12px; border: 1px solid rgba(15, 23, 42, 0.2);
         }
-        .result-title { font-size: 1.2rem; font-weight: 700; margin-bottom: 10px; color: var(--text-main); }
-        .result-desc { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; font-weight: 600; margin-bottom: 20px; }
+        .result-title { font-size: 1.35rem; font-weight: 700; margin-bottom: 10px; color: var(--text-main); }
+        .result-desc { font-size: 0.92rem; color: var(--text-muted); line-height: 1.6; font-weight: 600; margin-bottom: 20px; }
         .action-grid { display: grid; gap: 10px; }
         .btn-secondary {
             background: #ffffff; border: 2px solid #94a3b8; color: var(--text-main); padding: 12px; border-radius: 10px; font-weight: 700; font-size: 0.9rem; cursor: pointer; text-align: center;
@@ -263,22 +278,22 @@
         }
         .card-back { background: linear-gradient(135deg, #4f46e5, #312e81); color: white; border: 2px solid rgba(192, 132, 252, 0.4); font-size: 1.5rem; }
         .card-back span { font-size: 0.68rem; letter-spacing: 1px; text-transform: uppercase; font-weight: 800; margin-top: 4px; color: #e2e8f0; }
-        .card-front { background: #ffffff; color: #1e1b4b; border: 2px solid #c084fc; transform: rotateY(180deg); font-size: 0.88rem; font-weight: 700; font-family: 'Cinzel', serif; gap: 4px; }
-        .card-front small { font-size: 0.65rem; color: #64748b; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 600; }
+        .card-front { background: #ffffff; color: #1e1b4b; border: 2px solid #c084fc; transform: rotateY(180deg); font-size: 0.95rem; font-weight: 700; gap: 4px; }
+        .card-front small { font-size: 0.68rem; color: #64748b; font-weight: 600; font-family: var(--font-body) !important; }
 
         .expert-card { background: #ffffff; border: 2px solid #cbd5e1; border-radius: 20px; padding: 24px; text-align: center; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05); }
         .expert-avatar {
             width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, #7c3aed, #e11d48); display: flex; align-items: center; justify-content: center; font-size: 2.2rem; margin: 0 auto 14px; border: 3px solid #fff;
         }
-        .expert-name { font-family: 'Cinzel', serif; font-size: 1.25rem; font-weight: 700; color: var(--text-main); margin-bottom: 4px; }
+        .expert-name { font-size: 1.4rem; font-weight: 700; color: var(--text-main); margin-bottom: 4px; }
         .expert-title { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 1px; color: #7c3aed; font-weight: 800; margin-bottom: 12px; display: block; }
         .expert-bio { font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; font-weight: 600; margin-bottom: 16px; }
         .expert-tagline { background: #f1f5f9; padding: 8px 12px; border-radius: 8px; font-size: 0.8rem; color: var(--text-main); font-weight: 700; border: 1px solid #cbd5e1; }
 
-        .section-title { font-family: 'Cinzel', serif; font-size: 1.15rem; font-weight: 700; margin-bottom: 12px; color: var(--text-main); text-align: center; }
+        .section-title { font-size: 1.35rem; font-weight: 700; margin-bottom: 12px; color: var(--text-main); text-align: center; }
         .insight-grid { display: grid; gap: 12px; }
         .insight-card { background: #ffffff; border: 2px solid #cbd5e1; border-radius: 12px; padding: 16px; box-shadow: 0 4px 10px rgba(15, 23, 42, 0.04); }
-        .insight-card h4 { font-size: 0.98rem; margin-bottom: 6px; color: #7c3aed; font-family: 'Cinzel', serif; font-weight: 800; }
+        .insight-card h4 { font-size: 1.15rem; margin-bottom: 6px; color: #7c3aed; font-weight: 700; }
         .insight-card p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; font-weight: 600; }
 
         .testimonials-section { margin: 10px -16px; overflow: hidden; }
@@ -288,7 +303,7 @@
         .t-card { background: #ffffff; border: 2px solid #cbd5e1; border-radius: 12px; padding: 14px; width: 260px; flex-shrink: 0; box-shadow: 0 4px 10px rgba(15, 23, 42, 0.05); }
         .t-header { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
         .t-avatar { width: 30px; height: 30px; border-radius: 50%; background: #7c3aed; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.75rem; color: #fff; }
-        .t-meta h5 { font-size: 0.85rem; font-weight: 800; color: var(--text-main); }
+        .t-meta h5 { font-size: 0.95rem; font-weight: 800; color: var(--text-main); }
         .t-meta span { font-size: 0.7rem; color: #7c3aed; font-weight: 700; }
         .t-text { font-size: 0.8rem; color: var(--text-muted); line-height: 1.5; font-weight: 600; }
 
@@ -296,7 +311,7 @@
         .faq-item { border-bottom: 1px solid #cbd5e1; }
         .faq-item:last-child { border-bottom: none; }
         .faq-question {
-            width: 100%; background: none; border: none; padding: 14px 4px; text-align: left; font-family: inherit; font-size: 0.92rem; font-weight: 800; color: var(--text-main); cursor: pointer; display: flex; align-items: center; justify-content: space-between;
+            width: 100%; background: none; border: none; padding: 14px 4px; text-align: left; font-size: 0.95rem; font-weight: 800; color: var(--text-main); cursor: pointer; display: flex; align-items: center; justify-content: space-between;
         }
         .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease; font-size: 0.83rem; color: var(--text-muted); line-height: 1.6; font-weight: 600; padding: 0 4px; }
         .faq-item.active .faq-answer { max-height: 150px; padding-bottom: 14px; }
@@ -353,7 +368,7 @@
             <div id="aura-scanner" class="view">
                 <div class="scanner-box">
                     <div class="pulse-orb"></div>
-                    <h3 style="font-size: 1.05rem; margin-bottom: 6px; font-weight: 700;">Scanning your energy...</h3>
+                    <h3 style="font-size: 1.15rem; margin-bottom: 6px; font-weight: 700;">Scanning your energy...</h3>
                     <p class="status-text" id="auraStatus">Mixing cosmic vibes...</p>
                     <div class="progress-bar-container">
                         <div class="progress-bar" id="auraProgress"></div>
@@ -385,8 +400,8 @@
             <span class="card-badge" style="color: #e11d48;">❤️ 2. Soulmate & Compatibility Match</span>
             
             <div id="bond-form" class="view active">
-                <h3 style="font-size: 1.15rem; margin-bottom: 6px; color: var(--text-main); font-family: 'Cinzel', serif;">Crush & Relationship Compatibility Match</h3>
-                <p class="subtitle" style="margin-bottom: 14px; font-size: 0.85rem;">Check your emotional synergy percentage with your partner, crush, or best friend instantly.</p>
+                <h3 style="font-size: 1.25rem; margin-bottom: 6px; color: var(--text-main);">Crush & Relationship Compatibility Match</h3>
+                <p class="subtitle" style="margin-bottom: 14px; font-size: 0.88rem;">Check your emotional synergy percentage with your partner, crush, or best friend instantly.</p>
                 
                 <div class="input-group">
                     <label for="p1Name">Your Name</label>
@@ -404,7 +419,7 @@
             <div id="bond-scanner" class="view">
                 <div class="scanner-box">
                     <div class="pulse-orb" style="background: #e11d48; box-shadow: 0 0 25px rgba(225, 29, 72, 0.4);"></div>
-                    <h3 style="font-size: 1.05rem; margin-bottom: 6px; font-weight: 700;">Matching Names...</h3>
+                    <h3 style="font-size: 1.15rem; margin-bottom: 6px; font-weight: 700;">Matching Names...</h3>
                     <p class="status-text" id="bondStatus">Calculating emotional compatibility...</p>
                     <div class="progress-bar-container">
                         <div class="progress-bar" id="bondProgress" style="background: #e11d48;"></div>
@@ -434,8 +449,8 @@
         <!-- CARD 3: DAILY TAROT DRAW -->
         <section class="card tarot-card-section" style="text-align: center;">
             <span class="card-badge">✨ 3. Daily Tarot Draw</span>
-            <h3 style="font-size: 1.15rem; margin-bottom: 6px; font-family: 'Cinzel', serif;">Pick 1 Card for Today's Guidance</h3>
-            <p class="subtitle" style="margin-bottom: 14px; font-size: 0.85rem;">Tap any mystical card below to reveal your message.</p>
+            <h3 style="font-size: 1.25rem; margin-bottom: 6px;">Pick 1 Card for Today's Guidance</h3>
+            <p class="subtitle" style="margin-bottom: 14px; font-size: 0.88rem;">Tap any mystical card below to reveal your message.</p>
             
             <div class="tarot-deck" id="tarotDeck">
                 <div class="tarot-card" onclick="pickTarotCard(0)">
@@ -460,7 +475,7 @@
 
             <div id="tarotResultBox" style="display: none; margin-top: 14px; background: rgba(255, 255, 255, 0.95); border: 2px solid #c084fc; border-radius: 12px; padding: 16px; text-align: left; color: #0f172a;">
                 <span class="result-badge" style="margin-bottom: 8px;">TAROT INSIGHT UNLOCKED</span>
-                <h4 id="tarotTitle" style="font-size: 1.05rem; font-weight: 700; color: #1e1b4b; margin-bottom: 6px;"></h4>
+                <h4 id="tarotTitle" style="font-size: 1.15rem; font-weight: 700; color: #1e1b4b; margin-bottom: 6px;"></h4>
                 <p id="tarotDesc" style="font-size: 0.85rem; color: #334155; line-height: 1.6; font-weight: 600; margin-bottom: 14px;"></p>
                 <button class="btn btn-social" style="font-size: 0.85rem; padding: 10px;" onclick="shareTarot()">💬 Share Tarot Reading on WhatsApp</button>
             </div>
@@ -477,8 +492,8 @@
             <span class="card-badge" style="color: #0284c7;">💌 4. Secret Initial Finder</span>
 
             <div id="viral-form" class="view active">
-                <h3 style="font-size: 1.05rem; margin-bottom: 6px; color: var(--text-main); font-family: 'Cinzel', serif;">Secret Crush Initial Detector</h3>
-                <p class="subtitle" style="margin-bottom: 12px; font-size: 0.85rem;">Find out the first letter of the person who has a secret crush on you or thinks of you often.</p>
+                <h3 style="font-size: 1.25rem; margin-bottom: 6px; color: var(--text-main);">Secret Crush Initial Detector</h3>
+                <p class="subtitle" style="margin-bottom: 12px; font-size: 0.88rem;">Find out the first letter of the person who has a secret crush on you or thinks of you often.</p>
                 <div class="input-group">
                     <label for="viralName">Enter Your Full Name</label>
                     <input type="text" id="viralName" placeholder="e.g. Jessica Miller" autocomplete="off" />
@@ -491,7 +506,7 @@
             <div id="viral-scanner" class="view">
                 <div class="scanner-box">
                     <div class="pulse-orb" style="background: #0284c7; box-shadow: 0 0 25px rgba(2, 132, 199, 0.4);"></div>
-                    <h3 style="font-size: 1.05rem; margin-bottom: 6px; font-weight: 700;">Searching Secret Letters...</h3>
+                    <h3 style="font-size: 1.15rem; margin-bottom: 6px; font-weight: 700;">Searching Secret Letters...</h3>
                     <p class="status-text">Unlocking admirer signals...</p>
                     <div class="progress-bar-container">
                         <div class="progress-bar" id="viralProgress" style="background: #0284c7;"></div>
@@ -517,8 +532,8 @@
             <span class="card-badge" style="color: #b45309;">🌟 5. Claim Your Angel Number</span>
             
             <div id="angel-form" class="view active">
-                <h3 style="font-size: 1.15rem; margin-bottom: 6px; color: var(--text-main); font-family: 'Cinzel', serif;">Saw an Angel Number Today? (888, 777, 111...)</h3>
-                <p class="subtitle" style="margin-bottom: 14px; font-size: 0.85rem;">Enter the 2 or 3 digit angel number you saw on your clock or phone to claim its secret message!</p>
+                <h3 style="font-size: 1.25rem; margin-bottom: 6px; color: var(--text-main);">Saw an Angel Number Today? (888, 777, 111...)</h3>
+                <p class="subtitle" style="margin-bottom: 14px; font-size: 0.88rem;">Enter the 2 or 3 digit angel number you saw on your clock or phone to claim its secret message!</p>
                 
                 <div class="input-group">
                     <label for="angelNumberInput">Enter Angel Number (e.g., 11, 777, 888, 555)</label>
@@ -551,8 +566,8 @@
         <!-- CARD 6: LUCKY CODE GENERATOR -->
         <section class="card lucky-card">
             <span class="card-badge" style="color: #d97706;">✨ 6. Daily Lucky Code</span>
-            <h3 style="font-size: 1.05rem; margin-bottom: 6px; color: var(--text-main); font-family: 'Cinzel', serif;">Today's Lucky Color & Number</h3>
-            <p class="subtitle" style="margin-bottom: 14px; font-size: 0.85rem;">Tap below to instantly get your lucky details for today.</p>
+            <h3 style="font-size: 1.25rem; margin-bottom: 6px; color: var(--text-main);">Today's Lucky Color & Number</h3>
+            <p class="subtitle" style="margin-bottom: 14px; font-size: 0.88rem;">Tap below to instantly get your lucky details for today.</p>
             
             <div id="luckyBox" style="background: #ffffff; border: 2px solid #cbd5e1; border-radius: 10px; padding: 14px; margin-bottom: 14px;">
                 <span id="luckyResultText" style="font-size: 0.95rem; font-weight: 800; color: #d97706;">Tap button to get your lucky code...</span>
@@ -568,7 +583,7 @@
             <div class="chat-header">
                 <div class="avatar">👩🏻</div>
                 <div>
-                    <h3 style="font-size: 1rem; font-weight: 700; color: #ffffff;">Jessica ✨ (Astrology & Vibe AI)</h3>
+                    <h3 style="font-size: 1.15rem; font-weight: 700; color: #ffffff;">Jessica ✨ (Astrology & Vibe AI)</h3>
                     <div class="status"><span class="status-dot"></span> Online & Ready to Answer</div>
                 </div>
             </div>
@@ -688,7 +703,7 @@
 
         <!-- SECTION: 10 ACCORDION FREQUENTLY ASKED QUESTIONS -->
         <section class="faq-box">
-            <h3 class="section-title" style="font-size: 1rem; margin-bottom: 10px;">💡 Frequently Asked Questions</h3>
+            <h3 class="section-title" style="font-size: 1.15rem; margin-bottom: 10px;">💡 Frequently Asked Questions</h3>
             
             <div class="faq-item">
                 <button class="faq-question"><span>1. Are these checks free to use?</span><span class="faq-icon">+</span></button>
@@ -816,7 +831,7 @@
                             <span class="card-badge" style="color: ${item.color === '#ffffff' ? '#d8b4fe' : item.btnBg}; margin-bottom: 0;">${item.badge}</span>
                             <span style="font-size: 1.4rem; background: rgba(255,255,255,0.2); padding: 4px 8px; border-radius: 10px;">${item.avatar}</span>
                         </div>
-                        <h3 style="font-size: 1.15rem; margin-bottom: 6px; font-family: 'Cinzel', serif;">${item.title}</h3>
+                        <h3 style="font-size: 1.25rem; margin-bottom: 6px;">${item.title}</h3>
                         <p style="font-size: 0.88rem; line-height: 1.5; font-weight: 600; margin-bottom: 14px; opacity: 0.95;">${item.desc}</p>
                         
                         <div class="input-group">
@@ -834,7 +849,7 @@
 
                     <div id="${cardId}_scanner" class="view" style="text-align: center; padding: 20px 0;">
                         <div class="pulse-orb" style="background: ${item.btnBg};"></div>
-                        <h3 style="font-size: 1.05rem; margin-bottom: 6px; font-weight: 700; color: ${item.color};">Scanning cosmic frequency...</h3>
+                        <h3 style="font-size: 1.15rem; margin-bottom: 6px; font-weight: 700; color: ${item.color};">Scanning cosmic frequency...</h3>
                         <div class="progress-bar-container" style="background: rgba(0,0,0,0.1);">
                             <div class="progress-bar" id="${cardId}_bar" style="background: ${item.btnBg}; width: 0%;"></div>
                         </div>
@@ -842,7 +857,7 @@
 
                     <div id="${cardId}_result" class="view" style="text-align: center;">
                         <span class="result-badge" id="${cardId}_rbadge" style="background: rgba(255,255,255,0.2); color: ${item.color};">RESULT UNLOCKED</span>
-                        <h2 class="result-title" id="${cardId}_rtitle" style="color: ${item.color}; font-size: 1.15rem; margin-bottom: 8px;"></h2>
+                        <h2 class="result-title" id="${cardId}_rtitle" style="color: ${item.color}; font-size: 1.25rem; margin-bottom: 8px;"></h2>
                         <p class="result-desc" id="${cardId}_rdesc" style="color: ${item.color}; font-size: 0.88rem; margin-bottom: 16px; opacity: 0.95;"></p>
                         <div class="action-grid">
                             <button class="btn btn-social" onclick="shareLoopResult('${cardId}')">💬 Share Result on WhatsApp</button>
@@ -918,7 +933,7 @@
         function shareLoopResult(cardId) {
             const title = document.getElementById(cardId + '_rtitle').textContent;
             const text = encodeURIComponent(`I just checked my cosmic result on Vibe Check: "${title}". Check yours here: ` + window.location.href);
-            window.open(`[https://api.whatsapp.com/send?text=$](https://api.whatsapp.com/send?text=$){text}`, '_blank');
+            window.open(`https://api.whatsapp.com/send?text=${text}`, '_blank');
         }
 
         window.addEventListener('scroll', () => {
@@ -1006,7 +1021,7 @@
         function shareAngelNumber() {
             const num = document.getElementById('angelNumberInput').value || "Angel Number";
             const text = encodeURIComponent(`I just claimed my Angel Number (${num}) message on Vibe Check! Check yours here: ` + window.location.href);
-            window.open(`[https://api.whatsapp.com/send?text=$](https://api.whatsapp.com/send?text=$){text}`, '_blank');
+            window.open(`https://api.whatsapp.com/send?text=${text}`, '_blank');
         }
 
         const tarotData = [
@@ -1032,7 +1047,7 @@
         }
 
         function shareTarot() {
-            window.open(`[https://api.whatsapp.com/send?text=$](https://api.whatsapp.com/send?text=$){encodeURIComponent("I just drew my Daily Tarot Card on Vibe Check! Check yours here: " + window.location.href)}`, '_blank');
+            window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent("I just drew my Daily Tarot Card on Vibe Check! Check yours here: " + window.location.href)}`, '_blank');
         }
 
         const startScanBtn = document.getElementById('startScanBtn');
@@ -1116,7 +1131,7 @@
         }
 
         function shareMatch() {
-            window.open(`[https://api.whatsapp.com/send?text=$](https://api.whatsapp.com/send?text=$){encodeURIComponent("I just checked our compatibility match score and got an amazing result! Check yours here: " + window.location.href)}`, '_blank');
+            window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent("I just checked our compatibility match score and got an amazing result! Check yours here: " + window.location.href)}`, '_blank');
         }
 
         const startViralBtn = document.getElementById('startViralBtn');
@@ -1154,7 +1169,7 @@
         }
 
         function shareViral() {
-            window.open(`[https://api.whatsapp.com/send?text=$](https://api.whatsapp.com/send?text=$){encodeURIComponent("I found out my secret admirer initial on Vibe Check! Try your name here: " + window.location.href)}`, '_blank');
+            window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent("I found out my secret admirer initial on Vibe Check! Try your name here: " + window.location.href)}`, '_blank');
         }
 
         const luckyCodes = [
