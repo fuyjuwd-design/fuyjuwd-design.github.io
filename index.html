@@ -163,7 +163,7 @@
         .card.lucky-card .card-badge { color: #d97706; }
         .card.lucky-card .btn { background: #d97706; box-shadow: 0 4px 14px rgba(217, 119, 6, 0.3); }
 
-        /* 7. AI CHAT STYLES */
+        /* 7. AI ASTROLOGY CHAT STYLES (JESSICA) */
         .card.chat-card {
             background: #ffffff;
             border: 2px solid #7c3aed;
@@ -185,9 +185,9 @@
         .status { font-size: 0.75rem; color: #e2e8f0; display: flex; align-items: center; gap: 5px; margin-top: 2px; }
         .status-dot { width: 8px; height: 8px; background: #22c55e; border-radius: 50%; display: inline-block; }
         .chat-messages {
-            height: 320px; padding: 16px; overflow-y: auto; display: flex; flex-direction: column; gap: 12px; background: #f8fafc;
+            height: 340px; padding: 16px; overflow-y: auto; display: flex; flex-direction: column; gap: 12px; background: #f8fafc;
         }
-        .message { max-width: 80%; padding: 12px 16px; border-radius: 14px; font-size: 0.88rem; line-height: 1.5; word-wrap: break-word; }
+        .message { max-width: 85%; padding: 12px 16px; border-radius: 14px; font-size: 0.88rem; line-height: 1.5; word-wrap: break-word; }
         .message.incoming { background: #ffffff; color: #0f172a; align-self: flex-start; border: 1px solid #cbd5e1; border-bottom-left-radius: 4px; }
         .message.outgoing { background: #7c3aed; color: #ffffff; align-self: flex-end; border-bottom-right-radius: 4px; }
         .quick-replies { padding: 12px; background: #ffffff; border-top: 1px solid #cbd5e1; display: flex; flex-direction: column; gap: 8px; }
@@ -572,37 +572,38 @@
             </button>
         </section>
 
-        <!-- CARD 7: AI GIRL CHAT (JESSICA) -->
+        <!-- ================= CARD 7: SMART ASTROLOGY AI CHAT (JESSICA) ================= -->
         <section class="card chat-card">
             <div class="chat-header">
                 <div class="avatar">👩🏻</div>
                 <div>
-                    <h3 style="font-size: 1rem; font-weight: 700; color: #ffffff;">Jessica ✨</h3>
-                    <div class="status"><span class="status-dot"></span> Online & Ready to Chat</div>
+                    <h3 style="font-size: 1rem; font-weight: 700; color: #ffffff;">Jessica ✨ (Astrology & Vibe AI)</h3>
+                    <div class="status"><span class="status-dot"></span> Online & Ready to Answer</div>
                 </div>
             </div>
 
             <div class="chat-messages" id="chatMessages">
                 <div class="message incoming">
-                    Hi there! 👋 I'm Jessica. Tap any quick question below or type to chat with me!
+                    Hi there! 👋 I'm Jessica, your personal astrology and cosmic guide. Ask me about your Angel Number, love compatibility, tarot cards, or any life questions! ✨
                 </div>
             </div>
 
             <div class="quick-replies">
-                <span class="quick-title">Quick Questions:</span>
+                <span class="quick-title">Ask Jessica About:</span>
                 <div class="chips-grid">
-                    <button class="chip" onclick="sendPreset('Hello! How are you?')">👋 Hello! How are you?</button>
-                    <button class="chip" onclick="sendPreset('What is your favorite hobby?')">🎨 What is your hobby?</button>
-                    <button class="chip" onclick="sendPreset('Can you tell me a fun fact?')">💡 Tell me a fun fact</button>
-                    <button class="chip" onclick="sendPreset('What do you think about astrology?')">🔮 Do you like astrology?</button>
+                    <button class="chip" onclick="sendPreset('What does angel number 777 mean?')">🌟 Angel Number 777</button>
+                    <button class="chip" onclick="sendPreset('Check my love compatibility match')">💖 Love Compatibility</button>
+                    <button class="chip" onclick="sendPreset('Give me a tarot card reading')">🔮 Tarot Guidance</button>
+                    <button class="chip" onclick="sendPreset('I am feeling stuck, help me')">🌿 Life Guidance</button>
                 </div>
             </div>
 
             <div class="chat-input-area">
-                <input type="text" id="userInput" placeholder="Type a message..." autocomplete="off" onkeypress="handleKey(event)" />
+                <input type="text" id="userInput" placeholder="Ask about angel numbers, love, tarot..." autocomplete="off" onkeypress="handleKey(event)" />
                 <button class="chat-send-btn" onclick="sendMessage()">Send</button>
             </div>
         </section>
+        <!-- ====================================================================== -->
 
         <!-- EXPERT PSYCHIC PROFILE -->
         <section class="expert-card">
@@ -803,7 +804,6 @@
             const container = document.getElementById('infiniteFeedContainer');
             if (!container) return;
 
-            // Load 2 cards with different styling themes per batch
             for (let i = 0; i < 2; i++) {
                 const item = infinitePool[poolIndex % infinitePool.length];
                 poolIndex++;
@@ -811,7 +811,6 @@
                 const cardDiv = document.createElement('div');
                 cardDiv.className = 'card';
                 
-                // Assign gorgeous distinct themes
                 if (item.style === 'dark') {
                     cardDiv.style.background = 'linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%)';
                     cardDiv.style.color = '#ffffff';
@@ -844,7 +843,6 @@
             }
         }
 
-        // Detect scroll near bottom for endless feed
         window.addEventListener('scroll', () => {
             if ((window.innerHeight + window.scrollY) >= document.documentElement.scrollHeight - 300) {
                 loadMoreContent();
@@ -862,7 +860,6 @@
                     }, 300);
                 }
             }
-            // Load initial infinite batch
             loadMoreContent();
         });
 
@@ -1106,14 +1103,38 @@
             }, 400);
         }
 
-        /* === AI CHAT LOGIC (JESSICA) === */
-        const predefinedAnswers = {
-            "hello! how are you?": "I'm doing wonderful today, thanks for asking! 😊 How are things with you?",
-            "what is your favorite hobby?": "I love painting digital art, listening to music, and trying out new coffee recipes! ☕🎨",
-            "can you tell me a fun fact?": "Did you know that honey never spoils? Archaeologists found 3,000-year-old honey in Egyptian tombs that is still edible! 🍯",
-            "what do you think about astrology?": "I think astrology is super fascinating! It's so cool how star signs connect with our daily energy. ✨"
-        };
-        const defaultFallback = "That's so interesting! Tell me more about that. 😊";
+        /* === SMART ASTROLOGY AI CHAT LOGIC (JESSICA) === */
+        function getJessicaAstrologyReply(text) {
+            text = text.toLowerCase();
+            
+            // 1. Angel Numbers
+            if (text.includes('angel') || text.includes('111') || text.includes('222') || text.includes('333') || text.includes('444') || text.includes('555') || text.includes('777') || text.includes('888') || text.includes('999') || text.includes('number')) {
+                return "✨ Ah, angel numbers carry deep cosmic vibrations! If you're seeing repeating numbers or asking about one, your guardian angels are sending you a divine sign of abundance or awakening. Try entering your number in our 'Claim Your Angel Number' card above for a full detailed breakdown! 🌟";
+            }
+            
+            // 2. Love Compatibility & Matchmaking
+            if (text.includes('match') || text.includes('compatib') || text.includes('love') || text.includes('crush') || text.includes('partner') || text.includes('relationship') || text.includes('shadi')) {
+                return "💖 Love chemistry is deeply influenced by your zodiac element (Fire, Earth, Air, Water)! Use our Soulmate & Compatibility Match card above by typing both names to reveal your emotional synergy score instantly! ✨";
+            }
+            
+            // 3. Tarot Readings
+            if (text.includes('tarot') || text.includes('card') || text.includes('future') || text.includes('destiny')) {
+                return "🔮 The tarot cards never lie! They reflect your subconscious path and upcoming energies. Scroll up to our Daily Tarot Draw section and pick a card to reveal your custom guidance for today! 🌙";
+            }
+            
+            // 4. Life Problems / Guidance / Tension
+            if (text.includes('problem') || text.includes('issue') || text.includes('sad') || text.includes('stuck') || text.includes('life') || text.includes('help') || text.includes('tension') || text.includes('pareshan')) {
+                return "🌟 I hear you, friend. Every soul goes through heavy planetary cycles and tough phases. Remember that after every dark night comes a brilliant sunrise. Take a deep breath—your energy is shifting towards a positive breakthrough very soon! 💫";
+            }
+            
+            // 5. Zodiac & Horoscope
+            if (text.includes('zodiac') || text.includes('horoscope') || text.includes('sign') || text.includes('aries') || text.includes('leo') || text.includes('taurus') || text.includes('gemini') || text.includes('scorpio') || text.includes('pisces') || text.includes('virgo')) {
+                return "🌙 The stars are in a fascinating alignment right now! Your zodiac sign holds unique traits that connect with today's cosmic energy. Focus on your strengths and keep your vibe positive today! ✨";
+            }
+            
+            // Default intelligent conversational fallback
+            return "✨ That is so interesting! As your cosmic guide, I sense a lot of unique energy around your query today. Feel free to explore our Tarot readings, Angel Number claimer, or compatibility match above to unlock more insights! 🔮";
+        }
 
         function appendChatMessage(text, sender) {
             const chatMessages = document.getElementById('chatMessages');
@@ -1131,9 +1152,9 @@
         function sendPreset(questionText) {
             appendChatMessage(questionText, 'outgoing');
             setTimeout(() => {
-                const reply = predefinedAnswers[questionText.toLowerCase()] || defaultFallback;
+                const reply = getJessicaAstrologyReply(questionText);
                 appendChatMessage(reply, 'incoming');
-            }, 300);
+            }, 350);
         }
 
         function sendMessage() {
@@ -1145,9 +1166,9 @@
             input.value = '';
 
             setTimeout(() => {
-                const reply = predefinedAnswers[text.toLowerCase()] || defaultFallback;
+                const reply = getJessicaAstrologyReply(text);
                 appendChatMessage(reply, 'incoming');
-            }, 300);
+            }, 350);
         }
 
         /* === BOOKMARK & MARQUEE === */
