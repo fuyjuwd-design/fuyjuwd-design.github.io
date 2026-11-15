@@ -14,8 +14,10 @@
             --primary: #6d28d9;       /* Deep vibrant violet */
             --primary-hover: #5b21b6;
             --rose-accent: #e11d48;    /* Rich romantic rose for compatibility */
+            --cyan-accent: #0284c7;    /* Sky blue for secret initial */
+            --amber-accent: #d97706;   /* Golden amber for lucky code */
             --text-main: #0f172a;     /* Deep slate black for 100% crystal clear reading */
-            --text-muted: #475569;    /* Rich slate gray - zero muddy grey */
+            --text-muted: #475569;    /* Rich slate gray */
             --border-color: #cbd5e1;  /* Sharp clean borders */
             --transition: all 0.2s ease;
         }
@@ -127,7 +129,7 @@
             border: 1px solid var(--border-color);
         }
 
-        /* Card Container */
+        /* BASE CARD STYLES */
         .card {
             background: var(--bg-card);
             border: 1px solid var(--border-color);
@@ -137,10 +139,44 @@
             position: relative;
         }
 
-        /* Highlighted Compatibility Card */
-        .card.featured-compatibility {
+        /* 1. AURA CARD (Violet Theme) */
+        .card.aura-card {
+            border-top: 4px solid var(--primary);
+        }
+
+        /* 2. COMPATIBILITY CARD (Rose Theme) */
+        .card.compatibility-card {
             border: 2px solid var(--rose-accent);
             background: linear-gradient(180deg, #ffffff 0%, #fff1f2 100%);
+            border-top: 4px solid var(--rose-accent);
+        }
+
+        /* 3. TAROT CARD (Deep Mystical Indigo/Dark Theme - Breaks Monotony!) */
+        .card.tarot-card-section {
+            background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
+            color: #ffffff;
+            border: 2px solid rgba(192, 132, 252, 0.4);
+            box-shadow: 0 14px 35px rgba(30, 27, 75, 0.3);
+        }
+        .card.tarot-card-section .card-badge {
+            color: #c084fc;
+        }
+        .card.tarot-card-section h3 {
+            color: #ffffff;
+        }
+        .card.tarot-card-section p.subtitle {
+            color: #cbd5e1;
+        }
+
+        /* 4. SECRET INITIAL CARD (Cyan Theme) */
+        .card.initial-card {
+            border-top: 4px solid var(--cyan-accent);
+        }
+
+        /* 5. LUCKY CODE CARD (Amber Theme) */
+        .card.lucky-card {
+            border-top: 4px solid var(--amber-accent);
+            background: linear-gradient(180deg, #ffffff 0%, #fffbeb 100%);
         }
 
         .card-badge {
@@ -153,9 +189,9 @@
             display: block;
         }
 
-        .card-badge.rose {
-            color: var(--rose-accent);
-        }
+        .card-badge.rose { color: var(--rose-accent); }
+        .card-badge.cyan { color: var(--cyan-accent); }
+        .card-badge.amber { color: var(--amber-accent); }
 
         /* Form Elements */
         .input-group {
@@ -170,6 +206,7 @@
             color: var(--text-main);
             letter-spacing: 0.3px;
         }
+        .tarot-card-section label { color: #f8fafc; }
 
         input, select {
             width: 100%;
@@ -208,17 +245,25 @@
             transition: var(--transition);
         }
 
-        .btn:hover {
-            background: var(--primary-hover);
-        }
+        .btn:hover { background: var(--primary-hover); }
 
         .btn-rose {
             background: var(--rose-accent);
             box-shadow: 0 4px 12px rgba(225, 29, 72, 0.25);
         }
-        .btn-rose:hover {
-            background: #be123c;
+        .btn-rose:hover { background: #be123c; }
+
+        .btn-cyan {
+            background: var(--cyan-accent);
+            box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);
         }
+        .btn-cyan:hover { background: #0369a1; }
+
+        .btn-amber {
+            background: var(--amber-accent);
+            box-shadow: 0 4px 12px rgba(217, 119, 6, 0.25);
+        }
+        .btn-amber:hover { background: #b45309; }
 
         .btn-arrow {
             display: inline-flex;
@@ -233,26 +278,17 @@
             transition: transform 0.2s ease;
         }
 
-        .btn:hover .btn-arrow {
-            transform: translateX(3px);
-        }
+        .btn:hover .btn-arrow { transform: translateX(3px); }
 
         .btn-social {
             background: #16a34a;
             box-shadow: 0 4px 12px rgba(22, 163, 74, 0.2);
         }
-        .btn-social:hover {
-            background: #15803d;
-        }
+        .btn-social:hover { background: #15803d; }
 
         /* States Management */
-        .view {
-            display: none;
-        }
-
-        .view.active {
-            display: block;
-        }
+        .view { display: none; }
+        .view.active { display: block; }
 
         /* Scanning Screen Animation */
         .scanner-box {
@@ -279,7 +315,7 @@
         .progress-bar-container {
             width: 100%;
             height: 6px;
-            background: #e2e8f0;
+            background: rgba(255, 255, 255, 0.2);
             border-radius: 3px;
             margin: 16px 0 10px;
             overflow: hidden;
@@ -288,7 +324,7 @@
         .progress-bar {
             width: 0%;
             height: 100%;
-            background: var(--primary);
+            background: #ffffff;
             transition: width 0.1s linear;
         }
 
@@ -297,6 +333,7 @@
             color: var(--text-muted);
             font-weight: 600;
         }
+        .tarot-card-section .status-text { color: #e2e8f0; }
 
         /* Results Screen */
         .result-badge {
@@ -326,10 +363,7 @@
             margin-bottom: 20px;
         }
 
-        .action-grid {
-            display: grid;
-            gap: 10px;
-        }
+        .action-grid { display: grid; gap: 10px; }
 
         .btn-secondary {
             background: #f1f5f9;
@@ -342,9 +376,7 @@
             cursor: pointer;
             text-align: center;
         }
-        .btn-secondary:hover {
-            background: #e2e8f0;
-        }
+        .btn-secondary:hover { background: #e2e8f0; }
 
         /* CURIOSITY BRIDGE BOXES */
         .bridge-box {
@@ -368,7 +400,7 @@
             font-weight: 600;
         }
 
-        /* STYLISH 3D TAROT CARDS */
+        /* STYLISH 3D TAROT CARDS (FOR DARK TAROT SECTION) */
         .tarot-deck {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -392,7 +424,7 @@
             transition: transform 0.6s ease;
             transform-style: preserve-3d;
             border-radius: 14px;
-            box-shadow: 0 6px 16px rgba(15, 23, 42, 0.1);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
         }
 
         .tarot-card.flipped .card-inner {
@@ -413,9 +445,9 @@
         }
 
         .card-back {
-            background: linear-gradient(135deg, var(--primary), #4338ca);
+            background: linear-gradient(135deg, #4f46e5, #312e81);
             color: white;
-            border: 2px solid rgba(255, 255, 255, 0.25);
+            border: 2px solid rgba(192, 132, 252, 0.4);
             font-size: 1.5rem;
         }
 
@@ -425,13 +457,13 @@
             text-transform: uppercase;
             font-weight: 800;
             margin-top: 4px;
-            color: #f1f5f9;
+            color: #e2e8f0;
         }
 
         .card-front {
             background: #ffffff;
-            color: var(--primary);
-            border: 2px solid var(--primary);
+            color: #1e1b4b;
+            border: 2px solid #c084fc;
             transform: rotateY(180deg);
             font-size: 0.88rem;
             font-weight: 700;
@@ -441,7 +473,7 @@
 
         .card-front small {
             font-size: 0.65rem;
-            color: var(--text-muted);
+            color: #64748b;
             font-family: 'Plus Jakarta Sans', sans-serif;
             font-weight: 600;
         }
@@ -516,10 +548,7 @@
             text-align: center;
         }
 
-        .insight-grid {
-            display: grid;
-            gap: 12px;
-        }
+        .insight-grid { display: grid; gap: 12px; }
 
         .insight-card {
             background: var(--bg-card);
@@ -545,16 +574,9 @@
         }
 
         /* SINGLE ROW TESTIMONIALS INFINITE MARQUEE */
-        .testimonials-section {
-            margin: 10px -16px;
-            overflow: hidden;
-        }
+        .testimonials-section { margin: 10px -16px; overflow: hidden; }
 
-        .marquee-wrapper {
-            display: flex;
-            flex-direction: column;
-            position: relative;
-        }
+        .marquee-wrapper { display: flex; flex-direction: column; position: relative; }
 
         .marquee-track {
             display: flex;
@@ -578,12 +600,7 @@
             box-shadow: 0 4px 10px rgba(15, 23, 42, 0.04);
         }
 
-        .t-header {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 8px;
-        }
+        .t-header { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
 
         .t-avatar {
             width: 30px;
@@ -598,24 +615,9 @@
             color: #fff;
         }
 
-        .t-meta h5 {
-            font-size: 0.85rem;
-            font-weight: 700;
-            color: var(--text-main);
-        }
-
-        .t-meta span {
-            font-size: 0.7rem;
-            color: var(--accent);
-            font-weight: 600;
-        }
-
-        .t-text {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            line-height: 1.5;
-            font-weight: 500;
-        }
+        .t-meta h5 { font-size: 0.85rem; font-weight: 700; color: var(--text-main); }
+        .t-meta span { font-size: 0.7rem; color: var(--primary); font-weight: 600; }
+        .t-text { font-size: 0.8rem; color: var(--text-muted); line-height: 1.5; font-weight: 500; }
 
         /* ACCORDION FAQ STYLING */
         .faq-box {
@@ -626,13 +628,8 @@
             box-shadow: 0 4px 10px rgba(15, 23, 42, 0.04);
         }
 
-        .faq-item {
-            border-bottom: 1px solid #e2e8f0;
-        }
-
-        .faq-item:last-child {
-            border-bottom: none;
-        }
+        .faq-item { border-bottom: 1px solid #e2e8f0; }
+        .faq-item:last-child { border-bottom: none; }
 
         .faq-question {
             width: 100%;
@@ -650,9 +647,7 @@
             justify-content: space-between;
         }
 
-        .faq-question:hover {
-            color: var(--primary);
-        }
+        .faq-question:hover { color: var(--primary); }
 
         .faq-icon {
             font-size: 1rem;
@@ -671,15 +666,8 @@
             padding: 0 4px;
         }
 
-        .faq-item.active .faq-answer {
-            max-height: 150px;
-            padding-bottom: 14px;
-        }
-
-        .faq-item.active .faq-icon {
-            transform: rotate(45deg);
-            color: var(--primary);
-        }
+        .faq-item.active .faq-answer { max-height: 150px; padding-bottom: 14px; }
+        .faq-item.active .faq-icon { transform: rotate(45deg); color: var(--primary); }
 
         footer.site-footer {
             text-align: center;
@@ -712,8 +700,8 @@
             <p class="subtitle">Quick fun checks to discover your daily energy, love compatibility, tarot card, and secret initial!</p>
         </header>
 
-        <!-- CARD 1: MAIN AURA SCANNER -->
-        <main class="card">
+        <!-- CARD 1: MAIN AURA SCANNER (Violet Theme) -->
+        <main class="card aura-card">
             <span class="card-badge">⚡ Energy & Vibe Check</span>
             
             <div id="aura-form" class="view active">
@@ -752,7 +740,7 @@
                     <h3 style="font-size: 1.05rem; margin-bottom: 6px; font-weight: 700;">Scanning your energy...</h3>
                     <p class="status-text" id="auraStatus">Mixing cosmic vibes...</p>
                     <div class="progress-bar-container">
-                        <div class="progress-bar" id="auraProgress"></div>
+                        <div class="progress-bar" id="auraProgress" style="background: var(--primary);"></div>
                     </div>
                 </div>
             </div>
@@ -766,12 +754,8 @@
                     </p>
                 </div>
                 <div class="action-grid">
-                    <button class="btn" onclick="resetAura()">
-                        🔄 Check Again
-                    </button>
-                    <button class="btn-secondary" onclick="bookmarkPrompt()">
-                        ⭐ Bookmark for Daily Luck
-                    </button>
+                    <button class="btn" onclick="resetAura()">🔄 Check Again</button>
+                    <button class="btn-secondary" onclick="bookmarkPrompt()">⭐ Bookmark for Daily Luck</button>
                 </div>
             </div>
         </main>
@@ -782,8 +766,8 @@
             <span>↓ Enter names in the Compatibility Match below ↓</span>
         </div>
 
-        <!-- CARD 2: HIGHLIGHTED COMPATIBILITY MATCH (COLOMBIATIO HERO) -->
-        <section class="card featured-compatibility">
+        <!-- CARD 2: COMPATIBILITY MATCH (Rose Theme) -->
+        <section class="card compatibility-card">
             <span class="card-badge rose">❤️ Soulmate & Compatibility Match</span>
             
             <div id="bond-form" class="view active">
@@ -823,12 +807,8 @@
                     </p>
                 </div>
                 <div class="action-grid">
-                    <button class="btn btn-social" onclick="shareMatch()">
-                        💬 Share Compatibility on WhatsApp
-                    </button>
-                    <button class="btn-secondary" onclick="resetBond()">
-                        🔄 Check Another Match
-                    </button>
+                    <button class="btn btn-social" onclick="shareMatch()">💬 Share Compatibility on WhatsApp</button>
+                    <button class="btn-secondary" onclick="resetBond()">🔄 Check Another Match</button>
                 </div>
             </div>
         </section>
@@ -836,14 +816,14 @@
         <!-- CURIOSITY BRIDGE 2 -->
         <div class="bridge-box">
             <p>🔮 Ready to reveal your daily destiny card?</p>
-            <span>↓ Pick 1 Stylish Tarot Card below ↓</span>
+            <span>↓ Pick 1 Mystical Tarot Card below ↓</span>
         </div>
 
-        <!-- CARD 3: STYLISH DAILY TAROT CARD DRAW -->
-        <section class="card" style="text-align: center;">
-            <span class="card-badge">✨ Daily Tarot Draw</span>
-            <h3 style="font-size: 1.05rem; margin-bottom: 6px; color: var(--text-main);">Pick 1 Card for Today's Guidance</h3>
-            <p class="subtitle" style="margin-bottom: 12px; font-size: 0.85rem;">Tap any mystical card below to reveal your message.</p>
+        <!-- CARD 3: DAILY TAROT DRAW (Dark Mystical Indigo/Purple Theme - Distinct!) -->
+        <section class="card tarot-card-section" style="text-align: center;">
+            <span class="card-badge" style="color: #c084fc;">✨ Daily Tarot Draw</span>
+            <h3 style="font-size: 1.15rem; margin-bottom: 6px; font-family: 'Cinzel', serif;">Pick 1 Card for Today's Guidance</h3>
+            <p class="subtitle" style="margin-bottom: 14px; font-size: 0.85rem;">Tap any mystical card below to reveal your message.</p>
             
             <div class="tarot-deck" id="tarotDeck">
                 <div class="tarot-card" onclick="pickTarotCard(0)">
@@ -866,13 +846,11 @@
                 </div>
             </div>
 
-            <div id="tarotResultBox" style="display: none; margin-top: 14px; background: #f8fafc; border: 1px solid var(--border-color); border-radius: 12px; padding: 16px; text-align: left;">
+            <div id="tarotResultBox" style="display: none; margin-top: 14px; background: rgba(255, 255, 255, 0.95); border: 1px solid #c084fc; border-radius: 12px; padding: 16px; text-align: left; color: #0f172a;">
                 <span class="result-badge" style="margin-bottom: 8px;">TAROT INSIGHT UNLOCKED</span>
-                <h4 id="tarotTitle" style="font-size: 1.05rem; font-weight: 700; color: var(--text-main); margin-bottom: 6px;"></h4>
-                <p id="tarotDesc" style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; font-weight: 500; margin-bottom: 14px;"></p>
-                <button class="btn btn-social" style="font-size: 0.85rem; padding: 10px;" onclick="shareTarot()">
-                    💬 Share Tarot Reading on WhatsApp
-                </button>
+                <h4 id="tarotTitle" style="font-size: 1.05rem; font-weight: 700; color: #1e1b4b; margin-bottom: 6px;"></h4>
+                <p id="tarotDesc" style="font-size: 0.85rem; color: #475569; line-height: 1.6; font-weight: 500; margin-bottom: 14px;"></p>
+                <button class="btn btn-social" style="font-size: 0.85rem; padding: 10px;" onclick="shareTarot()">💬 Share Tarot Reading on WhatsApp</button>
             </div>
         </section>
 
@@ -882,9 +860,9 @@
             <span>↓ Find your Secret Crush Initial below ↓</span>
         </div>
 
-        <!-- CARD 4: SECRET INITIAL & SOUL CONNECTION DETECTOR -->
-        <section class="card">
-            <span class="card-badge">💌 Secret Initial Finder</span>
+        <!-- CARD 4: SECRET INITIAL FINDER (Cyan Theme) -->
+        <section class="card initial-card">
+            <span class="card-badge cyan">💌 Secret Initial Finder</span>
 
             <div id="viral-form" class="view active">
                 <h3 style="font-size: 1.05rem; margin-bottom: 6px; color: var(--text-main); font-family: 'Cinzel', serif;">Secret Crush Initial Detector</h3>
@@ -893,7 +871,7 @@
                     <label for="viralName">Enter Your Full Name</label>
                     <input type="text" id="viralName" placeholder="e.g. Jessica Miller" autocomplete="off" />
                 </div>
-                <button class="btn" id="startViralBtn">
+                <button class="btn btn-cyan" id="startViralBtn">
                     Reveal Secret Letter <span class="btn-arrow">➔</span>
                 </button>
             </div>
@@ -918,12 +896,8 @@
                     </p>
                 </div>
                 <div class="action-grid">
-                    <button class="btn btn-social" onclick="shareViral()">
-                        📤 Send to Friends on WhatsApp
-                    </button>
-                    <button class="btn-secondary" onclick="resetViral()">
-                        🔄 Test Another Name
-                    </button>
+                    <button class="btn btn-social" onclick="shareViral()">📤 Send to Friends on WhatsApp</button>
+                    <button class="btn-secondary" onclick="resetViral()">🔄 Test Another Name</button>
                 </div>
             </div>
         </section>
@@ -934,22 +908,22 @@
             <span>↓ Tap below to unlock ↓</span>
         </div>
 
-        <!-- CARD 5: INSTANT LUCKY FREQUENCY CODE GENERATOR -->
-        <section class="card" style="text-align: center;">
-            <span class="card-badge">✨ Daily Lucky Code</span>
+        <!-- CARD 5: LUCKY CODE GENERATOR (Amber Theme) -->
+        <section class="card lucky-card" style="text-align: center;">
+            <span class="card-badge amber">✨ Daily Lucky Code</span>
             <h3 style="font-size: 1.05rem; margin-bottom: 6px; color: var(--text-main); font-family: 'Cinzel', serif;">Today's Lucky Color & Number</h3>
             <p class="subtitle" style="margin-bottom: 14px; font-size: 0.85rem;">Tap below to instantly get your lucky details for today.</p>
             
-            <div id="luckyBox" style="background: #f8fafc; border: 1px solid var(--border-color); border-radius: 10px; padding: 14px; margin-bottom: 14px;">
-                <span id="luckyResultText" style="font-size: 0.95rem; font-weight: 700; color: var(--primary);">Tap button to get your lucky code...</span>
+            <div id="luckyBox" style="background: #ffffff; border: 1px solid var(--border-color); border-radius: 10px; padding: 14px; margin-bottom: 14px;">
+                <span id="luckyResultText" style="font-size: 0.95rem; font-weight: 700; color: var(--amber-accent);">Tap button to get your lucky code...</span>
             </div>
 
-            <button class="btn" onclick="generateLuckyCode()">
+            <button class="btn btn-amber" onclick="generateLuckyCode()">
                 ⚡ Get My Lucky Code <span class="btn-arrow">➔</span>
             </button>
         </section>
 
-        <!-- EXPERT PSYCHIC & TAROT READER PROFILE -->
+        <!-- EXPERT PSYCHIC PROFILE -->
         <section class="expert-card">
             <div class="expert-avatar">🔮</div>
             <h3 class="expert-name">Elena Vance</h3>
