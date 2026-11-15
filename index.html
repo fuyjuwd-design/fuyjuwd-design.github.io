@@ -154,7 +154,16 @@
         .card.lucky-card .card-badge { color: #d97706; }
         .card.lucky-card .btn { background: #d97706; box-shadow: 0 4px 14px rgba(217, 119, 6, 0.3); }
 
-        /* ================= CHAT STYLES ================= */
+        /* 6. ANGEL NUMBER CLAIMER CARD (New Golden/Mystic Theme for Social Traffic) */
+        .card.angel-card {
+            background: linear-gradient(135deg, #fefce8 0%, #fef9c3 100%);
+            border: 2px solid #ca8a04;
+        }
+        .card.angel-card .card-badge { color: #b45309; }
+        .card.angel-card .btn { background: #ca8a04; box-shadow: 0 4px 14px rgba(202, 138, 4, 0.3); }
+        .card.angel-card .btn:hover { background: #a16207; }
+
+        /* 7. AI CHAT STYLES */
         .card.chat-card {
             background: #ffffff;
             border: 2px solid #7c3aed;
@@ -196,7 +205,6 @@
         .chat-input-area input:focus { border-color: #7c3aed; box-shadow: 0 0 0 2px rgba(124, 58, 237, 0.15); }
         .chat-send-btn { background: #7c3aed; color: white; border: none; padding: 0 16px; border-radius: 10px; font-weight: 700; cursor: pointer; }
         .chat-send-btn:hover { background: #6d28d9; }
-        /* =============================================== */
 
         .card-badge {
             font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 800; margin-bottom: 10px; display: block;
@@ -512,15 +520,46 @@
             </div>
         </section>
 
-        <!-- CURIOSITY BRIDGE 4 -->
-        <div class="bridge-box">
-            <p>✨ Want to know your lucky color and power number today?</p>
-            <span>↓ Tap below to unlock ↓</span>
-        </div>
+        <!-- ================= CARD 5: SOCIAL TRAFFIC ANGEL NUMBER CLAIMER ================= -->
+        <section class="card angel-card">
+            <span class="card-badge" style="color: #b45309;">🌟 5. Claim Your Angel Number</span>
+            
+            <div id="angel-form" class="view active">
+                <h3 style="font-size: 1.15rem; margin-bottom: 6px; color: var(--text-main); font-family: 'Cinzel', serif;">Saw an Angel Number Today? (888, 777, 111...)</h3>
+                <p class="subtitle" style="margin-bottom: 14px; font-size: 0.85rem;">Enter the 2 or 3 digit angel number you saw on your clock or phone to claim its secret message!</p>
+                
+                <div class="input-group">
+                    <label for="angelNumberInput">Enter Angel Number (e.g., 11, 777, 888, 555)</label>
+                    <input type="text" id="angelNumberInput" maxlength="3" placeholder="e.g. 777" autocomplete="off" />
+                </div>
+                <div class="input-group">
+                    <label for="visitorName">Your Name</label>
+                    <input type="text" id="visitorName" placeholder="e.g. Alex" autocomplete="off" />
+                </div>
+                <button class="btn" style="background: #ca8a04;" onclick="claimAngelNumber()">
+                    Claim My Angel Message <span class="btn-arrow">➔</span>
+                </button>
+            </div>
 
-        <!-- CARD 5: LUCKY CODE GENERATOR -->
+            <div id="angel-result" class="view">
+                <div style="text-align: center;">
+                    <span class="result-badge" style="background: rgba(202, 138, 4, 0.15); color: #b45309; border-color: rgba(202, 138, 4, 0.4);" id="angelResultBadge">ANGEL NUMBER CLAIMED: 777</span>
+                    <h2 class="result-title" id="angelResultHeading">Cosmic Wealth & Fortune Incoming!</h2>
+                    <p class="result-desc" id="angelResultBody">
+                        Your guardian angels are aligning massive financial luck and positive breakthroughs for you right now. Get ready for a major blessing!
+                    </p>
+                </div>
+                <div class="action-grid">
+                    <button class="btn btn-social" onclick="shareAngelNumber()">💬 Share My Claimed Number on WhatsApp</button>
+                    <button class="btn-secondary" onclick="resetAngel()">🔄 Claim Another Number</button>
+                </div>
+            </div>
+        </section>
+        <!-- ====================================================================== -->
+
+        <!-- CARD 6: LUCKY CODE GENERATOR -->
         <section class="card lucky-card">
-            <span class="card-badge" style="color: #d97706;">✨ 5. Daily Lucky Code</span>
+            <span class="card-badge" style="color: #d97706;">✨ 6. Daily Lucky Code</span>
             <h3 style="font-size: 1.05rem; margin-bottom: 6px; color: var(--text-main); font-family: 'Cinzel', serif;">Today's Lucky Color & Number</h3>
             <p class="subtitle" style="margin-bottom: 14px; font-size: 0.85rem;">Tap below to instantly get your lucky details for today.</p>
             
@@ -533,7 +572,7 @@
             </button>
         </section>
 
-        <!-- ================= CARD 6: AI GIRL CHAT (JESSICA) ================= -->
+        <!-- CARD 7: AI GIRL CHAT (JESSICA) -->
         <section class="card chat-card">
             <div class="chat-header">
                 <div class="avatar">👩🏻</div>
@@ -564,7 +603,6 @@
                 <button class="chat-send-btn" onclick="sendMessage()">Send</button>
             </div>
         </section>
-        <!-- ========================================================== -->
 
         <!-- EXPERT PSYCHIC PROFILE -->
         <section class="expert-card">
@@ -647,7 +685,7 @@
             </div>
         </section>
 
-        <!-- SECTION: GLOBAL USER TESTIMONIALS (SINGLE ROW MARQUEE) -->
+        <!-- SECTION: GLOBAL USER TESTIMONIALS -->
         <section class="testimonials-section">
             <h3 class="section-title" style="margin-bottom: 14px;">🌟 Loved by People Worldwide</h3>
             <div class="marquee-wrapper">
@@ -741,7 +779,58 @@
         setInterval(updateGlobalClock, 1000);
         updateGlobalClock();
 
-        /* === STYLISH TAROT CARD DRAW 3D FLIP LOGIC === */
+        /* === ANGEL NUMBER CLAIMER LOGIC === */
+        const angelMessages = {
+            "11": { title: "Spiritual Awakening & Intuition", desc: "Seeing 11 means your spiritual alignment is peaking. Trust your gut feelings today because great clarity is coming your way!" },
+            "22": { title: "Master Builder & Manifestation", desc: "Seeing 22 means your hard work and dreams are turning into reality. Keep pushing forward with complete confidence!" },
+            "111": { title: "Manifestation Portal Open", desc: "111 is a powerful sign that your thoughts are manifesting instantly. Keep your mind positive and focused on your goals!" },
+            "222": { title: "Harmony & Trust in Universe", desc: "Everything is happening exactly as it's supposed to. Trust the process, you are in the right place at the right time." },
+            "333": { title: "Divine Protection & Support", desc: "Ascended masters are surrounding you with love, guidance, and complete support. You are never alone!" },
+            "444": { title: "Angel Presence & Inner Strength", desc: "Angels are wrapping you in divine protection. Your foundation is solid and success is guaranteed." },
+            "555": { title: "Major Positive Change Ahead", desc: "Get ready! A huge positive shift or exciting adventure is about to enter your life very soon." },
+            "666": { title: "Realign Your Focus & Balance", desc: "Take a deep breath and balance your spiritual life with your material goals. Peace of mind is returning." },
+            "777": { title: "Cosmic Wealth & Good Fortune", desc: "Jackpot energy! Massive financial luck, unexpected blessings, and wonderful miracles are heading your way." },
+            "888": { title: "Infinite Abundance & Financial Flow", desc: "Financial freedom and great rewards for your past efforts are flowing directly into your life now." },
+            "999": { title: "Completion & New Beginnings", desc: "A chapter of your life is successfully closing to make space for something much bigger and better!" }
+        };
+
+        function claimAngelNumber() {
+            const numInput = document.getElementById('angelNumberInput').value.trim();
+            const nameInput = document.getElementById('visitorName').value.trim();
+
+            if (!numInput) {
+                alert('Please enter a valid 2 or 3 digit angel number (e.g. 777, 888, 11)!');
+                return;
+            }
+
+            document.getElementById('angel-form').classList.remove('active');
+            document.getElementById('angel-result').classList.add('active');
+
+            // Find matching angel data or generate a customized one if custom number entered
+            const data = angelMessages[numInput] || {
+                title: `Special Angel Message for [ ${numInput} ]`,
+                desc: `Your guardian angels have unlocked a unique energy transmission for code ${numInput}. Expect wonderful syncs and pleasant surprises today!`
+            };
+
+            document.getElementById('angelResultBadge').textContent = `ANGEL NUMBER CLAIMED: ${numInput}`;
+            document.getElementById('angelResultHeading').textContent = nameInput ? `${nameInput}, ${data.title}` : data.title;
+            document.getElementById('angelResultBody').textContent = data.desc;
+        }
+
+        function resetAngel() {
+            document.getElementById('angelNumberInput').value = '';
+            document.getElementById('visitorName').value = '';
+            document.getElementById('angel-result').classList.remove('active');
+            document.getElementById('angel-form').classList.add('active');
+        }
+
+        function shareAngelNumber() {
+            const num = document.getElementById('angelNumberInput').value || "Angel Number";
+            const text = encodeURIComponent(`I just claimed my Angel Number (${num}) message on Vibe Check! Check yours here: ` + window.location.href);
+            window.open(`https://api.whatsapp.com/send?text=${text}`, '_blank');
+        }
+
+        /* === STYLISH TAROT CARD DRAW === */
         const tarotData = [
             { name: "✨ The Star", desc: "Hope, renewed energy, and great wishes coming true today! Your focus is sharp and optimism brings wonderful opportunities." },
             { name: "🔥 The Sun", desc: "Massive success, joy, and wonderful positivity surrounding you. A great day for new beginnings and spreading good energy." },
@@ -974,7 +1063,7 @@
                     htmlContent += `
                         <div class="t-card">
                             <div class="t-header">
-                                <div class="t-avatar">${r.name.split(' ').map(n => n[0]).join('')}</div>
+                                <div class="t-avatar">${r.name.feat ? '' : r.name.split(' ').map(n => n[0]).join('')}</div>
                                 <div class="t-meta">
                                     <h5>${r.name}</h5>
                                     <span>📍 ${r.loc}</span>
