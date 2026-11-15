@@ -28,7 +28,6 @@
 
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            /* Mystical Spiritual Aura Background Glow (Lightweight & Fast) */
             background: radial-gradient(circle at 50% 0%, rgba(124, 58, 237, 0.12) 0%, rgba(2, 132, 199, 0.06) 35%, var(--bg-deep) 75%);
             background-attachment: fixed;
             color: var(--text-main);
@@ -56,7 +55,6 @@
             position: relative;
         }
 
-        /* Subtle Astrological Floating Symbols Vibe */
         header::before {
             content: "✨ 🌙 🔮 🌟";
             display: block;
@@ -134,7 +132,7 @@
             border: 1px solid #e4e4e7;
         }
 
-        /* Card Container with Mystical Glow Border */
+        /* Card Container */
         .card {
             background: var(--bg-card);
             border: 1px solid var(--border-glow);
@@ -516,14 +514,15 @@
             background: var(--bg-card);
             border: 1px solid #e4e4e7;
             border-radius: 12px;
-            padding: 14px;
+            padding: 16px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
         }
 
         .insight-card h4 {
-            font-size: 0.9rem;
-            margin-bottom: 4px;
+            font-size: 0.95rem;
+            margin-bottom: 6px;
             color: var(--primary);
+            font-family: 'Cinzel', serif;
         }
 
         .insight-card p {
@@ -941,9 +940,62 @@
             <div class="expert-tagline">✨ "Keep your vibe high and wonderful things will happen!"</div>
         </section>
 
-        <!-- SECTION 5: DAILY VIBE HIGHLIGHTS -->
+        <!-- NEW SECTION: WHY DO WE BELIEVE IN ASTROLOGY -->
         <section>
-            <h3 class="section-title">🔮 Daily Energy Tips</h3>
+            <h3 class="section-title">🔮 Why Do We Believe in Astrology?</h3>
+            <div class="insight-grid">
+                <div class="insight-card">
+                    <h4>Seeking Meaning in Uncertainty</h4>
+                    <p>Throughout history, humans have looked to the stars to find comfort and answers during confusing or changing times. Astrology provides a comforting narrative that our lives are connected to the greater universe.</p>
+                </div>
+                <div class="insight-card">
+                    <h4>Self-Reflection & Personal Growth</h4>
+                    <p>Zodiac signs and birth charts act as mirrors for self-reflection. They encourage us to examine our strengths, weaknesses, and relationship patterns with more mindfulness.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- NEW SECTION: INTERESTING FACTS ABOUT ASTROLOGY -->
+        <section>
+            <h3 class="section-title">🌟 Some Interesting Facts About Astrology</h3>
+            <div class="insight-grid">
+                <div class="insight-card">
+                    <h4>Ancient Origins</h4>
+                    <p>Astrology dates back over 4,000 years to the ancient Babylonians, who mapped the night sky and tracked planetary cycles to forecast seasonal changes and royal events.</p>
+                </div>
+                <div class="insight-card">
+                    <h4>Sister Science to Astronomy</h4>
+                    <p>In ancient times, astronomy (studying celestial bodies) and astrology (interpreting their meaning) were practiced as the exact same scientific discipline before gradually separating.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- NEW SECTION: THE 4 ZODIAC ELEMENTS -->
+        <section>
+            <h3 class="section-title">🔥 The 4 Elements of Astrology</h3>
+            <div class="insight-grid">
+                <div class="insight-card">
+                    <h4>🔥 Fire Signs (Aries, Leo, Sagittarius)</h4>
+                    <p>Passionate, energetic, and spontaneous. Fire signs bring warmth, enthusiasm, leadership, and a bold zest for life into everything they do.</p>
+                </div>
+                <div class="insight-card">
+                    <h4>🌿 Earth Signs (Taurus, Virgo, Capricorn)</h4>
+                    <p>Grounded, practical, and reliable. Earth signs are the builders of the zodiac, valuing stability, loyalty, hard work, and tangible results.</p>
+                </div>
+                <div class="insight-card">
+                    <h4>💨 Air Signs (Gemini, Libra, Aquarius)</h4>
+                    <p>Intellectual, communicative, and free-thinking. Air signs excel in ideas, social connections, creativity, and looking at the big picture.</p>
+                </div>
+                <div class="insight-card">
+                    <h4>💧 Water Signs (Cancer, Scorpio, Pisces)</h4>
+                    <p>Emotional, highly intuitive, and deeply empathetic. Water signs feel things profoundly and possess strong psychic sensitivity and creative depth.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: DAILY VIBE HIGHLIGHTS -->
+        <section>
+            <h3 class="section-title">✨ Daily Energy Tips</h3>
             <div class="insight-grid">
                 <div class="insight-card">
                     <h4>Morning Positivity</h4>
@@ -960,7 +1012,7 @@
             </div>
         </section>
 
-        <!-- SECTION 6: GLOBAL USER TESTIMONIALS (SINGLE ROW MARQUEE) -->
+        <!-- SECTION: GLOBAL USER TESTIMONIALS (SINGLE ROW MARQUEE) -->
         <section class="testimonials-section">
             <h3 class="section-title" style="margin-bottom: 14px;">🌟 Loved by People Worldwide</h3>
             
@@ -971,7 +1023,7 @@
             </div>
         </section>
 
-        <!-- SECTION 7: 10 ACCORDION FREQUENTLY ASKED QUESTIONS -->
+        <!-- SECTION: 10 ACCORDION FREQUENTLY ASKED QUESTIONS -->
         <section class="faq-box">
             <h3 class="section-title" style="font-size: 1rem; margin-bottom: 10px;">💡 Frequently Asked Questions</h3>
             
@@ -1107,7 +1159,6 @@
                 return;
             }
 
-            // Flip all cards
             for (let i = 0; i < 3; i++) {
                 const cardInner = document.getElementById(`cardInner${i}`);
                 cardInner.parentElement.classList.add('flipped');
@@ -1116,7 +1167,6 @@
 
             localStorage.setItem('tarot_date', todayKey);
 
-            // Show clean result box below
             document.getElementById('tarotTitle').textContent = tarotData[index].name + " — Your Daily Guidance";
             document.getElementById('tarotDesc').textContent = tarotData[index].desc;
             document.getElementById('tarotResultBox').style.display = 'block';
