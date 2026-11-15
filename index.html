@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Universal Energy & Vibe Check 2026</title>
-    <meta name="description" content="Discover your true vibe, relationship compatibility, secret crush initial, and daily lucky codes. Instant, fun, and 100% free.">
+    <title>Daily Vibe & Tarot Check 2026</title>
+    <meta name="description" content="Discover your daily tarot card reading, energy vibe, relationship compatibility, and secret initial. Instant, fun, and 100% free.">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Cinzel:wght@600;700&display=swap" rel="stylesheet">
     <style>
@@ -347,6 +347,64 @@
             color: var(--text-muted);
         }
 
+        /* 3D TAROT CARDS STYLING */
+        .tarot-deck {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin: 16px 0;
+            perspective: 1000px;
+        }
+
+        .tarot-card {
+            background: linear-gradient(135deg, #7c3aed, #4f46e5);
+            border-radius: 14px;
+            height: 130px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.5rem;
+            box-shadow: 0 6px 16px rgba(124, 58, 237, 0.25);
+            transition: transform 0.4s ease, box-shadow 0.3s ease;
+            position: relative;
+            transform-style: preserve-3d;
+        }
+
+        .tarot-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 22px rgba(124, 58, 237, 0.35);
+        }
+
+        .tarot-card.flipped {
+            background: #ffffff;
+            color: var(--text-main);
+            border: 2px solid var(--primary);
+            transform: rotateY(180deg);
+            cursor: default;
+        }
+
+        .tarot-card .card-back-content, .tarot-card .card-front-content {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 8px;
+            text-align: center;
+        }
+
+        .tarot-card .card-front-content {
+            transform: rotateY(180deg);
+            font-size: 0.78rem;
+            font-weight: 600;
+        }
+
         /* EXPERT PSYCHIC & TAROT READER PROFILE */
         .expert-card {
             background: var(--bg-card);
@@ -589,7 +647,7 @@
     <div class="container">
         <!-- TOP HEADER -->
         <header>
-            <span class="brand-tag">✨ Daily Vibe Check 2026</span>
+            <span class="brand-tag">✨ Daily Vibe & Tarot Check 2026</span>
             
             <!-- LIVE CLOCK -->
             <div class="live-clock-card">
@@ -601,7 +659,7 @@
             </div>
 
             <h1>What's Your Hidden Energy Vibe & Luck Score Today?</h1>
-            <p class="subtitle">Quick fun checks to discover your daily energy, love compatibility, and secret initial!</p>
+            <p class="subtitle">Quick fun checks to discover your daily energy, tarot card, love compatibility, and secret initial!</p>
         </header>
 
         <!-- CARD 1: MAIN AURA SCANNER -->
@@ -670,11 +728,46 @@
 
         <!-- CURIOSITY BRIDGE 1 -->
         <div class="bridge-box">
+            <p>🔮 Ready to reveal your daily destiny card?</p>
+            <span>↓ Pick 1 Tarot Card below to flip ↓</span>
+        </div>
+
+        <!-- CARD 2: DAILY TAROT CARD DRAW -->
+        <section class="card" style="text-align: center;">
+            <span class="card-badge">✨ Daily Tarot Draw</span>
+            <h3 style="font-size: 1.05rem; margin-bottom: 6px; color: var(--text-main);">Pick 1 Card for Today's Guidance</h3>
+            <p class="subtitle" style="margin-bottom: 10px; font-size: 0.82rem;">Tap any card below to flip and reveal your daily message.</p>
+            
+            <div class="tarot-deck" id="tarotDeck">
+                <div class="tarot-card" onclick="pickTarotCard(0)">
+                    <div class="card-back-content">🔮</div>
+                    <div class="card-front-content" id="tCard0">Card</div>
+                </div>
+                <div class="tarot-card" onclick="pickTarotCard(1)">
+                    <div class="card-back-content">🔮</div>
+                    <div class="card-front-content" id="tCard1">Card</div>
+                </div>
+                <div class="tarot-card" onclick="pickTarotCard(2)">
+                    <div class="card-back-content">🔮</div>
+                    <div class="card-front-content" id="tCard2">Card</div>
+                </div>
+            </div>
+
+            <div id="tarotResultBox" style="display: none; margin-top: 14px; background: #fafaf9; border: 1px solid #d4d4d8; border-radius: 10px; padding: 14px;">
+                <span id="tarotResultText" style="font-size: 0.88rem; font-weight: 600; color: var(--primary); display: block; margin-bottom: 10px;"></span>
+                <button class="btn btn-social" style="font-size: 0.85rem; padding: 10px;" onclick="shareTarot()">
+                    💬 Share Tarot Reading on WhatsApp
+                </button>
+            </div>
+        </section>
+
+        <!-- CURIOSITY BRIDGE 2 -->
+        <div class="bridge-box">
             <p>💖 Vibe checked! But how do you match with your crush or best friend?</p>
             <span>↓ Tap below to check your Relationship Match ↓</span>
         </div>
 
-        <!-- CARD 2: COSMIC BOND & LOVE SYNERGY SCANNER -->
+        <!-- CARD 3: COSMIC BOND & LOVE SYNERGY SCANNER -->
         <section class="card">
             <span class="card-badge">❤️ Love & Friendship Match</span>
             
@@ -723,13 +816,13 @@
             </div>
         </section>
 
-        <!-- CURIOSITY BRIDGE 2 -->
+        <!-- CURIOSITY BRIDGE 3 -->
         <div class="bridge-box">
             <p>🤫 Want to know who is thinking about you?</p>
             <span>↓ Find your Secret Crush Initial below ↓</span>
         </div>
 
-        <!-- CARD 3: SECRET INITIAL & SOUL CONNECTION DETECTOR -->
+        <!-- CARD 4: SECRET INITIAL & SOUL CONNECTION DETECTOR -->
         <section class="card">
             <span class="card-badge">💌 Secret Initial Finder</span>
 
@@ -775,13 +868,13 @@
             </div>
         </section>
 
-        <!-- CURIOSITY BRIDGE 3 -->
+        <!-- CURIOSITY BRIDGE 4 -->
         <div class="bridge-box">
             <p>✨ Want to know your lucky color and power number today?</p>
             <span>↓ Tap below to unlock ↓</span>
         </div>
 
-        <!-- CARD 4: INSTANT LUCKY FREQUENCY CODE GENERATOR -->
+        <!-- CARD 5: INSTANT LUCKY FREQUENCY CODE GENERATOR -->
         <section class="card" style="text-align: center;">
             <span class="card-badge">✨ Daily Lucky Code</span>
             <h3 style="font-size: 1.05rem; margin-bottom: 6px; color: var(--text-main);">Today's Lucky Color & Number</h3>
@@ -957,6 +1050,45 @@
         setInterval(updateGlobalClock, 1000);
         updateGlobalClock();
 
+        /* === DAILY TAROT CARD 3D FLIP LOGIC === */
+        const tarotMeanings = [
+            "✨ The Star: Hope, renewed energy, and great wishes coming true today!",
+            "🔥 The Sun: Massive success, joy, and wonderful positivity surrounding you.",
+            "🌿 The Wheel: A lucky breakthrough and a pleasant surprise in your day!",
+            "💖 The Lovers: Harmonious connections, love, and deep mutual understanding.",
+            "⚡ The Magician: Your manifestation power is peak today—make your move!"
+        ];
+
+        let tarotPickedToday = false;
+        function pickTarotCard(index) {
+            const todayKey = new Date().toDateString();
+            const lastPicked = localStorage.getItem('tarot_date');
+            
+            if (lastPicked === todayKey) {
+                alert('You have already drawn your daily tarot card today! Come back tomorrow for a new card.');
+                return;
+            }
+
+            const cards = document.querySelectorAll('.tarot-card');
+            cards.forEach((card, idx) => {
+                card.classList.add('flipped');
+                const randomMeaning = tarotMeanings[Math.floor(Math.random() * tarotMeanings.length)];
+                document.getElementById(`tCard${idx}`).textContent = (idx === index) ? randomMeaning : tarotMeanings[Math.floor(Math.random() * tarotMeanings.length)];
+            });
+
+            localStorage.setItem('tarot_date', todayKey);
+            tarotPickedToday = true;
+
+            const selectedMsg = document.getElementById(`tCard${index}`).textContent;
+            document.getElementById('tarotResultText').textContent = "Your Daily Reading: " + selectedMsg;
+            document.getElementById('tarotResultBox').style.display = 'block';
+        }
+
+        function shareTarot() {
+            const text = encodeURIComponent("I just drew my Daily Tarot Card on Vibe Check! Check yours here: " + window.location.href);
+            window.open(`https://api.whatsapp.com/send?text=${text}`, '_blank');
+        }
+
         /* === 1. MAIN AURA SCANNER LOGIC === */
         const startScanBtn = document.getElementById('startScanBtn');
         const auraForm = document.getElementById('aura-form');
@@ -1122,7 +1254,7 @@
         }
 
         const globalReviews = [
-            { name: "Sarah L.", loc: "United Kingdom", text: "The energy vibe check was so fun and accurate for my week!" },
+            { name: "Sarah L.", loc: "United Kingdom", text: "The daily tarot card draw is my favorite part of the morning!" },
             { name: "Marcus T.", loc: "United States", text: "Super fun interactive tools, loved checking my match score." },
             { name: "Priya K.", loc: "India", text: "Zero sign up needed, clean design and instant fun. Amazing!" },
             { name: "Carlos M.", loc: "Brazil", text: "My lucky color result gave me great daily motivation." },
