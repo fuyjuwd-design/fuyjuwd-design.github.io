@@ -149,12 +149,7 @@
         .card.initial-card .card-badge { color: #0284c7; }
         .card.initial-card .btn { background: #0284c7; box-shadow: 0 4px 14px rgba(2, 132, 199, 0.3); }
 
-        /* 5. LUCKY CODE */
-        .card.lucky-card { background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%); border: 2px solid #d97706; text-align: center; }
-        .card.lucky-card .card-badge { color: #d97706; }
-        .card.lucky-card .btn { background: #d97706; box-shadow: 0 4px 14px rgba(217, 119, 6, 0.3); }
-
-        /* 6. ANGEL NUMBER CLAIMER CARD (New Golden/Mystic Theme for Social Traffic) */
+        /* 5. ANGEL NUMBER CLAIMER CARD */
         .card.angel-card {
             background: linear-gradient(135deg, #fefce8 0%, #fef9c3 100%);
             border: 2px solid #ca8a04;
@@ -162,6 +157,11 @@
         .card.angel-card .card-badge { color: #b45309; }
         .card.angel-card .btn { background: #ca8a04; box-shadow: 0 4px 14px rgba(202, 138, 4, 0.3); }
         .card.angel-card .btn:hover { background: #a16207; }
+
+        /* 6. LUCKY CODE */
+        .card.lucky-card { background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%); border: 2px solid #d97706; text-align: center; }
+        .card.lucky-card .card-badge { color: #d97706; }
+        .card.lucky-card .btn { background: #d97706; box-shadow: 0 4px 14px rgba(217, 119, 6, 0.3); }
 
         /* 7. AI CHAT STYLES */
         .card.chat-card {
@@ -521,41 +521,40 @@
         </section>
 
         <!-- ================= CARD 5: SOCIAL TRAFFIC ANGEL NUMBER CLAIMER ================= -->
-<section class="card angel-card" id="claim-angel-number">
-    <span class="card-badge" style="color: #b45309;">🌟 5. Claim Your Angel Number</span>
-    
-    <div id="angel-form" class="view active">
-        <h3 style="font-size: 1.15rem; margin-bottom: 6px; color: var(--text-main); font-family: 'Cinzel', serif;">Saw an Angel Number Today? (888, 777, 111...)</h3>
-        <p class="subtitle" style="margin-bottom: 14px; font-size: 0.85rem;">Enter the 2 or 3 digit angel number you saw on your clock or phone to claim its secret message!</p>
-        
-        <div class="input-group">
-            <label for="angelNumberInput">Enter Angel Number (e.g., 11, 777, 888, 555)</label>
-            <input type="text" id="angelNumberInput" maxlength="3" placeholder="e.g. 777" autocomplete="off" />
-        </div>
-        <div class="input-group">
-            <label for="visitorName">Your Name</label>
-            <input type="text" id="visitorName" placeholder="e.g. Alex" autocomplete="off" />
-        </div>
-        <button class="btn" style="background: #ca8a04;" onclick="claimAngelNumber()">
-            Claim My Angel Message <span class="btn-arrow">➔</span>
-        </button>
-    </div>
+        <section class="card angel-card" id="claim-angel-number">
+            <span class="card-badge" style="color: #b45309;">🌟 5. Claim Your Angel Number</span>
+            
+            <div id="angel-form" class="view active">
+                <h3 style="font-size: 1.15rem; margin-bottom: 6px; color: var(--text-main); font-family: 'Cinzel', serif;">Saw an Angel Number Today? (888, 777, 111...)</h3>
+                <p class="subtitle" style="margin-bottom: 14px; font-size: 0.85rem;">Enter the 2 or 3 digit angel number you saw on your clock or phone to claim its secret message!</p>
+                
+                <div class="input-group">
+                    <label for="angelNumberInput">Enter Angel Number (e.g., 11, 777, 888, 555)</label>
+                    <input type="text" id="angelNumberInput" maxlength="3" placeholder="e.g. 777" autocomplete="off" />
+                </div>
+                <div class="input-group">
+                    <label for="visitorName">Your Name</label>
+                    <input type="text" id="visitorName" placeholder="e.g. Alex" autocomplete="off" />
+                </div>
+                <button class="btn" style="background: #ca8a04;" onclick="claimAngelNumber()">
+                    Claim My Angel Message <span class="btn-arrow">➔</span>
+                </button>
+            </div>
 
-    <div id="angel-result" class="view">
-        <div style="text-align: center;">
-            <span class="result-badge" style="background: rgba(202, 138, 4, 0.15); color: #b45309; border-color: rgba(202, 138, 4, 0.4);" id="angelResultBadge">ANGEL NUMBER CLAIMED: 777</span>
-            <h2 class="result-title" id="angelResultHeading">Cosmic Wealth & Fortune Incoming!</h2>
-            <p class="result-desc" id="angelResultBody">
-                Your guardian angels are aligning massive financial luck and positive breakthroughs for you right now. Get ready for a major blessing!
-            </p>
-        </div>
-        <div class="action-grid">
-            <button class="btn btn-social" onclick="shareAngelNumber()">💬 Share My Claimed Number on WhatsApp</button>
-            <button class="btn-secondary" onclick="resetAngel()">🔄 Claim Another Number</button>
-        </div>
-    </div>
-</section>
-        
+            <div id="angel-result" class="view">
+                <div style="text-align: center;">
+                    <span class="result-badge" style="background: rgba(202, 138, 4, 0.15); color: #b45309; border-color: rgba(202, 138, 4, 0.4);" id="angelResultBadge">ANGEL NUMBER CLAIMED: 777</span>
+                    <h2 class="result-title" id="angelResultHeading">Cosmic Wealth & Fortune Incoming!</h2>
+                    <p class="result-desc" id="angelResultBody">
+                        Your guardian angels are aligning massive financial luck and positive breakthroughs for you right now. Get ready for a major blessing!
+                    </p>
+                </div>
+                <div class="action-grid">
+                    <button class="btn btn-social" onclick="shareAngelNumber()">💬 Share My Claimed Number on WhatsApp</button>
+                    <button class="btn-secondary" onclick="resetAngel()">🔄 Claim Another Number</button>
+                </div>
+            </div>
+        </section>
         <!-- ====================================================================== -->
 
         <!-- CARD 6: LUCKY CODE GENERATOR -->
@@ -758,6 +757,19 @@
     </div>
 
     <script>
+        /* === AUTO-SCROLL FOR CLEAN URL REDIRECT === */
+        window.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('card') === 'angel') {
+                const angelSection = document.getElementById('claim-angel-number');
+                if (angelSection) {
+                    setTimeout(() => {
+                        angelSection.scrollIntoView({ behavior: 'smooth' });
+                    }, 300);
+                }
+            }
+        });
+
         /* === ACCORDION FAQ LOGIC === */
         const faqQuestions = document.querySelectorAll('.faq-question');
         faqQuestions.forEach(question => {
@@ -807,7 +819,6 @@
             document.getElementById('angel-form').classList.remove('active');
             document.getElementById('angel-result').classList.add('active');
 
-            // Find matching angel data or generate a customized one if custom number entered
             const data = angelMessages[numInput] || {
                 title: `Special Angel Message for [ ${numInput} ]`,
                 desc: `Your guardian angels have unlocked a unique energy transmission for code ${numInput}. Expect wonderful syncs and pleasant surprises today!`
@@ -1064,7 +1075,7 @@
                     htmlContent += `
                         <div class="t-card">
                             <div class="t-header">
-                                <div class="t-avatar">${r.name.feat ? '' : r.name.split(' ').map(n => n[0]).join('')}</div>
+                                <div class="t-avatar">${r.name.split(' ').map(n => n[0]).join('')}</div>
                                 <div class="t-meta">
                                     <h5>${r.name}</h5>
                                     <span>📍 ${r.loc}</span>
