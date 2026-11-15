@@ -1,4 +1,228 @@
-canner-box { text-align: center; padding: 16px 0; }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Vibe & Compatibility Check 2026</title>
+    <meta name="description" content="Discover your daily tarot reading, love compatibility match, secret initial, and energy vibe. Instant, fun, and 100% free.">
+    <!-- Google Fonts -->
+    <link href="[https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Cinzel:wght@600;700&display=swap](https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Cinzel:wght@600;700&display=swap)" rel="stylesheet">
+    <style>
+        :root {
+            --bg-deep: #f2f1ec;
+            --text-main: #0f172a;
+            --text-muted: #334155;
+            --transition: all 0.2s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: radial-gradient(circle at 50% 0%, rgba(109, 40, 217, 0.08) 0%, rgba(225, 29, 72, 0.04) 40%, var(--bg-deep) 80%);
+            background-attachment: fixed;
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 540px;
+            margin: 0 auto;
+            padding: 24px 16px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        header {
+            text-align: center;
+            padding-top: 10px;
+        }
+
+        header::before {
+            content: "✨ 🌙 🔮 💖";
+            display: block;
+            font-size: 1.2rem;
+            letter-spacing: 10px;
+            margin-bottom: 6px;
+        }
+
+        .brand-tag {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #6d28d9;
+            font-weight: 800;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+
+        p.subtitle {
+            color: var(--text-muted);
+            font-size: 0.92rem;
+            line-height: 1.5;
+            font-weight: 600;
+            margin-bottom: 14px;
+        }
+
+        .live-clock-card {
+            background: #ffffff;
+            border: 2px solid #cbd5e1;
+            border-radius: 14px;
+            padding: 10px 14px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 4px;
+        }
+
+        .clock-left {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .live-date {
+            font-size: 0.78rem;
+            color: #6d28d9;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .live-time {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text-main);
+            font-family: monospace;
+            background: #f1f5f9;
+            padding: 4px 10px;
+            border-radius: 6px;
+            border: 1px solid #cbd5e1;
+        }
+
+        .card {
+            border-radius: 20px;
+            padding: 24px;
+            position: relative;
+            box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+        }
+
+        .card.aura-card { background: #ffffff; border: 2px solid #8b5cf6; }
+        .card.aura-card .card-badge { color: #7c3aed; }
+        .card.aura-card .btn { background: #7c3aed; box-shadow: 0 4px 14px rgba(124, 58, 237, 0.3); }
+
+        .card.compatibility-card { background: linear-gradient(135deg, #fff1f2 100%, #ffe4e6 0%); border: 2px solid #f43f5e; }
+        .card.compatibility-card .card-badge { color: #e11d48; }
+        .card.compatibility-card .btn { background: #e11d48; box-shadow: 0 4px 14px rgba(225, 29, 72, 0.3); }
+
+        .card.tarot-card-section { background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%); color: #ffffff; border: 2px solid #a855f7; }
+        .card.tarot-card-section .card-badge { color: #d8b4fe; }
+        .card.tarot-card-section h3, .card.tarot-card-section p.subtitle { color: #ffffff; }
+
+        .card.initial-card { background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); border: 2px solid #0284c7; }
+        .card.initial-card .card-badge { color: #0284c7; }
+        .card.initial-card .btn { background: #0284c7; box-shadow: 0 4px 14px rgba(2, 132, 199, 0.3); }
+
+        .card.angel-card {
+            background: linear-gradient(135deg, #fefce8 0%, #fef9c3 100%);
+            border: 2px solid #ca8a04;
+        }
+        .card.angel-card .card-badge { color: #b45309; }
+        .card.angel-card .btn { background: #ca8a04; box-shadow: 0 4px 14px rgba(202, 138, 4, 0.3); }
+        .card.angel-card .btn:hover { background: #a16207; }
+
+        .card.lucky-card { background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%); border: 2px solid #d97706; text-align: center; }
+        .card.lucky-card .card-badge { color: #d97706; }
+        .card.lucky-card .btn { background: #d97706; box-shadow: 0 4px 14px rgba(217, 119, 6, 0.3); }
+
+        .card.chat-card {
+            background: #ffffff;
+            border: 2px solid #7c3aed;
+            padding: 0;
+            overflow: hidden;
+        }
+        .chat-header {
+            background: #7c3aed;
+            color: white;
+            padding: 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .avatar {
+            width: 45px; height: 45px; background: #ffffff; color: #7c3aed;
+            border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; font-weight: 700;
+        }
+        .status { font-size: 0.75rem; color: #e2e8f0; display: flex; align-items: center; gap: 5px; margin-top: 2px; }
+        .status-dot { width: 8px; height: 8px; background: #22c55e; border-radius: 50%; display: inline-block; }
+        .chat-messages {
+            height: 340px; padding: 16px; overflow-y: auto; display: flex; flex-direction: column; gap: 12px; background: #f8fafc;
+        }
+        .message { max-width: 85%; padding: 12px 16px; border-radius: 14px; font-size: 0.88rem; line-height: 1.5; word-wrap: break-word; }
+        .message.incoming { background: #ffffff; color: #0f172a; align-self: flex-start; border: 1px solid #cbd5e1; border-bottom-left-radius: 4px; }
+        .message.outgoing { background: #7c3aed; color: #ffffff; align-self: flex-end; border-bottom-right-radius: 4px; }
+        .quick-replies { padding: 12px; background: #ffffff; border-top: 1px solid #cbd5e1; display: flex; flex-direction: column; gap: 8px; }
+        .quick-title { font-size: 0.75rem; font-weight: 700; color: #64748b; text-transform: uppercase; }
+        .chips-grid { display: flex; flex-wrap: wrap; gap: 6px; }
+        .chip {
+            background: #f1f5f9; border: 1px solid #cbd5e1; padding: 6px 12px; border-radius: 20px;
+            font-size: 0.78rem; font-weight: 600; color: #334155; cursor: pointer; transition: all 0.2s ease;
+        }
+        .chip:hover { background: #7c3aed; color: white; border-color: #7c3aed; }
+        .chat-input-area { padding: 12px 16px; background: #ffffff; border-top: 1px solid #cbd5e1; display: flex; gap: 8px; }
+        .chat-input-area input {
+            flex: 1; padding: 10px 14px; border: 1px solid #cbd5e1; border-radius: 10px; font-family: inherit; font-size: 0.9rem; outline: none;
+        }
+        .chat-input-area input:focus { border-color: #7c3aed; box-shadow: 0 0 0 2px rgba(124, 58, 237, 0.15); }
+        .chat-send-btn { background: #7c3aed; color: white; border: none; padding: 0 16px; border-radius: 10px; font-weight: 700; cursor: pointer; }
+        .chat-send-btn:hover { background: #6d28d9; }
+
+        .card-badge {
+            font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 800; margin-bottom: 10px; display: block;
+        }
+
+        .input-group { margin-bottom: 16px; }
+        label { display: block; font-size: 0.85rem; font-weight: 700; margin-bottom: 6px; color: var(--text-main); }
+        .tarot-card-section label { color: #f8fafc; }
+
+        input, select {
+            width: 100%; padding: 12px 14px; background: #ffffff; border: 1px solid #94a3b8; border-radius: 10px; color: var(--text-main); font-family: inherit; font-size: 0.95rem; font-weight: 600;
+        }
+        .tarot-card-section input { background: rgba(255, 255, 255, 0.1); color: white; border-color: #a855f7; }
+
+        .btn {
+            width: 100%; padding: 12px 16px; color: white; border: none; border-radius: 10px; font-size: 0.95rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; transition: var(--transition);
+        }
+        .btn-arrow {
+            display: inline-flex; align-items: center; justify-content: center; font-size: 1.1rem; font-weight: 800; background: rgba(255, 255, 255, 0.25); width: 24px; height: 24px; border-radius: 50%;
+        }
+        .btn-social { background: #16a34a !important; box-shadow: 0 4px 12px rgba(22, 163, 74, 0.3) !important; }
+
+        .view { display: none; }
+        .view.active { display: block; }
+
+        .scanner-box { text-align: center; padding: 16px 0; }
         .pulse-orb {
             width: 70px; height: 70px; background: radial-gradient(circle, #f43f5e 0%, #6d28d9 100%); border-radius: 50%; margin: 0 auto 16px; animation: pulseAnim 1.5s infinite ease-in-out;
         }
@@ -288,7 +512,7 @@ canner-box { text-align: center; padding: 16px 0; }
             </div>
         </section>
 
-        <!-- ================= CARD 5: SOCIAL TRAFFIC ANGEL NUMBER CLAIMER ================= -->
+        <!-- CARD 5: SOCIAL TRAFFIC ANGEL NUMBER CLAIMER -->
         <section class="card angel-card" id="claim-angel-number">
             <span class="card-badge" style="color: #b45309;">🌟 5. Claim Your Angel Number</span>
             
@@ -323,7 +547,6 @@ canner-box { text-align: center; padding: 16px 0; }
                 </div>
             </div>
         </section>
-        <!-- ====================================================================== -->
 
         <!-- CARD 6: LUCKY CODE GENERATOR -->
         <section class="card lucky-card">
@@ -340,7 +563,7 @@ canner-box { text-align: center; padding: 16px 0; }
             </button>
         </section>
 
-        <!-- ================= CARD 7: SMART ASTROLOGY AI CHAT (JESSICA) ================= -->
+        <!-- CARD 7: SMART ASTROLOGY AI CHAT (JESSICA) -->
         <section class="card chat-card">
             <div class="chat-header">
                 <div class="avatar">👩🏻</div>
@@ -371,7 +594,6 @@ canner-box { text-align: center; padding: 16px 0; }
                 <button class="chat-send-btn" onclick="sendMessage()">Send</button>
             </div>
         </section>
-        <!-- ====================================================================== -->
 
         <!-- EXPERT PSYCHIC PROFILE -->
         <section class="expert-card">
@@ -519,11 +741,11 @@ canner-box { text-align: center; padding: 16px 0; }
             </div>
         </section>
 
-        <!-- INFINITE FEED CONTAINER (STUNNING DIVERSE LOOP CARDS) -->
+        <!-- INFINITE FEED CONTAINER -->
         <div id="infiniteFeedContainer" style="display: flex; flex-direction: column; gap: 24px;"></div>
         
         <div id="infiniteLoader" style="text-align: center; padding: 20px; font-weight: 700; color: #6d28d9; font-size: 0.9rem;">
-            ✨ Loading more cosmic vibrations... ✨
+            ✨ Loading more cosmic checks... ✨
         </div>
 
         <!-- FOOTER -->
@@ -533,55 +755,42 @@ canner-box { text-align: center; padding: 16px 0; }
     </div>
 
     <script>
-        /* === DIVERSE INFINITE LOOP SYSTEM (LOVE MATCH, GIRLS VIBE & HIGH PAYING HOOKS) === */
         const infinitePool = [
             { 
                 type: "love", 
                 badge: "💖 LIVE LOVE MATCHING HOOK", 
-                title: "What is Your True Chemistry & Soulmate Score?", 
-                desc: "Discover whether your relationship has a 99% stellar match rate or needs a little extra romance boost today.", 
-                btnText: "Test Match Now ➔",
-                btnBg: "#e11d48",
-                bg: "linear-gradient(135deg, #fff1f2 0%, #ffe4e6 100%)",
-                border: "2px solid #f43f5e",
-                color: "#0f172a",
-                avatar: "👩🏻‍❤️‍👨🏽"
+                title: "Soulmate & Crush Chemistry Scan", 
+                desc: "Type your name and your crush's name to calculate your true emotional connection score.", 
+                input1: "Your Name", input2: "Crush Name",
+                btnText: "Check Compatibility Now ➔", btnBg: "#e11d48",
+                bg: "linear-gradient(135deg, #fff1f2 0%, #ffe4e6 100%)", border: "2px solid #f43f5e", color: "#0f172a", avatar: "👩🏻‍❤️‍👨🏽"
             },
             { 
                 type: "wealth", 
-                badge: "💰 HIGH PAYING WEALTH HOOK", 
-                title: "2026 Financial Luck & Abundance Multiplier", 
-                desc: "The cosmic alignment indicates sudden financial breakthroughs and lucky monetary surprises coming your way.", 
-                btnText: "Claim Wealth Code ➔",
-                btnBg: "#ca8a04",
-                bg: "linear-gradient(135deg, #fefce8 0%, #fef9c3 100%)",
-                border: "2px solid #ca8a04",
-                color: "#0f172a",
-                avatar: "💎"
+                badge: "💰 2026 HIGH PAYING WEALTH HOOK", 
+                title: "Cosmic Abundance & Fortune Code", 
+                desc: "Enter your lucky number (1-9) to unlock your incoming financial windfall.", 
+                input1: "Your Name", input2: "Lucky Number (1-9)",
+                btnText: "Claim My Wealth Code ➔", btnBg: "#ca8a04",
+                bg: "linear-gradient(135deg, #fefce8 0%, #fef9c3 100%)", border: "2px solid #ca8a04", color: "#0f172a", avatar: "💎"
             },
             { 
                 type: "crush", 
                 badge: "🤫 SECRET ADMIRER DETECTOR", 
-                title: "Who Has a Secret Crush on You Right Now?", 
-                desc: "Someone special with initials M, S, or A is thinking of you constantly. Let our vibe scanner reveal who they are!", 
-                btnText: "Reveal Secret Admirer ➔",
-                btnBg: "#0284c7",
-                bg: "linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%)",
-                border: "2px solid #0284c7",
-                color: "#0f172a",
-                avatar: "💌"
+                title: "Find Your Secret Admirer Initial", 
+                desc: "Enter your name to discover the first letter of the person who is secretly thinking of you.", 
+                input1: "Your Full Name", input2: "Your Birth Month",
+                btnText: "Reveal Secret Letter ➔", btnBg: "#0284c7",
+                bg: "linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%)", border: "2px solid #0284c7", color: "#0f172a", avatar: "💌"
             },
             { 
                 type: "cosmic", 
                 badge: "🔮 MYSTICAL TAROT GUIDANCE", 
-                title: "Your Weekly Destiny Card & Energy Vibe", 
-                desc: "Unlock hidden spiritual guidance and major positive changes designed specifically for your zodiac element.", 
-                btnText: "Draw Cosmic Card ➔",
-                btnBg: "#7c3aed",
-                bg: "linear-gradient(135deg, #1e1b4b 0%, #312e81 100%)",
-                border: "2px solid #a855f7",
-                color: "#ffffff",
-                avatar: "✨"
+                title: "Instant Destiny & Spirit Guide Vibe", 
+                desc: "Choose your mood to unlock your personalized cosmic message for today.", 
+                input1: "Your Name", input2: "Current Mood / Wish",
+                btnText: "Unlock Cosmic Guidance ➔", btnBg: "#7c3aed",
+                bg: "linear-gradient(135deg, #1e1b4b 0%, #312e81 100%)", border: "2px solid #a855f7", color: "#ffffff", avatar: "✨"
             }
         ];
 
@@ -590,9 +799,9 @@ canner-box { text-align: center; padding: 16px 0; }
             const container = document.getElementById('infiniteFeedContainer');
             if (!container) return;
 
-            // Load 2 distinct cards per batch to keep scroll endless and varied
             for (let i = 0; i < 2; i++) {
                 const item = infinitePool[poolIndex % infinitePool.length];
+                const cardId = 'loopCard_' + Math.random().toString(36).substring(2, 9);
                 poolIndex++;
 
                 const cardDiv = document.createElement('div');
@@ -602,26 +811,122 @@ canner-box { text-align: center; padding: 16px 0; }
                 cardDiv.style.color = item.color;
 
                 cardDiv.innerHTML = `
-                    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;">
-                        <span class="card-badge" style="color: ${item.color === '#ffffff' ? '#d8b4fe' : item.btnBg}; margin-bottom: 0;">${item.badge}</span>
-                        <span style="font-size: 1.5rem; background: rgba(255,255,255,0.2); padding: 6px 10px; border-radius: 12px;">${item.avatar}</span>
+                    <div id="${cardId}_form">
+                        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;">
+                            <span class="card-badge" style="color: ${item.color === '#ffffff' ? '#d8b4fe' : item.btnBg}; margin-bottom: 0;">${item.badge}</span>
+                            <span style="font-size: 1.4rem; background: rgba(255,255,255,0.2); padding: 4px 8px; border-radius: 10px;">${item.avatar}</span>
+                        </div>
+                        <h3 style="font-size: 1.15rem; margin-bottom: 6px; font-family: 'Cinzel', serif;">${item.title}</h3>
+                        <p style="font-size: 0.88rem; line-height: 1.5; font-weight: 600; margin-bottom: 14px; opacity: 0.95;">${item.desc}</p>
+                        
+                        <div class="input-group">
+                            <label style="color: ${item.color};">${item.input1}</label>
+                            <input type="text" id="${cardId}_in1" placeholder="Type here..." autocomplete="off" style="background: ${item.color === '#ffffff' ? 'rgba(255,255,255,0.1)' : '#ffffff'}; color: ${item.color}; border-color: ${item.btnBg};" />
+                        </div>
+                        <div class="input-group">
+                            <label style="color: ${item.color};">${item.input2}</label>
+                            <input type="text" id="${cardId}_in2" placeholder="Type here..." autocomplete="off" style="background: ${item.color === '#ffffff' ? 'rgba(255,255,255,0.1)' : '#ffffff'}; color: ${item.color}; border-color: ${item.btnBg};" />
+                        </div>
+                        <button class="btn" style="background: ${item.btnBg};" onclick="triggerLoopScan('${cardId}', '${item.type}')">
+                            ${item.btnText}
+                        </button>
                     </div>
-                    <h3 style="font-size: 1.15rem; margin-bottom: 8px; font-family: 'Cinzel', serif;">${item.title}</h3>
-                    <p style="font-size: 0.9rem; line-height: 1.6; font-weight: 600; margin-bottom: 16px; opacity: 0.95;">${item.desc}</p>
-                    <button class="btn" style="background: ${item.btnBg};" onclick="alert('✨ Vibe locked & saved! Keep scrolling for more endless cosmic surprises.')">${item.btnText}</button>
+
+                    <div id="${cardId}_scanner" class="view" style="text-align: center; padding: 20px 0;">
+                        <div class="pulse-orb" style="background: ${item.btnBg};"></div>
+                        <h3 style="font-size: 1.05rem; margin-bottom: 6px; font-weight: 700; color: ${item.color};">Scanning cosmic frequency...</h3>
+                        <div class="progress-bar-container" style="background: rgba(0,0,0,0.1);">
+                            <div class="progress-bar" id="${cardId}_bar" style="background: ${item.btnBg}; width: 0%;"></div>
+                        </div>
+                    </div>
+
+                    <div id="${cardId}_result" class="view" style="text-align: center;">
+                        <span class="result-badge" id="${cardId}_rbadge" style="background: rgba(255,255,255,0.2); color: ${item.color};">RESULT UNLOCKED</span>
+                        <h2 class="result-title" id="${cardId}_rtitle" style="color: ${item.color}; font-size: 1.15rem; margin-bottom: 8px;"></h2>
+                        <p class="result-desc" id="${cardId}_rdesc" style="color: ${item.color}; font-size: 0.88rem; margin-bottom: 16px; opacity: 0.95;"></p>
+                        <div class="action-grid">
+                            <button class="btn btn-social" onclick="shareLoopResult('${cardId}')">💬 Share Result on WhatsApp</button>
+                            <button class="btn-secondary" style="color: #0f172a;" onclick="resetLoopCard('${cardId}')">🔄 Scan Again</button>
+                        </div>
+                    </div>
                 `;
                 container.appendChild(cardDiv);
             }
         }
 
-        // Detect scroll near bottom for endless feed
+        function triggerLoopScan(cardId, type) {
+            const val1 = document.getElementById(cardId + '_in1').value.trim();
+            const val2 = document.getElementById(cardId + '_in2').value.trim();
+
+            if (!val1 || !val2) {
+                alert('Please fill in both fields before running the scan!');
+                return;
+            }
+
+            document.getElementById(cardId + '_form').classList.remove('active');
+            document.getElementById(cardId + '_scanner').classList.add('active');
+
+            let progress = 0;
+            const bar = document.getElementById(cardId + '_bar');
+            const timer = setInterval(() => {
+                progress += 5;
+                bar.style.width = progress + '%';
+                if (progress >= 100) {
+                    clearInterval(timer);
+                    document.getElementById(cardId + '_scanner').classList.remove('active');
+                    document.getElementById(cardId + '_result').classList.add('active');
+
+                    let badgeText = "VIBE UNLOCKED";
+                    let titleText = "Amazing Energy Found!";
+                    let descText = "";
+
+                    if (type === 'love') {
+                        badgeText = "LOVE SYNERGY SCORE: 96%";
+                        titleText = `${val1} & ${val2} Share Exceptional Chemistry!`;
+                        descText = `Your emotional compatibility is extraordinarily high. The stars indicate deep mutual understanding and wonderful romantic alignment!`;
+                    } else if (type === 'wealth') {
+                        badgeText = `WEALTH CODE #${val2} ACTIVE`;
+                        titleText = `${val1}, Major Financial Breakthrough Incoming!`;
+                        descText = `Your lucky digit (${val2}) activates massive financial luck and unexpected monetary gains this month. Get ready for abundance!`;
+                    } else if (type === 'crush') {
+                        const letters = ['M', 'S', 'A', 'J', 'K', 'R', 'D'];
+                        const randomLetter = letters[Math.floor(Math.random() * letters.length)];
+                        badgeText = `SECRET ADMIRER: [ ${randomLetter} ]`;
+                        titleText = `${val1}, Someone Special is Thinking of You!`;
+                        descText = `Someone whose name starts with letter [ ${randomLetter} ] has a deep secret crush on you and loves spending time around you!`;
+                    } else {
+                        badgeText = "COSMIC TAROT GUIDANCE";
+                        titleText = `${val1}, Your Manifestation Portal is Open!`;
+                        descText = `Your focus on "${val2}" is aligning with powerful universe energy. Expect positive breakthroughs and wonderful syncs very soon!`;
+                    }
+
+                    document.getElementById(cardId + '_rbadge').textContent = badgeText;
+                    document.getElementById(cardId + '_rtitle').textContent = titleText;
+                    document.getElementById(cardId + '_rdesc').textContent = descText;
+                }
+            }, 60);
+        }
+
+        function resetLoopCard(cardId) {
+            document.getElementById(cardId + '_in1').value = '';
+            document.getElementById(cardId + '_in2').value = '';
+            document.getElementById(cardId + '_result').classList.remove('active');
+            document.getElementById(cardId + '_form').classList.add('active');
+            document.getElementById(cardId + '_bar').style.width = '0%';
+        }
+
+        function shareLoopResult(cardId) {
+            const title = document.getElementById(cardId + '_rtitle').textContent;
+            const text = encodeURIComponent(`I just checked my cosmic result on Vibe Check: "${title}". Check yours here: ` + window.location.href);
+            window.open(`[https://api.whatsapp.com/send?text=$](https://api.whatsapp.com/send?text=$){text}`, '_blank');
+        }
+
         window.addEventListener('scroll', () => {
             if ((window.innerHeight + window.scrollY) >= document.documentElement.scrollHeight - 300) {
                 loadMoreContent();
             }
         });
 
-        /* === AUTO-SCROLL FOR CLEAN URL REDIRECT === */
         window.addEventListener('DOMContentLoaded', () => {
             const urlParams = new URLSearchParams(window.location.search);
             if (urlParams.get('card') === 'angel') {
@@ -635,7 +940,6 @@ canner-box { text-align: center; padding: 16px 0; }
             loadMoreContent();
         });
 
-        /* === ACCORDION FAQ LOGIC === */
         const faqQuestions = document.querySelectorAll('.faq-question');
         faqQuestions.forEach(question => {
             question.addEventListener('click', () => {
@@ -646,7 +950,6 @@ canner-box { text-align: center; padding: 16px 0; }
             });
         });
 
-        /* === LIVE LOCAL TIME & DATE DETECTOR === */
         function updateGlobalClock() {
             const now = new Date();
             const dateOptions = { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric' };
@@ -657,7 +960,6 @@ canner-box { text-align: center; padding: 16px 0; }
         setInterval(updateGlobalClock, 1000);
         updateGlobalClock();
 
-        /* === ANGEL NUMBER CLAIMER LOGIC === */
         const angelMessages = {
             "11": { title: "Spiritual Awakening & Intuition", desc: "Seeing 11 means your spiritual alignment is peaking. Trust your gut feelings today because great clarity is coming your way!" },
             "22": { title: "Master Builder & Manifestation", desc: "Seeing 22 means your hard work and dreams are turning into reality. Keep pushing forward with complete confidence!" },
@@ -704,10 +1006,9 @@ canner-box { text-align: center; padding: 16px 0; }
         function shareAngelNumber() {
             const num = document.getElementById('angelNumberInput').value || "Angel Number";
             const text = encodeURIComponent(`I just claimed my Angel Number (${num}) message on Vibe Check! Check yours here: ` + window.location.href);
-            window.open(`https://api.whatsapp.com/send?text=${text}`, '_blank');
+            window.open(`[https://api.whatsapp.com/send?text=$](https://api.whatsapp.com/send?text=$){text}`, '_blank');
         }
 
-        /* === STYLISH TAROT CARD DRAW === */
         const tarotData = [
             { name: "✨ The Star", desc: "Hope, renewed energy, and great wishes coming true today! Your focus is sharp and optimism brings wonderful opportunities." },
             { name: "🔥 The Sun", desc: "Massive success, joy, and wonderful positivity surrounding you. A great day for new beginnings and spreading good energy." },
@@ -731,10 +1032,9 @@ canner-box { text-align: center; padding: 16px 0; }
         }
 
         function shareTarot() {
-            window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent("I just drew my Daily Tarot Card on Vibe Check! Check yours here: " + window.location.href)}`, '_blank');
+            window.open(`[https://api.whatsapp.com/send?text=$](https://api.whatsapp.com/send?text=$){encodeURIComponent("I just drew my Daily Tarot Card on Vibe Check! Check yours here: " + window.location.href)}`, '_blank');
         }
 
-        /* === 1. MAIN AURA SCANNER LOGIC === */
         const startScanBtn = document.getElementById('startScanBtn');
         const auraForm = document.getElementById('aura-form');
         const auraScanner = document.getElementById('aura-scanner');
@@ -780,7 +1080,6 @@ canner-box { text-align: center; padding: 16px 0; }
             auraProgress.style.width = '0%';
         }
 
-        /* === 2. COMPATIBILITY SCANNER LOGIC === */
         const startBondBtn = document.getElementById('startBondBtn');
         const bondForm = document.getElementById('bond-form');
         const bondScanner = document.getElementById('bond-scanner');
@@ -817,10 +1116,9 @@ canner-box { text-align: center; padding: 16px 0; }
         }
 
         function shareMatch() {
-            window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent("I just checked our compatibility match score and got an amazing result! Check yours here: " + window.location.href)}`, '_blank');
+            window.open(`[https://api.whatsapp.com/send?text=$](https://api.whatsapp.com/send?text=$){encodeURIComponent("I just checked our compatibility match score and got an amazing result! Check yours here: " + window.location.href)}`, '_blank');
         }
 
-        /* === 3. SECRET INITIAL LOGIC === */
         const startViralBtn = document.getElementById('startViralBtn');
         const viralForm = document.getElementById('viral-form');
         const viralScanner = document.getElementById('viral-scanner');
@@ -856,10 +1154,9 @@ canner-box { text-align: center; padding: 16px 0; }
         }
 
         function shareViral() {
-            window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent("I found out my secret admirer initial on Vibe Check! Try your name here: " + window.location.href)}`, '_blank');
+            window.open(`[https://api.whatsapp.com/send?text=$](https://api.whatsapp.com/send?text=$){encodeURIComponent("I found out my secret admirer initial on Vibe Check! Try your name here: " + window.location.href)}`, '_blank');
         }
 
-        /* === 4. LUCKY CODE GENERATOR === */
         const luckyCodes = [
             "🎨 Lucky Color: Sapphire Blue | 🔢 Power Number: 7",
             "🌟 Lucky Color: Solar Gold | 🔢 Power Number: 3",
@@ -875,30 +1172,23 @@ canner-box { text-align: center; padding: 16px 0; }
             }, 400);
         }
 
-        /* === SMART ASTROLOGY AI CHAT LOGIC (JESSICA) === */
         function getJessicaAstrologyReply(text) {
             text = text.toLowerCase();
-            
             if (text.includes('angel') || text.includes('111') || text.includes('222') || text.includes('333') || text.includes('444') || text.includes('555') || text.includes('777') || text.includes('888') || text.includes('999') || text.includes('number')) {
                 return "✨ Ah, angel numbers carry deep cosmic vibrations! If you're seeing repeating numbers or asking about one, your guardian angels are sending you a divine sign of abundance or awakening. Try entering your number in our 'Claim Your Angel Number' card above for a full detailed breakdown! 🌟";
             }
-            
             if (text.includes('match') || text.includes('compatib') || text.includes('love') || text.includes('crush') || text.includes('partner') || text.includes('relationship') || text.includes('shadi')) {
                 return "💖 Love chemistry is deeply influenced by your zodiac element (Fire, Earth, Air, Water)! Use our Soulmate & Compatibility Match card above by typing both names to reveal your emotional synergy score instantly! ✨";
             }
-            
             if (text.includes('tarot') || text.includes('card') || text.includes('future') || text.includes('destiny')) {
                 return "🔮 The tarot cards never lie! They reflect your subconscious path and upcoming energies. Scroll up to our Daily Tarot Draw section and pick a card to reveal your custom guidance for today! 🌙";
             }
-            
             if (text.includes('problem') || text.includes('issue') || text.includes('sad') || text.includes('stuck') || text.includes('life') || text.includes('help') || text.includes('tension') || text.includes('pareshan')) {
                 return "🌟 I hear you, friend. Every soul goes through heavy planetary cycles and tough phases. Remember that after every dark night comes a brilliant sunrise. Take a deep breath—your energy is shifting towards a positive breakthrough very soon! 💫";
             }
-            
             if (text.includes('zodiac') || text.includes('horoscope') || text.includes('sign') || text.includes('aries') || text.includes('leo') || text.includes('taurus') || text.includes('gemini') || text.includes('scorpio') || text.includes('pisces') || text.includes('virgo')) {
                 return "🌙 The stars are in a fascinating alignment right now! Your zodiac sign holds unique traits that connect with today's cosmic energy. Focus on your strengths and keep your vibe positive today! ✨";
             }
-            
             return "✨ That is so interesting! As your cosmic guide, I sense a lot of unique energy around your query today. Feel free to explore our Tarot readings, Angel Number claimer, or compatibility match above to unlock more insights! 🔮";
         }
 
@@ -937,7 +1227,6 @@ canner-box { text-align: center; padding: 16px 0; }
             }, 350);
         }
 
-        /* === BOOKMARK & MARQUEE === */
         function bookmarkPrompt() { alert('Press Ctrl+D (or Cmd+D on Mac) to bookmark this page and return for your daily updates!'); }
 
         const globalReviews = [
