@@ -79,7 +79,7 @@
             margin-bottom: 16px;
         }
 
-        /* LIVE GLOBAL TIME & DATE WIDGET */
+        /* LIVE GLOBAL TIME & DATE WIDGET (Cleaned - No Zone Text) */
         .live-clock-card {
             background: var(--bg-card);
             border: 1px solid rgba(56, 189, 248, 0.2);
@@ -109,16 +109,11 @@
         }
 
         .live-date {
-            font-size: 0.75rem;
+            font-size: 0.8rem;
             color: var(--accent);
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-        }
-
-        .live-location {
-            font-size: 0.7rem;
-            color: var(--text-muted);
         }
 
         .live-time {
@@ -461,13 +456,13 @@
         <header>
             <span class="brand-tag">✨ Universal Frequency Matrix 2026</span>
             
-            <!-- LIVE COUNTRY TIME & DATE WIDGET -->
+            <!-- LIVE COUNTRY TIME & DATE WIDGET (Zone text removed) -->
             <div class="live-clock-card">
                 <div class="clock-left">
                     <span class="clock-icon">🌍</span>
                     <div class="clock-info">
                         <span id="liveDate" class="live-date">Loading...</span>
-                        <span id="userTimezone" class="live-location">Local Matrix Time</span>
+                        <span style="font-size: 0.7rem; color: var(--text-muted);">Live Synchronization</span>
                     </div>
                 </div>
                 <div id="liveTime" class="live-time">00:00:00</div>
@@ -690,23 +685,58 @@
             </div>
         </section>
 
-        <!-- SECTION 7: FREQUENTLY ASKED QUESTIONS -->
+        <!-- SECTION 7: 10 COMPREHENSIVE FREQUENTLY ASKED QUESTIONS -->
         <section class="faq-box">
-            <h3 class="section-title" style="font-size: 1.05rem; margin-bottom: 10px;">💡 Frequently Asked Questions</h3>
+            <h3 class="section-title" style="font-size: 1.05rem; margin-bottom: 12px;">💡 Frequently Asked Questions</h3>
             
             <div class="faq-item">
-                <h5>How does the Aura Frequency Scan work?</h5>
+                <h5>1. How does the Aura Frequency Scan work?</h5>
                 <p>The system analyzes your chosen birth cycle harmonics and name input against universal cyclical matrices to generate lighthearted personal insights for entertainment.</p>
             </div>
             
             <div class="faq-item">
-                <h5>Is this service free and private?</h5>
-                <p>Yes, 100% free with zero login or signup required. Your data stays entirely in your browser session for complete privacy.</p>
+                <h5>2. Is this service 100% free?</h5>
+                <p>Yes, all scans, synergy checks, and daily lucky code generators are completely free with zero hidden charges or subscriptions.</p>
             </div>
 
             <div class="faq-item">
-                <h5>How often can I check my frequency?</h5>
-                <p>You can run a new scan as often as you like, especially at the start of every week or month to track your shifting energetic alignment.</p>
+                <h5>3. Do I need to register or create an account?</h5>
+                <p>No login or sign-up is required. You can instantly run scans and check compatibility without sharing personal credentials.</p>
+            </div>
+
+            <div class="faq-item">
+                <h5>4. Is my personal data stored or private?</h5>
+                <p>Completely private! All calculations run directly inside your browser session, and no personal names or inputs are saved on our servers.</p>
+            </div>
+
+            <div class="faq-item">
+                <h5>5. How often can I check my frequency matrix?</h5>
+                <p>You can run new scans as often as you like. Many users check at the start of every week or month to track shifting energy alignments.</p>
+            </div>
+
+            <div class="faq-item">
+                <h5>6. What does the Relationship Synergy Match measure?</h5>
+                <p>It calculates fun, lighthearted harmonic resonance between two names or signs to highlight emotional flow and mutual compatibility.</p>
+            </div>
+
+            <div class="faq-item">
+                <h5>7. How do I unlock my Secret Admirer Initial?</h5>
+                <p>Simply enter your full name in the viral detector section, let the karmic scanner run, and discover your connected alphabetical frequency.</p>
+            </div>
+
+            <div class="faq-item">
+                <h5>8. Can I share my results with friends?</h5>
+                <p>Yes! Every result screen features a direct one-tap WhatsApp share button so you can challenge or compare matches with your friends instantly.</p>
+            </div>
+
+            <div class="faq-item">
+                <h5>9. What are the Daily Lucky Codes based on?</h5>
+                <p>They are generated dynamically based on daily cyclical algorithms designed to provide positive daily motivation and focused mindset cues.</p>
+            </div>
+
+            <div class="faq-item">
+                <h5>10. Is this platform meant for official guidance?</h5>
+                <p>This platform is designed strictly for entertainment, personal reflection, and positive daily inspiration purposes.</p>
             </div>
         </section>
 
@@ -717,24 +747,15 @@
     </div>
 
     <script>
-        /* === LIVE LOCAL TIME & DATE DETECTOR === */
+        /* === LIVE LOCAL TIME & DATE DETECTOR (Zone text removed) === */
         function updateGlobalClock() {
             const now = new Date();
-            
-            // Get user's local timezone string (e.g. "America/New_York", "Europe/London", "Asia/Karachi")
-            const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || 'Local Time';
-            const cleanTz = tz.split('/').pop().replace('_', ' ');
-
-            // Format date: Day, Month Date, Year
             const dateOptions = { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric' };
             const dateStr = now.toLocaleDateString('en-US', dateOptions);
-
-            // Format time: HH:MM:SS AM/PM
             const timeOptions = { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
             const timeStr = now.toLocaleTimeString('en-US', timeOptions);
 
             document.getElementById('liveDate').textContent = dateStr;
-            document.getElementById('userTimezone').textContent = `🌍 ${cleanTz} Zone`;
             document.getElementById('liveTime').textContent = timeStr;
         }
 
