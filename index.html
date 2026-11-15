@@ -9,14 +9,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Cinzel:wght@600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-deep: #0a0c14;
-            --bg-card: #121626;
-            --border-glow: rgba(139, 92, 246, 0.3);
-            --primary: #8b5cf6;
-            --primary-hover: #7c3aed;
-            --accent: #38bdf8;
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
+            --bg-deep: #f1f5f9;       /* Soft modern pearl daylight background */
+            --bg-card: #ffffff;       /* Pure crisp white cards */
+            --border-glow: rgba(124, 58, 237, 0.2);
+            --primary: #7c3aed;       /* Vibrant rich violet */
+            --primary-hover: #6d28d9;
+            --accent: #0284c7;        /* Clean sky blue accent */
+            --text-main: #0f172a;     /* Deep rich navy for ultimate daylight readability */
+            --text-muted: #64748b;    /* Professional muted gray */
             --transition: all 0.2s ease;
         }
 
@@ -57,7 +57,7 @@
             font-size: 0.75rem;
             text-transform: uppercase;
             letter-spacing: 2px;
-            color: var(--accent);
+            color: var(--primary);
             font-weight: 700;
             margin-bottom: 8px;
             display: block;
@@ -67,7 +67,7 @@
             font-family: 'Cinzel', serif;
             font-size: 1.6rem;
             font-weight: 700;
-            color: #fff;
+            color: var(--text-main);
             margin-bottom: 10px;
             line-height: 1.3;
         }
@@ -79,16 +79,16 @@
             margin-bottom: 16px;
         }
 
-        /* LIVE GLOBAL TIME & DATE WIDGET (Cleaned - No Zone Text) */
+        /* LIVE GLOBAL TIME & DATE WIDGET (Daylight Styled) */
         .live-clock-card {
             background: var(--bg-card);
-            border: 1px solid rgba(56, 189, 248, 0.2);
+            border: 1px solid rgba(124, 58, 237, 0.15);
             border-radius: 14px;
             padding: 12px 16px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05);
             margin-bottom: 8px;
         }
 
@@ -110,7 +110,7 @@
 
         .live-date {
             font-size: 0.8rem;
-            color: var(--accent);
+            color: var(--primary);
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.5px;
@@ -119,21 +119,21 @@
         .live-time {
             font-size: 1rem;
             font-weight: 700;
-            color: #fff;
+            color: var(--text-main);
             font-family: monospace;
-            background: rgba(10, 12, 20, 0.6);
+            background: #f8fafc;
             padding: 4px 10px;
             border-radius: 8px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            border: 1px solid #e2e8f0;
         }
 
-        /* Solid Card Container */
+        /* Crisp White Card Container */
         .card {
             background: var(--bg-card);
-            border: 1px solid var(--border-glow);
+            border: 1px solid #e2e8f0;
             border-radius: 20px;
             padding: 24px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
             position: relative;
         }
 
@@ -141,7 +141,7 @@
             font-size: 0.75rem;
             text-transform: uppercase;
             letter-spacing: 1.5px;
-            color: var(--accent);
+            color: var(--primary);
             font-weight: 700;
             margin-bottom: 12px;
             display: block;
@@ -157,15 +157,15 @@
             font-size: 0.85rem;
             font-weight: 600;
             margin-bottom: 8px;
-            color: #e2e8f0;
+            color: var(--text-main);
             letter-spacing: 0.5px;
         }
 
         input, select {
             width: 100%;
             padding: 14px 16px;
-            background: #0a0c14;
-            border: 1px solid rgba(255, 255, 255, 0.12);
+            background: #f8fafc;
+            border: 1px solid #cbd5e1;
             border-radius: 12px;
             color: var(--text-main);
             font-family: inherit;
@@ -175,6 +175,7 @@
         input:focus, select:focus {
             outline: none;
             border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.15);
         }
 
         .btn {
@@ -191,6 +192,7 @@
             align-items: center;
             justify-content: center;
             gap: 8px;
+            box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);
         }
 
         .btn:active {
@@ -198,7 +200,8 @@
         }
 
         .btn-social {
-            background: #25D366;
+            background: #16a34a; /* Crisp daylight green for WhatsApp */
+            box-shadow: 0 4px 15px rgba(22, 163, 74, 0.25);
         }
 
         /* States Management */
@@ -219,10 +222,10 @@
         .pulse-orb {
             width: 80px;
             height: 80px;
-            background: var(--accent);
+            background: var(--primary);
             border-radius: 50%;
             margin: 0 auto 20px;
-            box-shadow: 0 0 20px var(--primary);
+            box-shadow: 0 0 20px rgba(124, 58, 237, 0.4);
             animation: pulseAnim 1.5s infinite ease-in-out;
         }
 
@@ -235,7 +238,7 @@
         .progress-bar-container {
             width: 100%;
             height: 6px;
-            background: rgba(255, 255, 255, 0.1);
+            background: #e2e8f0;
             border-radius: 3px;
             margin: 20px 0 12px;
             overflow: hidden;
@@ -244,7 +247,7 @@
         .progress-bar {
             width: 0%;
             height: 100%;
-            background: var(--accent);
+            background: var(--primary);
             transition: width 0.1s linear;
         }
 
@@ -257,21 +260,21 @@
         /* Results Screen */
         .result-badge {
             display: inline-block;
-            background: rgba(56, 189, 248, 0.12);
-            color: var(--accent);
+            background: rgba(124, 58, 237, 0.1);
+            color: var(--primary);
             padding: 6px 14px;
             border-radius: 20px;
             font-size: 0.78rem;
             font-weight: 700;
             margin-bottom: 14px;
-            border: 1px solid rgba(56, 189, 248, 0.2);
+            border: 1px solid rgba(124, 58, 237, 0.2);
         }
 
         .result-title {
             font-size: 1.25rem;
             font-weight: 700;
             margin-bottom: 12px;
-            color: #fff;
+            color: var(--text-main);
         }
 
         .result-desc {
@@ -287,8 +290,8 @@
         }
 
         .btn-secondary {
-            background: rgba(255, 255, 255, 0.06);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: #f1f5f9;
+            border: 1px solid #cbd5e1;
             color: var(--text-main);
             padding: 14px;
             border-radius: 12px;
@@ -302,8 +305,8 @@
         .curiosity-teaser {
             text-align: center;
             font-size: 0.8rem;
-            color: var(--accent);
-            font-weight: 600;
+            color: var(--primary);
+            font-weight: 700;
             letter-spacing: 1px;
             text-transform: uppercase;
         }
@@ -314,7 +317,7 @@
             font-size: 1.15rem;
             font-weight: 600;
             margin-bottom: 14px;
-            color: #fff;
+            color: var(--text-main);
             text-align: center;
         }
 
@@ -325,15 +328,16 @@
 
         .insight-card {
             background: var(--bg-card);
-            border: 1px solid rgba(255, 255, 255, 0.06);
+            border: 1px solid #e2e8f0;
             border-radius: 14px;
             padding: 16px;
+            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.03);
         }
 
         .insight-card h4 {
             font-size: 0.95rem;
             margin-bottom: 6px;
-            color: var(--accent);
+            color: var(--primary);
         }
 
         .insight-card p {
@@ -368,11 +372,12 @@
 
         .t-card {
             background: var(--bg-card);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            border: 1px solid #e2e8f0;
             border-radius: 12px;
             padding: 14px;
             width: 260px;
             flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04);
         }
 
         .t-header {
@@ -398,7 +403,7 @@
         .t-meta h5 {
             font-size: 0.82rem;
             font-weight: 600;
-            color: #fff;
+            color: var(--text-main);
         }
 
         .t-meta span {
@@ -415,22 +420,23 @@
         /* FAQ Section */
         .faq-box {
             background: var(--bg-card);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            border: 1px solid #e2e8f0;
             border-radius: 16px;
             padding: 16px;
+            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04);
         }
 
         .faq-item + .faq-item {
             margin-top: 12px;
             padding-top: 12px;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            border-top: 1px solid #f1f5f9;
         }
 
         .faq-item h5 {
             font-size: 0.9rem;
             font-weight: 600;
             margin-bottom: 4px;
-            color: #e2e8f0;
+            color: var(--text-main);
         }
 
         .faq-item p {
@@ -444,7 +450,7 @@
             padding: 20px;
             font-size: 0.75rem;
             color: var(--text-muted);
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            border-top: 1px solid #e2e8f0;
             margin-top: 10px;
         }
     </style>
@@ -456,7 +462,7 @@
         <header>
             <span class="brand-tag">✨ Universal Frequency Matrix 2026</span>
             
-            <!-- LIVE COUNTRY TIME & DATE WIDGET (Zone text removed) -->
+            <!-- LIVE COUNTRY TIME & DATE WIDGET -->
             <div class="live-clock-card">
                 <div class="clock-left">
                     <span class="clock-icon">🌍</span>
@@ -544,7 +550,7 @@
             <span class="card-badge">💖 Synergy Matrix</span>
             
             <div id="bond-form" class="view active">
-                <h3 style="font-size: 1.1rem; margin-bottom: 12px; color: #fff;">Cosmic Bond & Relationship Vibe Check</h3>
+                <h3 style="font-size: 1.1rem; margin-bottom: 12px; color: var(--text-main);">Cosmic Bond & Relationship Vibe Check</h3>
                 <div class="input-group">
                     <label for="p1Name">Your Name / Sign</label>
                     <input type="text" id="p1Name" placeholder="e.g. Alex" autocomplete="off" />
@@ -560,7 +566,7 @@
 
             <div id="bond-scanner" class="view">
                 <div class="scanner-box">
-                    <div class="pulse-orb" style="background: #db2777; box-shadow: 0 0 20px #db2777;"></div>
+                    <div class="pulse-orb" style="background: #db2777; box-shadow: 0 0 20px rgba(219, 39, 119, 0.4);"></div>
                     <h3 style="font-size: 1.1rem; margin-bottom: 6px;">Synchronizing Aura Frequencies...</h3>
                     <p class="status-text" id="bondStatus">Calculating emotional resonance...</p>
                     <div class="progress-bar-container">
@@ -571,7 +577,7 @@
 
             <div id="bond-result" class="view">
                 <div style="text-align: center;">
-                    <span class="result-badge" style="background: rgba(244,114,182,0.12); color: #f472b6; border-color: rgba(244,114,182,0.2);">HARMONY INDEX: 94% (HIGH FLOW)</span>
+                    <span class="result-badge" style="background: rgba(219, 39, 119, 0.1); color: #db2777; border-color: rgba(219, 39, 119, 0.2);">HARMONY INDEX: 94% (HIGH FLOW)</span>
                     <h2 class="result-title" id="bondResultHeading">Deep Magnetic Resonance Detected</h2>
                     <p class="result-desc" id="bondResultBody">
                         Your energetic alignment shows exceptional emotional understanding and supportive mutual growth. A very harmonious cycle ahead!
@@ -596,7 +602,7 @@
             <span class="card-badge">🔮 Viral Detector</span>
 
             <div id="viral-form" class="view active">
-                <h3 style="font-size: 1.1rem; margin-bottom: 12px; color: #fff;">Secret Admirer Initial Detector</h3>
+                <h3 style="font-size: 1.1rem; margin-bottom: 12px; color: var(--text-main);">Secret Admirer Initial Detector</h3>
                 <p class="subtitle" style="margin-bottom: 14px; font-size: 0.85rem;">Discover the hidden alphabetical frequency connected to your 2026 destiny path.</p>
                 <div class="input-group">
                     <label for="viralName">Enter Your Full Name</label>
@@ -609,7 +615,7 @@
 
             <div id="viral-scanner" class="view">
                 <div class="scanner-box">
-                    <div class="pulse-orb" style="background: #0284c7; box-shadow: 0 0 20px #0284c7;"></div>
+                    <div class="pulse-orb" style="background: #0284c7; box-shadow: 0 0 20px rgba(2, 132, 199, 0.4);"></div>
                     <h3 style="font-size: 1.1rem; margin-bottom: 6px;">Scanning Karmic Databanks...</h3>
                     <p class="status-text">Decrypting astral initial signatures...</p>
                     <div class="progress-bar-container">
@@ -620,7 +626,7 @@
 
             <div id="viral-result" class="view">
                 <div style="text-align: center;">
-                    <span class="result-badge">SECRET INITIAL HARMONIC</span>
+                    <span class="result-badge" style="background: rgba(2, 132, 199, 0.1); color: #0284c7; border-color: rgba(2, 132, 199, 0.2);">SECRET INITIAL HARMONIC</span>
                     <h2 class="result-title" id="viralHeading">Your Connected Initial is [ M ]</h2>
                     <p class="result-desc">
                         An individual carrying a strong stabilizing frequency (Initial M, S, or J) is entering your close alignment cycle for collaborative projects and meaningful personal growth.
@@ -643,11 +649,11 @@
         <!-- SECTION 4: INSTANT LUCKY FREQUENCY CODE GENERATOR -->
         <section class="card" style="text-align: center;">
             <span class="card-badge">✨ Instant Lucky Code</span>
-            <h3 style="font-size: 1.1rem; margin-bottom: 8px; color: #fff;">Today's Personal Vibration Code</h3>
+            <h3 style="font-size: 1.1rem; margin-bottom: 8px; color: var(--text-main);">Today's Personal Vibration Code</h3>
             <p class="subtitle" style="margin-bottom: 16px; font-size: 0.85rem;">Tap below to instantly extract your lucky color and power number for today.</p>
             
-            <div id="luckyBox" style="background: #0a0c14; border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 16px; margin-bottom: 16px;">
-                <span id="luckyResultText" style="font-size: 1rem; font-weight: 700; color: var(--accent);">Tap button to generate your daily code...</span>
+            <div id="luckyBox" style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 16px; margin-bottom: 16px;">
+                <span id="luckyResultText" style="font-size: 1rem; font-weight: 700; color: var(--primary);">Tap button to generate your daily code...</span>
             </div>
 
             <button class="btn" onclick="generateLuckyCode()">
@@ -747,7 +753,7 @@
     </div>
 
     <script>
-        /* === LIVE LOCAL TIME & DATE DETECTOR (Zone text removed) === */
+        /* === LIVE LOCAL TIME & DATE DETECTOR === */
         function updateGlobalClock() {
             const now = new Date();
             const dateOptions = { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric' };
