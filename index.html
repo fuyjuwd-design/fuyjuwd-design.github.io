@@ -9,13 +9,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Cinzel:wght@600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-deep: #f7f6f2;       /* Cozy warm paper tone - gentle on eyes day & night, zero glare */
+            --bg-deep: #f7f6f2;       /* Cozy warm paper tone - zero eye strain day & night */
             --bg-card: #ffffff;       /* Crisp white cards */
             --border-glow: rgba(124, 58, 237, 0.15);
             --primary: #7c3aed;       /* Rich violet */
             --primary-hover: #6d28d9;
             --accent: #0284c7;        /* Soft sky blue */
-            --text-main: #18181b;     /* Deep charcoal for smooth reading (no eye strain) */
+            --text-main: #18181b;     /* Deep charcoal for smooth reading */
             --text-muted: #71717a;    /* Balanced professional gray */
             --transition: all 0.2s ease;
         }
@@ -45,7 +45,7 @@
             flex: 1;
             display: flex;
             flex-direction: column;
-            gap: 32px;
+            gap: 28px;
         }
 
         header {
@@ -65,51 +65,45 @@
 
         h1 {
             font-family: 'Cinzel', serif;
-            font-size: 1.6rem;
+            font-size: 1.5rem;
             font-weight: 700;
             color: var(--text-main);
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             line-height: 1.3;
         }
 
         p.subtitle {
             color: var(--text-muted);
-            font-size: 0.92rem;
+            font-size: 0.9rem;
             line-height: 1.5;
-            margin-bottom: 16px;
+            margin-bottom: 14px;
         }
 
-        /* LIVE GLOBAL TIME & DATE WIDGET (Cleaned) */
+        /* LIVE GLOBAL TIME & DATE WIDGET */
         .live-clock-card {
             background: var(--bg-card);
             border: 1px solid rgba(124, 58, 237, 0.15);
             border-radius: 14px;
-            padding: 12px 16px;
+            padding: 10px 14px;
             display: flex;
             align-items: center;
             justify-content: space-between;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
-            margin-bottom: 8px;
+            margin-bottom: 4px;
         }
 
         .clock-left {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
         }
 
         .clock-icon {
-            font-size: 1.3rem;
-        }
-
-        .clock-info {
-            display: flex;
-            flex-direction: column;
-            text-align: left;
+            font-size: 1.2rem;
         }
 
         .live-date {
-            font-size: 0.8rem;
+            font-size: 0.78rem;
             color: var(--primary);
             font-weight: 700;
             text-transform: uppercase;
@@ -117,91 +111,119 @@
         }
 
         .live-time {
-            font-size: 1rem;
+            font-size: 0.95rem;
             font-weight: 700;
             color: var(--text-main);
             font-family: monospace;
             background: #f1f0ea;
-            padding: 4px 10px;
-            border-radius: 8px;
+            padding: 3px 8px;
+            border-radius: 6px;
             border: 1px solid #e4e4e7;
         }
 
-        /* Crisp White Card Container */
+        /* Card Container */
         .card {
             background: var(--bg-card);
             border: 1px solid #e4e4e7;
             border-radius: 20px;
-            padding: 24px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            padding: 22px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
             position: relative;
         }
 
         .card-badge {
-            font-size: 0.75rem;
+            font-size: 0.72rem;
             text-transform: uppercase;
             letter-spacing: 1.5px;
             color: var(--primary);
             font-weight: 700;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             display: block;
         }
 
         /* Form Elements */
         .input-group {
-            margin-bottom: 18px;
+            margin-bottom: 16px;
         }
 
         label {
             display: block;
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             font-weight: 600;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             color: var(--text-main);
             letter-spacing: 0.5px;
         }
 
         input, select {
             width: 100%;
-            padding: 14px 16px;
+            padding: 12px 14px;
             background: #fafaf9;
             border: 1px solid #d4d4d8;
-            border-radius: 12px;
+            border-radius: 10px;
             color: var(--text-main);
             font-family: inherit;
-            font-size: 1rem;
+            font-size: 0.95rem;
         }
 
         input:focus, select:focus {
             outline: none;
             border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.15);
+            box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.12);
         }
 
+        /* SMALLER, SLEEKER BUTTONS WITH VISIBLE ARROWS */
         .btn {
             width: 100%;
-            padding: 16px;
+            padding: 12px 16px;
             background: var(--primary);
             color: white;
             border: none;
-            border-radius: 12px;
-            font-size: 1rem;
+            border-radius: 10px;
+            font-size: 0.92rem;
             font-weight: 700;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 8px;
-            box-shadow: 0 4px 15px rgba(124, 58, 237, 0.25);
+            box-shadow: 0 4px 12px rgba(124, 58, 237, 0.22);
+            transition: var(--transition);
+        }
+
+        .btn:hover {
+            background: var(--primary-hover);
         }
 
         .btn:active {
             transform: scale(0.98);
         }
 
+        .btn-arrow {
+            display: inline-block;
+            font-size: 1.1rem;
+            font-weight: 800;
+            background: rgba(255, 255, 255, 0.2);
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 4px;
+            transition: transform 0.2s ease;
+        }
+
+        .btn:hover .btn-arrow {
+            transform: translateX(3px);
+        }
+
         .btn-social {
             background: #16a34a;
-            box-shadow: 0 4px 15px rgba(22, 163, 74, 0.2);
+            box-shadow: 0 4px 12px rgba(22, 163, 74, 0.2);
+        }
+        .btn-social:hover {
+            background: #15803d;
         }
 
         /* States Management */
@@ -216,15 +238,15 @@
         /* Scanning Screen Animation */
         .scanner-box {
             text-align: center;
-            padding: 20px 0;
+            padding: 16px 0;
         }
 
         .pulse-orb {
-            width: 80px;
-            height: 80px;
+            width: 70px;
+            height: 70px;
             background: var(--primary);
             border-radius: 50%;
-            margin: 0 auto 20px;
+            margin: 0 auto 16px;
             box-shadow: 0 0 20px rgba(124, 58, 237, 0.3);
             animation: pulseAnim 1.5s infinite ease-in-out;
         }
@@ -237,10 +259,10 @@
 
         .progress-bar-container {
             width: 100%;
-            height: 6px;
+            height: 5px;
             background: #e4e4e7;
             border-radius: 3px;
-            margin: 20px 0 12px;
+            margin: 16px 0 10px;
             overflow: hidden;
         }
 
@@ -252,7 +274,7 @@
         }
 
         .status-text {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: var(--text-muted);
             font-weight: 500;
         }
@@ -262,86 +284,100 @@
             display: inline-block;
             background: rgba(124, 58, 237, 0.1);
             color: var(--primary);
-            padding: 6px 14px;
+            padding: 5px 12px;
             border-radius: 20px;
-            font-size: 0.78rem;
+            font-size: 0.75rem;
             font-weight: 700;
-            margin-bottom: 14px;
+            margin-bottom: 12px;
             border: 1px solid rgba(124, 58, 237, 0.2);
         }
 
         .result-title {
-            font-size: 1.25rem;
+            font-size: 1.15rem;
             font-weight: 700;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             color: var(--text-main);
         }
 
         .result-desc {
-            font-size: 0.92rem;
+            font-size: 0.88rem;
             color: var(--text-muted);
             line-height: 1.6;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
         }
 
         .action-grid {
             display: grid;
-            gap: 12px;
+            gap: 10px;
         }
 
         .btn-secondary {
             background: #f4f4f5;
             border: 1px solid #d4d4d8;
             color: var(--text-main);
-            padding: 14px;
-            border-radius: 12px;
+            padding: 12px;
+            border-radius: 10px;
             font-weight: 600;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             cursor: pointer;
             text-align: center;
         }
+        .btn-secondary:hover {
+            background: #e4e4e7;
+        }
 
-        /* CURIOSITY TEASER BADGE */
-        .curiosity-teaser {
+        /* CURIOSITY BRIDGE BOXES (Between Cards) */
+        .bridge-box {
+            background: linear-gradient(135deg, rgba(124, 58, 237, 0.05), rgba(2, 132, 199, 0.05));
+            border: 1px dashed rgba(124, 58, 237, 0.3);
+            border-radius: 14px;
+            padding: 14px 16px;
             text-align: center;
-            font-size: 0.8rem;
-            color: var(--primary);
+        }
+
+        .bridge-box p {
+            font-size: 0.85rem;
             font-weight: 700;
-            letter-spacing: 1px;
-            text-transform: uppercase;
+            color: var(--primary);
+            margin-bottom: 4px;
+        }
+
+        .bridge-box span {
+            font-size: 0.75rem;
+            color: var(--text-muted);
         }
 
         /* LONG SCROLL SECTIONS */
         .section-title {
             font-family: 'Cinzel', serif;
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             font-weight: 600;
-            margin-bottom: 14px;
+            margin-bottom: 12px;
             color: var(--text-main);
             text-align: center;
         }
 
         .insight-grid {
             display: grid;
-            gap: 14px;
+            gap: 12px;
         }
 
         .insight-card {
             background: var(--bg-card);
             border: 1px solid #e4e4e7;
-            border-radius: 14px;
-            padding: 16px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+            border-radius: 12px;
+            padding: 14px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
         }
 
         .insight-card h4 {
-            font-size: 0.95rem;
-            margin-bottom: 6px;
+            font-size: 0.9rem;
+            margin-bottom: 4px;
             color: var(--primary);
         }
 
         .insight-card p {
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             color: var(--text-muted);
             line-height: 1.5;
         }
@@ -427,27 +463,27 @@
         }
 
         .faq-item + .faq-item {
-            margin-top: 12px;
-            padding-top: 12px;
+            margin-top: 10px;
+            padding-top: 10px;
             border-top: 1px solid #f4f4f5;
         }
 
         .faq-item h5 {
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             font-weight: 600;
             margin-bottom: 4px;
             color: var(--text-main);
         }
 
         .faq-item p {
-            font-size: 0.8rem;
+            font-size: 0.78rem;
             color: var(--text-muted);
             line-height: 1.5;
         }
 
         footer.site-footer {
             text-align: center;
-            padding: 20px;
+            padding: 16px;
             font-size: 0.75rem;
             color: var(--text-muted);
             border-top: 1px solid #e4e4e7;
@@ -462,13 +498,11 @@
         <header>
             <span class="brand-tag">✨ Universal Frequency Matrix 2026</span>
             
-            <!-- LIVE COUNTRY TIME & DATE WIDGET -->
+            <!-- LIVE CLOCK -->
             <div class="live-clock-card">
                 <div class="clock-left">
                     <span class="clock-icon">🌍</span>
-                    <div class="clock-info">
-                        <span id="liveDate" class="live-date">Loading...</span>
-                    </div>
+                    <span id="liveDate" class="live-date">Loading...</span>
                 </div>
                 <div id="liveTime" class="live-time">00:00:00</div>
             </div>
@@ -477,7 +511,7 @@
             <p class="subtitle">Tap into your universal vibrational blueprint, hidden strength archetype, and 2026 alignment.</p>
         </header>
 
-        <!-- SECTION 1: MAIN AURA SCANNER -->
+        <!-- CARD 1: MAIN AURA SCANNER -->
         <main class="card">
             <span class="card-badge">⚡ Core Energy Scan</span>
             
@@ -507,14 +541,14 @@
                 </div>
 
                 <button class="btn" id="startScanBtn">
-                    Begin Frequency Scan ➔
+                    Begin Frequency Scan <span class="btn-arrow">➔</span>
                 </button>
             </div>
 
             <div id="aura-scanner" class="view">
                 <div class="scanner-box">
                     <div class="pulse-orb"></div>
-                    <h3 style="font-size: 1.1rem; margin-bottom: 6px;">Calibrating Universal Frequency...</h3>
+                    <h3 style="font-size: 1.05rem; margin-bottom: 6px;">Calibrating Universal Frequency...</h3>
                     <p class="status-text" id="auraStatus">Scanning electromagnetic bio-field...</p>
                     <div class="progress-bar-container">
                         <div class="progress-bar" id="auraProgress"></div>
@@ -541,15 +575,18 @@
             </div>
         </main>
 
-        <!-- CURIOSITY TEASER 1 -->
-        <div class="curiosity-teaser">↓ Scroll down to check your Relationship Energy Match ↓</div>
+        <!-- CURIOSITY BRIDGE 1 -->
+        <div class="bridge-box">
+            <p>⚡ Your energy is active! But how does it match with your close connections?</p>
+            <span>↓ Tap below to check your Relationship Harmony Index ↓</span>
+        </div>
 
-        <!-- SECTION 2: COSMIC BOND & LOVE SYNERGY SCANNER -->
+        <!-- CARD 2: COSMIC BOND & LOVE SYNERGY SCANNER -->
         <section class="card">
             <span class="card-badge">💖 Synergy Matrix</span>
             
             <div id="bond-form" class="view active">
-                <h3 style="font-size: 1.1rem; margin-bottom: 12px; color: var(--text-main);">Cosmic Bond & Relationship Vibe Check</h3>
+                <h3 style="font-size: 1.05rem; margin-bottom: 12px; color: var(--text-main);">Cosmic Bond & Relationship Vibe Check</h3>
                 <div class="input-group">
                     <label for="p1Name">Your Name / Sign</label>
                     <input type="text" id="p1Name" placeholder="e.g. Alex" autocomplete="off" />
@@ -559,14 +596,14 @@
                     <input type="text" id="p2Name" placeholder="e.g. Sam" autocomplete="off" />
                 </div>
                 <button class="btn" id="startBondBtn">
-                    Calculate Energy Synergy ➔
+                    Calculate Energy Synergy <span class="btn-arrow">➔</span>
                 </button>
             </div>
 
             <div id="bond-scanner" class="view">
                 <div class="scanner-box">
                     <div class="pulse-orb" style="background: #db2777; box-shadow: 0 0 20px rgba(219, 39, 119, 0.3);"></div>
-                    <h3 style="font-size: 1.1rem; margin-bottom: 6px;">Synchronizing Aura Frequencies...</h3>
+                    <h3 style="font-size: 1.05rem; margin-bottom: 6px;">Synchronizing Aura Frequencies...</h3>
                     <p class="status-text" id="bondStatus">Calculating emotional resonance...</p>
                     <div class="progress-bar-container">
                         <div class="progress-bar" id="bondProgress" style="background: #db2777;"></div>
@@ -593,29 +630,32 @@
             </div>
         </section>
 
-        <!-- CURIOSITY TEASER 2 -->
-        <div class="curiosity-teaser">↓ What is your hidden karma initial? Uncover below ↓</div>
+        <!-- CURIOSITY BRIDGE 2 -->
+        <div class="bridge-box">
+            <p>💖 Synergy verified! Now unlock the hidden letter of your 2026 karmic connection.</p>
+            <span>↓ Discover your Secret Admirer Initial below ↓</span>
+        </div>
 
-        <!-- SECTION 3: SECRET INITIAL & SOUL CONNECTION DETECTOR -->
+        <!-- CARD 3: SECRET INITIAL & SOUL CONNECTION DETECTOR -->
         <section class="card">
             <span class="card-badge">🔮 Viral Detector</span>
 
             <div id="viral-form" class="view active">
-                <h3 style="font-size: 1.1rem; margin-bottom: 12px; color: var(--text-main);">Secret Admirer Initial Detector</h3>
-                <p class="subtitle" style="margin-bottom: 14px; font-size: 0.85rem;">Discover the hidden alphabetical frequency connected to your 2026 destiny path.</p>
+                <h3 style="font-size: 1.05rem; margin-bottom: 10px; color: var(--text-main);">Secret Admirer Initial Detector</h3>
+                <p class="subtitle" style="margin-bottom: 12px; font-size: 0.82rem;">Discover the hidden alphabetical frequency connected to your 2026 destiny path.</p>
                 <div class="input-group">
                     <label for="viralName">Enter Your Full Name</label>
                     <input type="text" id="viralName" placeholder="e.g. Jessica Miller" autocomplete="off" />
                 </div>
                 <button class="btn" id="startViralBtn">
-                    Reveal Secret Frequency ➔
+                    Reveal Secret Frequency <span class="btn-arrow">➔</span>
                 </button>
             </div>
 
             <div id="viral-scanner" class="view">
                 <div class="scanner-box">
                     <div class="pulse-orb" style="background: #0284c7; box-shadow: 0 0 20px rgba(2, 132, 199, 0.3);"></div>
-                    <h3 style="font-size: 1.1rem; margin-bottom: 6px;">Scanning Karmic Databanks...</h3>
+                    <h3 style="font-size: 1.05rem; margin-bottom: 6px;">Scanning Karmic Databanks...</h3>
                     <p class="status-text">Decrypting astral initial signatures...</p>
                     <div class="progress-bar-container">
                         <div class="progress-bar" id="viralProgress" style="background: #0284c7;"></div>
@@ -642,21 +682,24 @@
             </div>
         </section>
 
-        <!-- CURIOSITY TEASER 3 -->
-        <div class="curiosity-teaser">↓ Tap 1-Click to reveal Today's Lucky Energy Code ↓</div>
+        <!-- CURIOSITY BRIDGE 3 -->
+        <div class="bridge-box">
+            <p>✨ Ready for your daily boost? Grab your lucky code in one single tap!</p>
+            <span>↓ Unlock below ↓</span>
+        </div>
 
-        <!-- SECTION 4: INSTANT LUCKY FREQUENCY CODE GENERATOR -->
+        <!-- CARD 4: INSTANT LUCKY FREQUENCY CODE GENERATOR -->
         <section class="card" style="text-align: center;">
             <span class="card-badge">✨ Instant Lucky Code</span>
-            <h3 style="font-size: 1.1rem; margin-bottom: 8px; color: var(--text-main);">Today's Personal Vibration Code</h3>
-            <p class="subtitle" style="margin-bottom: 16px; font-size: 0.85rem;">Tap below to instantly extract your lucky color and power number for today.</p>
+            <h3 style="font-size: 1.05rem; margin-bottom: 6px; color: var(--text-main);">Today's Personal Vibration Code</h3>
+            <p class="subtitle" style="margin-bottom: 14px; font-size: 0.82rem;">Tap below to instantly extract your lucky color and power number for today.</p>
             
-            <div id="luckyBox" style="background: #fafaf9; border: 1px solid #d4d4d8; border-radius: 12px; padding: 16px; margin-bottom: 16px;">
-                <span id="luckyResultText" style="font-size: 1rem; font-weight: 700; color: var(--primary);">Tap button to generate your daily code...</span>
+            <div id="luckyBox" style="background: #fafaf9; border: 1px solid #d4d4d8; border-radius: 10px; padding: 14px; margin-bottom: 14px;">
+                <span id="luckyResultText" style="font-size: 0.95rem; font-weight: 700; color: var(--primary);">Tap button to generate your daily code...</span>
             </div>
 
             <button class="btn" onclick="generateLuckyCode()">
-                ⚡ Unlock Today's Code
+                ⚡ Unlock Today's Code <span class="btn-arrow">➔</span>
             </button>
         </section>
 
@@ -681,7 +724,7 @@
 
         <!-- SECTION 6: GLOBAL USER TESTIMONIALS (SINGLE ROW MARQUEE) -->
         <section class="testimonials-section">
-            <h3 class="section-title" style="margin-bottom: 16px;">🌟 Trusted by Global Seekers</h3>
+            <h3 class="section-title" style="margin-bottom: 14px;">🌟 Trusted by Global Seekers</h3>
             
             <div class="marquee-wrapper">
                 <div class="marquee-row">
@@ -692,7 +735,7 @@
 
         <!-- SECTION 7: 10 COMPREHENSIVE FREQUENTLY ASKED QUESTIONS -->
         <section class="faq-box">
-            <h3 class="section-title" style="font-size: 1.05rem; margin-bottom: 12px;">💡 Frequently Asked Questions</h3>
+            <h3 class="section-title" style="font-size: 1rem; margin-bottom: 10px;">💡 Frequently Asked Questions</h3>
             
             <div class="faq-item">
                 <h5>1. How does the Aura Frequency Scan work?</h5>
