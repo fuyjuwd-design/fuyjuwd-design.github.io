@@ -347,7 +347,7 @@
             color: var(--text-muted);
         }
 
-        /* 3D TAROT CARDS STYLING */
+        /* STYLISH 3D TAROT CARDS */
         .tarot-deck {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -357,51 +357,71 @@
         }
 
         .tarot-card {
-            background: linear-gradient(135deg, #7c3aed, #4f46e5);
-            border-radius: 14px;
+            background: transparent;
             height: 130px;
             cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: 700;
-            font-size: 1.5rem;
-            box-shadow: 0 6px 16px rgba(124, 58, 237, 0.25);
-            transition: transform 0.4s ease, box-shadow 0.3s ease;
+            perspective: 1000px;
+        }
+
+        .card-inner {
             position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s ease;
             transform-style: preserve-3d;
+            border-radius: 14px;
+            box-shadow: 0 6px 16px rgba(124, 58, 237, 0.18);
         }
 
-        .tarot-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 22px rgba(124, 58, 237, 0.35);
-        }
-
-        .tarot-card.flipped {
-            background: #ffffff;
-            color: var(--text-main);
-            border: 2px solid var(--primary);
+        .tarot-card.flipped .card-inner {
             transform: rotateY(180deg);
-            cursor: default;
         }
 
-        .tarot-card .card-back-content, .tarot-card .card-front-content {
+        .card-back, .card-front {
             position: absolute;
             width: 100%;
             height: 100%;
             backface-visibility: hidden;
+            border-radius: 14px;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             padding: 8px;
-            text-align: center;
         }
 
-        .tarot-card .card-front-content {
+        .card-back {
+            background: linear-gradient(135deg, #7c3aed, #4f46e5);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.25);
+            font-size: 1.5rem;
+        }
+
+        .card-back span {
+            font-size: 0.68rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-top: 4px;
+            color: #e2e8f0;
+        }
+
+        .card-front {
+            background: #ffffff;
+            color: var(--primary);
+            border: 2px solid var(--primary);
             transform: rotateY(180deg);
-            font-size: 0.78rem;
+            font-size: 0.88rem;
+            font-weight: 700;
+            font-family: 'Cinzel', serif;
+            gap: 4px;
+        }
+
+        .card-front small {
+            font-size: 0.65rem;
+            color: var(--text-muted);
+            font-family: 'Plus Jakarta Sans', sans-serif;
             font-weight: 600;
         }
 
@@ -729,32 +749,40 @@
         <!-- CURIOSITY BRIDGE 1 -->
         <div class="bridge-box">
             <p>🔮 Ready to reveal your daily destiny card?</p>
-            <span>↓ Pick 1 Tarot Card below to flip ↓</span>
+            <span>↓ Pick 1 Stylish Tarot Card below ↓</span>
         </div>
 
-        <!-- CARD 2: DAILY TAROT CARD DRAW -->
+        <!-- CARD 2: STYLISH DAILY TAROT CARD DRAW -->
         <section class="card" style="text-align: center;">
             <span class="card-badge">✨ Daily Tarot Draw</span>
             <h3 style="font-size: 1.05rem; margin-bottom: 6px; color: var(--text-main);">Pick 1 Card for Today's Guidance</h3>
-            <p class="subtitle" style="margin-bottom: 10px; font-size: 0.82rem;">Tap any card below to flip and reveal your daily message.</p>
+            <p class="subtitle" style="margin-bottom: 12px; font-size: 0.82rem;">Tap any mystical card below to reveal your message.</p>
             
             <div class="tarot-deck" id="tarotDeck">
                 <div class="tarot-card" onclick="pickTarotCard(0)">
-                    <div class="card-back-content">🔮</div>
-                    <div class="card-front-content" id="tCard0">Card</div>
+                    <div class="card-inner" id="cardInner0">
+                        <div class="card-back">🔮 <span>Card 1</span></div>
+                        <div class="card-front" id="cardFront0">✨ The Star</div>
+                    </div>
                 </div>
                 <div class="tarot-card" onclick="pickTarotCard(1)">
-                    <div class="card-back-content">🔮</div>
-                    <div class="card-front-content" id="tCard1">Card</div>
+                    <div class="card-inner" id="cardInner1">
+                        <div class="card-back">🌙 <span>Card 2</span></div>
+                        <div class="card-front" id="cardFront1">🔥 The Sun</div>
+                    </div>
                 </div>
                 <div class="tarot-card" onclick="pickTarotCard(2)">
-                    <div class="card-back-content">🔮</div>
-                    <div class="card-front-content" id="tCard2">Card</div>
+                    <div class="card-inner" id="cardInner2">
+                        <div class="card-back">👁️ <span>Card 3</span></div>
+                        <div class="card-front" id="cardFront2">💖 The Lovers</div>
+                    </div>
                 </div>
             </div>
 
-            <div id="tarotResultBox" style="display: none; margin-top: 14px; background: #fafaf9; border: 1px solid #d4d4d8; border-radius: 10px; padding: 14px;">
-                <span id="tarotResultText" style="font-size: 0.88rem; font-weight: 600; color: var(--primary); display: block; margin-bottom: 10px;"></span>
+            <div id="tarotResultBox" style="display: none; margin-top: 14px; background: #fafaf9; border: 1px solid #d4d4d8; border-radius: 12px; padding: 16px; text-align: left;">
+                <span class="result-badge" style="margin-bottom: 8px;">TAROT INSIGHT UNLOCKED</span>
+                <h4 id="tarotTitle" style="font-size: 1rem; font-weight: 700; color: var(--text-main); margin-bottom: 6px;"></h4>
+                <p id="tarotDesc" style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 14px;"></p>
                 <button class="btn btn-social" style="font-size: 0.85rem; padding: 10px;" onclick="shareTarot()">
                     💬 Share Tarot Reading on WhatsApp
                 </button>
@@ -1050,16 +1078,13 @@
         setInterval(updateGlobalClock, 1000);
         updateGlobalClock();
 
-        /* === DAILY TAROT CARD 3D FLIP LOGIC === */
-        const tarotMeanings = [
-            "✨ The Star: Hope, renewed energy, and great wishes coming true today!",
-            "🔥 The Sun: Massive success, joy, and wonderful positivity surrounding you.",
-            "🌿 The Wheel: A lucky breakthrough and a pleasant surprise in your day!",
-            "💖 The Lovers: Harmonious connections, love, and deep mutual understanding.",
-            "⚡ The Magician: Your manifestation power is peak today—make your move!"
+        /* === STYLISH TAROT CARD DRAW 3D FLIP LOGIC === */
+        const tarotData = [
+            { name: "✨ The Star", desc: "Hope, renewed energy, and great wishes coming true today! Your focus is sharp and optimism brings wonderful opportunities." },
+            { name: "🔥 The Sun", desc: "Massive success, joy, and wonderful positivity surrounding you. A great day for new beginnings and spreading good energy." },
+            { name: "💖 The Lovers", desc: "Harmonious connections, love, and deep mutual understanding. Trust your heart in relationship choices today." }
         ];
 
-        let tarotPickedToday = false;
         function pickTarotCard(index) {
             const todayKey = new Date().toDateString();
             const lastPicked = localStorage.getItem('tarot_date');
@@ -1069,18 +1094,20 @@
                 return;
             }
 
-            const cards = document.querySelectorAll('.tarot-card');
-            cards.forEach((card, idx) => {
-                card.classList.add('flipped');
-                const randomMeaning = tarotMeanings[Math.floor(Math.random() * tarotMeanings.length)];
-                document.getElementById(`tCard${idx}`).textContent = (idx === index) ? randomMeaning : tarotMeanings[Math.floor(Math.random() * tarotMeanings.length)];
-            });
+            // Flip all cards, highlight chosen one
+            for (let i = 0; i < 3; i++) {
+                const cardInner = document.getElementById(`cardInner${i}`);
+                cardInner.parentElement.classList.add('flipped');
+                
+                // Set specific name on the flipped front of each card
+                document.getElementById(`cardFront${i}`).innerHTML = `${tarotData[i].name} <small>Revealed</small>`;
+            }
 
             localStorage.setItem('tarot_date', todayKey);
-            tarotPickedToday = true;
 
-            const selectedMsg = document.getElementById(`tCard${index}`).textContent;
-            document.getElementById('tarotResultText').textContent = "Your Daily Reading: " + selectedMsg;
+            // Show clean separate result box below with description of the picked card
+            document.getElementById('tarotTitle').textContent = tarotData[index].name + " — Your Daily Guidance";
+            document.getElementById('tarotDesc').textContent = tarotData[index].desc;
             document.getElementById('tarotResultBox').style.display = 'block';
         }
 
@@ -1254,7 +1281,7 @@
         }
 
         const globalReviews = [
-            { name: "Sarah L.", loc: "United Kingdom", text: "The daily tarot card draw is my favorite part of the morning!" },
+            { name: "Sarah L.", loc: "United Kingdom", text: "The stylish tarot card draw is my favorite part of the morning!" },
             { name: "Marcus T.", loc: "United States", text: "Super fun interactive tools, loved checking my match score." },
             { name: "Priya K.", loc: "India", text: "Zero sign up needed, clean design and instant fun. Amazing!" },
             { name: "Carlos M.", loc: "Brazil", text: "My lucky color result gave me great daily motivation." },
