@@ -41,7 +41,7 @@
             flex: 1;
             display: flex;
             flex-direction: column;
-            gap: 32px; /* Increased gap between cards for extreme visual separation */
+            gap: 32px;
         }
 
         header {
@@ -122,539 +122,187 @@
             border: 1px solid #cbd5e1;
         }
 
-        /* ==========================================================
-           COMPLETELY DIFFERENT STYLED CARDS FOR ZERO MONOTONY
-           ========================================================== */
-        
         .card {
             border-radius: 20px;
             padding: 24px;
             position: relative;
             box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
-            transition: transform 0.2s ease;
         }
 
-        /* 1. AURA SCANNER CARD (Clean Crisp White with Violet Accent) */
-        .card.aura-card {
-            background: #ffffff;
-            border: 2px solid #8b5cf6;
-        }
+        /* 1. AURA SCANNER */
+        .card.aura-card { background: #ffffff; border: 2px solid #8b5cf6; }
         .card.aura-card .card-badge { color: #7c3aed; }
         .card.aura-card .btn { background: #7c3aed; box-shadow: 0 4px 14px rgba(124, 58, 237, 0.3); }
-        .card.aura-card .btn:hover { background: #6d28d9; }
 
-        /* 2. COMPATIBILITY CARD (Soft Romantic Rose Theme) */
-        .card.compatibility-card {
-            background: linear-gradient(135deg, #fff1f2 100%, #ffe4e6 0%);
-            border: 2px solid #f43f5e;
-        }
+        /* 2. COMPATIBILITY */
+        .card.compatibility-card { background: linear-gradient(135deg, #fff1f2 100%, #ffe4e6 0%); border: 2px solid #f43f5e; }
         .card.compatibility-card .card-badge { color: #e11d48; }
         .card.compatibility-card .btn { background: #e11d48; box-shadow: 0 4px 14px rgba(225, 29, 72, 0.3); }
-        .card.compatibility-card .btn:hover { background: #be123c; }
 
-        /* 3. TAROT CARD (Deep Mystical Dark Indigo Theme - Total Contrast!) */
-        .card.tarot-card-section {
-            background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
-            color: #ffffff;
-            border: 2px solid #a855f7;
-            box-shadow: 0 16px 40px rgba(30, 27, 75, 0.4);
-        }
+        /* 3. TAROT DRAW */
+        .card.tarot-card-section { background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%); color: #ffffff; border: 2px solid #a855f7; }
         .card.tarot-card-section .card-badge { color: #d8b4fe; }
         .card.tarot-card-section h3, .card.tarot-card-section p.subtitle { color: #ffffff; }
 
-        /* 4. SECRET INITIAL CARD (Fresh Sky Cyan Theme) */
-        .card.initial-card {
-            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
-            border: 2px solid #0284c7;
-        }
+        /* 4. SECRET INITIAL */
+        .card.initial-card { background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); border: 2px solid #0284c7; }
         .card.initial-card .card-badge { color: #0284c7; }
         .card.initial-card .btn { background: #0284c7; box-shadow: 0 4px 14px rgba(2, 132, 199, 0.3); }
-        .card.initial-card .btn:hover { background: #0369a1; }
 
-        /* 5. LUCKY CODE CARD (Warm Golden Amber Theme) */
-        .card.lucky-card {
-            background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
-            border: 2px solid #d97706;
-            text-align: center;
-        }
+        /* 5. LUCKY CODE */
+        .card.lucky-card { background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%); border: 2px solid #d97706; text-align: center; }
         .card.lucky-card .card-badge { color: #d97706; }
         .card.lucky-card .btn { background: #d97706; box-shadow: 0 4px 14px rgba(217, 119, 6, 0.3); }
-        .card.lucky-card .btn:hover { background: #b45309; }
+
+        /* ================= CHAT STYLES ================= */
+        .card.chat-card {
+            background: #ffffff;
+            border: 2px solid #7c3aed;
+            padding: 0;
+            overflow: hidden;
+        }
+        .chat-header {
+            background: #7c3aed;
+            color: white;
+            padding: 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .avatar {
+            width: 45px; height: 45px; background: #ffffff; color: #7c3aed;
+            border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; font-weight: 700;
+        }
+        .status { font-size: 0.75rem; color: #e2e8f0; display: flex; align-items: center; gap: 5px; margin-top: 2px; }
+        .status-dot { width: 8px; height: 8px; background: #22c55e; border-radius: 50%; display: inline-block; }
+        .chat-messages {
+            height: 320px; padding: 16px; overflow-y: auto; display: flex; flex-direction: column; gap: 12px; background: #f8fafc;
+        }
+        .message { max-width: 80%; padding: 12px 16px; border-radius: 14px; font-size: 0.88rem; line-height: 1.5; word-wrap: break-word; }
+        .message.incoming { background: #ffffff; color: #0f172a; align-self: flex-start; border: 1px solid #cbd5e1; border-bottom-left-radius: 4px; }
+        .message.outgoing { background: #7c3aed; color: #ffffff; align-self: flex-end; border-bottom-right-radius: 4px; }
+        .quick-replies { padding: 12px; background: #ffffff; border-top: 1px solid #cbd5e1; display: flex; flex-direction: column; gap: 8px; }
+        .quick-title { font-size: 0.75rem; font-weight: 700; color: #64748b; text-transform: uppercase; }
+        .chips-grid { display: flex; flex-wrap: wrap; gap: 6px; }
+        .chip {
+            background: #f1f5f9; border: 1px solid #cbd5e1; padding: 6px 12px; border-radius: 20px;
+            font-size: 0.78rem; font-weight: 600; color: #334155; cursor: pointer; transition: all 0.2s ease;
+        }
+        .chip:hover { background: #7c3aed; color: white; border-color: #7c3aed; }
+        .chat-input-area { padding: 12px 16px; background: #ffffff; border-top: 1px solid #cbd5e1; display: flex; gap: 8px; }
+        .chat-input-area input {
+            flex: 1; padding: 10px 14px; border: 1px solid #cbd5e1; border-radius: 10px; font-family: inherit; font-size: 0.9rem; outline: none;
+        }
+        .chat-input-area input:focus { border-color: #7c3aed; box-shadow: 0 0 0 2px rgba(124, 58, 237, 0.15); }
+        .chat-send-btn { background: #7c3aed; color: white; border: none; padding: 0 16px; border-radius: 10px; font-weight: 700; cursor: pointer; }
+        .chat-send-btn:hover { background: #6d28d9; }
+        /* =============================================== */
 
         .card-badge {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            font-weight: 800;
-            margin-bottom: 10px;
-            display: block;
+            font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 800; margin-bottom: 10px; display: block;
         }
 
-        /* Form Elements */
-        .input-group {
-            margin-bottom: 16px;
-        }
-
-        label {
-            display: block;
-            font-size: 0.85rem;
-            font-weight: 700;
-            margin-bottom: 6px;
-            color: var(--text-main);
-        }
+        .input-group { margin-bottom: 16px; }
+        label { display: block; font-size: 0.85rem; font-weight: 700; margin-bottom: 6px; color: var(--text-main); }
         .tarot-card-section label { color: #f8fafc; }
 
         input, select {
-            width: 100%;
-            padding: 12px 14px;
-            background: #ffffff;
-            border: 1px solid #94a3b8;
-            border-radius: 10px;
-            color: var(--text-main);
-            font-family: inherit;
-            font-size: 0.95rem;
-            font-weight: 600;
+            width: 100%; padding: 12px 14px; background: #ffffff; border: 1px solid #94a3b8; border-radius: 10px; color: var(--text-main); font-family: inherit; font-size: 0.95rem; font-weight: 600;
         }
         .tarot-card-section input { background: rgba(255, 255, 255, 0.1); color: white; border-color: #a855f7; }
 
-        input:focus, select:focus {
-            outline: none;
-            border-color: #0f172a;
-            box-shadow: 0 0 0 3px rgba(15, 23, 42, 0.15);
-        }
-
-        /* BUTTONS */
         .btn {
-            width: 100%;
-            padding: 12px 16px;
-            color: white;
-            border: none;
-            border-radius: 10px;
-            font-size: 0.95rem;
-            font-weight: 700;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            transition: var(--transition);
+            width: 100%; padding: 12px 16px; color: white; border: none; border-radius: 10px; font-size: 0.95rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; transition: var(--transition);
         }
-
         .btn-arrow {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.1rem;
-            font-weight: 800;
-            background: rgba(255, 255, 255, 0.25);
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            transition: transform 0.2s ease;
+            display: inline-flex; align-items: center; justify-content: center; font-size: 1.1rem; font-weight: 800; background: rgba(255, 255, 255, 0.25); width: 24px; height: 24px; border-radius: 50%;
         }
+        .btn-social { background: #16a34a !important; box-shadow: 0 4px 12px rgba(22, 163, 74, 0.3) !important; }
 
-        .btn:hover .btn-arrow { transform: translateX(3px); }
-
-        .btn-social {
-            background: #16a34a !important;
-            box-shadow: 0 4px 12px rgba(22, 163, 74, 0.3) !important;
-        }
-        .btn-social:hover { background: #15803d !important; }
-
-        /* States Management */
         .view { display: none; }
         .view.active { display: block; }
 
-        /* Scanning Screen Animation */
-        .scanner-box {
-            text-align: center;
-            padding: 16px 0;
-        }
-
+        .scanner-box { text-align: center; padding: 16px 0; }
         .pulse-orb {
-            width: 70px;
-            height: 70px;
-            background: radial-gradient(circle, #f43f5e 0%, #6d28d9 100%);
-            border-radius: 50%;
-            margin: 0 auto 16px;
-            box-shadow: 0 0 25px rgba(225, 29, 72, 0.4);
-            animation: pulseAnim 1.5s infinite ease-in-out;
+            width: 70px; height: 70px; background: radial-gradient(circle, #f43f5e 0%, #6d28d9 100%); border-radius: 50%; margin: 0 auto 16px; animation: pulseAnim 1.5s infinite ease-in-out;
         }
-
         @keyframes pulseAnim {
             0% { transform: scale(0.95); opacity: 0.8; }
             50% { transform: scale(1.08); opacity: 1; }
             100% { transform: scale(0.95); opacity: 0.8; }
         }
-
-        .progress-bar-container {
-            width: 100%;
-            height: 6px;
-            background: rgba(0, 0, 0, 0.1);
-            border-radius: 3px;
-            margin: 16px 0 10px;
-            overflow: hidden;
-        }
+        .progress-bar-container { width: 100%; height: 6px; background: rgba(0, 0, 0, 0.1); border-radius: 3px; margin: 16px 0 10px; overflow: hidden; }
         .tarot-card-section .progress-bar-container { background: rgba(255, 255, 255, 0.2); }
-
-        .progress-bar {
-            width: 0%;
-            height: 100%;
-            background: var(--text-main);
-            transition: width 0.1s linear;
-        }
+        .progress-bar { width: 0%; height: 100%; background: var(--text-main); transition: width 0.1s linear; }
         .tarot-card-section .progress-bar { background: #ffffff; }
-
-        .status-text {
-            font-size: 0.88rem;
-            color: var(--text-muted);
-            font-weight: 700;
-        }
+        .status-text { font-size: 0.88rem; color: var(--text-muted); font-weight: 700; }
         .tarot-card-section .status-text { color: #e2e8f0; }
 
-        /* Results Screen */
         .result-badge {
-            display: inline-block;
-            background: rgba(15, 23, 42, 0.08);
-            color: var(--text-main);
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: 800;
-            margin-bottom: 12px;
-            border: 1px solid rgba(15, 23, 42, 0.2);
+            display: inline-block; background: rgba(15, 23, 42, 0.08); color: var(--text-main); padding: 5px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 800; margin-bottom: 12px; border: 1px solid rgba(15, 23, 42, 0.2);
         }
-
-        .result-title {
-            font-size: 1.2rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-            color: var(--text-main);
-        }
-
-        .result-desc {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            line-height: 1.6;
-            font-weight: 600;
-            margin-bottom: 20px;
-        }
-
+        .result-title { font-size: 1.2rem; font-weight: 700; margin-bottom: 10px; color: var(--text-main); }
+        .result-desc { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; font-weight: 600; margin-bottom: 20px; }
         .action-grid { display: grid; gap: 10px; }
-
         .btn-secondary {
-            background: #ffffff;
-            border: 2px solid #94a3b8;
-            color: var(--text-main);
-            padding: 12px;
-            border-radius: 10px;
-            font-weight: 700;
-            font-size: 0.9rem;
-            cursor: pointer;
-            text-align: center;
-        }
-        .btn-secondary:hover { background: #f1f5f9; }
-
-        /* CURIOSITY BRIDGE BOXES */
-        .bridge-box {
-            background: rgba(255, 255, 255, 0.8);
-            border: 2px dashed #94a3b8;
-            border-radius: 14px;
-            padding: 14px 16px;
-            text-align: center;
+            background: #ffffff; border: 2px solid #94a3b8; color: var(--text-main); padding: 12px; border-radius: 10px; font-weight: 700; font-size: 0.9rem; cursor: pointer; text-align: center;
         }
 
-        .bridge-box p {
-            font-size: 0.88rem;
-            font-weight: 800;
-            color: #6d28d9;
-            margin-bottom: 4px;
-        }
+        .bridge-box { background: rgba(255, 255, 255, 0.8); border: 2px dashed #94a3b8; border-radius: 14px; padding: 14px 16px; text-align: center; }
+        .bridge-box p { font-size: 0.88rem; font-weight: 800; color: #6d28d9; margin-bottom: 4px; }
+        .bridge-box span { font-size: 0.78rem; color: var(--text-muted); font-weight: 700; }
 
-        .bridge-box span {
-            font-size: 0.78rem;
-            color: var(--text-muted);
-            font-weight: 700;
-        }
-
-        /* STYLISH 3D TAROT CARDS */
-        .tarot-deck {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 12px;
-            margin: 16px 0;
-            perspective: 1000px;
-        }
-
-        .tarot-card {
-            background: transparent;
-            height: 130px;
-            cursor: pointer;
-            perspective: 1000px;
-        }
-
+        .tarot-deck { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 16px 0; perspective: 1000px; }
+        .tarot-card { background: transparent; height: 130px; cursor: pointer; perspective: 1000px; }
         .card-inner {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            text-align: center;
-            transition: transform 0.6s ease;
-            transform-style: preserve-3d;
-            border-radius: 14px;
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+            position: relative; width: 100%; height: 100%; text-align: center; transition: transform 0.6s ease; transform-style: preserve-3d; border-radius: 14px; box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
         }
-
-        .tarot-card.flipped .card-inner {
-            transform: rotateY(180deg);
-        }
-
+        .tarot-card.flipped .card-inner { transform: rotateY(180deg); }
         .card-back, .card-front {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            backface-visibility: hidden;
-            border-radius: 14px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 8px;
+            position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 14px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 8px;
         }
+        .card-back { background: linear-gradient(135deg, #4f46e5, #312e81); color: white; border: 2px solid rgba(192, 132, 252, 0.4); font-size: 1.5rem; }
+        .card-back span { font-size: 0.68rem; letter-spacing: 1px; text-transform: uppercase; font-weight: 800; margin-top: 4px; color: #e2e8f0; }
+        .card-front { background: #ffffff; color: #1e1b4b; border: 2px solid #c084fc; transform: rotateY(180deg); font-size: 0.88rem; font-weight: 700; font-family: 'Cinzel', serif; gap: 4px; }
+        .card-front small { font-size: 0.65rem; color: #64748b; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 600; }
 
-        .card-back {
-            background: linear-gradient(135deg, #4f46e5, #312e81);
-            color: white;
-            border: 2px solid rgba(192, 132, 252, 0.4);
-            font-size: 1.5rem;
-        }
-
-        .card-back span {
-            font-size: 0.68rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            font-weight: 800;
-            margin-top: 4px;
-            color: #e2e8f0;
-        }
-
-        .card-front {
-            background: #ffffff;
-            color: #1e1b4b;
-            border: 2px solid #c084fc;
-            transform: rotateY(180deg);
-            font-size: 0.88rem;
-            font-weight: 700;
-            font-family: 'Cinzel', serif;
-            gap: 4px;
-        }
-
-        .card-front small {
-            font-size: 0.65rem;
-            color: #64748b;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            font-weight: 600;
-        }
-
-        /* EXPERT PSYCHIC PROFILE */
-        .expert-card {
-            background: #ffffff;
-            border: 2px solid #cbd5e1;
-            border-radius: 20px;
-            padding: 24px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
-        }
-
+        .expert-card { background: #ffffff; border: 2px solid #cbd5e1; border-radius: 20px; padding: 24px; text-align: center; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05); }
         .expert-avatar {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #7c3aed, #e11d48);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.2rem;
-            margin: 0 auto 14px;
-            box-shadow: 0 6px 16px rgba(109, 40, 217, 0.25);
-            border: 3px solid #fff;
+            width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, #7c3aed, #e11d48); display: flex; align-items: center; justify-content: center; font-size: 2.2rem; margin: 0 auto 14px; border: 3px solid #fff;
         }
+        .expert-name { font-family: 'Cinzel', serif; font-size: 1.25rem; font-weight: 700; color: var(--text-main); margin-bottom: 4px; }
+        .expert-title { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 1px; color: #7c3aed; font-weight: 800; margin-bottom: 12px; display: block; }
+        .expert-bio { font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; font-weight: 600; margin-bottom: 16px; }
+        .expert-tagline { background: #f1f5f9; padding: 8px 12px; border-radius: 8px; font-size: 0.8rem; color: var(--text-main); font-weight: 700; border: 1px solid #cbd5e1; }
 
-        .expert-name {
-            font-family: 'Cinzel', serif;
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--text-main);
-            margin-bottom: 4px;
-        }
-
-        .expert-title {
-            font-size: 0.78rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #7c3aed;
-            font-weight: 800;
-            margin-bottom: 12px;
-            display: block;
-        }
-
-        .expert-bio {
-            font-size: 0.88rem;
-            color: var(--text-muted);
-            line-height: 1.6;
-            font-weight: 600;
-            margin-bottom: 16px;
-        }
-
-        .expert-tagline {
-            background: #f1f5f9;
-            padding: 8px 12px;
-            border-radius: 8px;
-            font-size: 0.8rem;
-            color: var(--text-main);
-            font-weight: 700;
-            border: 1px solid #cbd5e1;
-        }
-
-        /* LONG SCROLL SECTIONS */
-        .section-title {
-            font-family: 'Cinzel', serif;
-            font-size: 1.15rem;
-            font-weight: 700;
-            margin-bottom: 12px;
-            color: var(--text-main);
-            text-align: center;
-        }
-
+        .section-title { font-family: 'Cinzel', serif; font-size: 1.15rem; font-weight: 700; margin-bottom: 12px; color: var(--text-main); text-align: center; }
         .insight-grid { display: grid; gap: 12px; }
+        .insight-card { background: #ffffff; border: 2px solid #cbd5e1; border-radius: 12px; padding: 16px; box-shadow: 0 4px 10px rgba(15, 23, 42, 0.04); }
+        .insight-card h4 { font-size: 0.98rem; margin-bottom: 6px; color: #7c3aed; font-family: 'Cinzel', serif; font-weight: 800; }
+        .insight-card p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; font-weight: 600; }
 
-        .insight-card {
-            background: #ffffff;
-            border: 2px solid #cbd5e1;
-            border-radius: 12px;
-            padding: 16px;
-            box-shadow: 0 4px 10px rgba(15, 23, 42, 0.04);
-        }
-
-        .insight-card h4 {
-            font-size: 0.98rem;
-            margin-bottom: 6px;
-            color: #7c3aed;
-            font-family: 'Cinzel', serif;
-            font-weight: 800;
-        }
-
-        .insight-card p {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            line-height: 1.6;
-            font-weight: 600;
-        }
-
-        /* SINGLE ROW TESTIMONIALS INFINITE MARQUEE */
         .testimonials-section { margin: 10px -16px; overflow: hidden; }
-
         .marquee-wrapper { display: flex; flex-direction: column; position: relative; }
-
-        .marquee-track {
-            display: flex;
-            gap: 16px;
-            width: max-content;
-            animation: scrollSingle 600s linear infinite;
-        }
-
-        @keyframes scrollSingle {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-
-        .t-card {
-            background: #ffffff;
-            border: 2px solid #cbd5e1;
-            border-radius: 12px;
-            padding: 14px;
-            width: 260px;
-            flex-shrink: 0;
-            box-shadow: 0 4px 10px rgba(15, 23, 42, 0.05);
-        }
-
+        .marquee-track { display: flex; gap: 16px; width: max-content; animation: scrollSingle 600s linear infinite; }
+        @keyframes scrollSingle { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        .t-card { background: #ffffff; border: 2px solid #cbd5e1; border-radius: 12px; padding: 14px; width: 260px; flex-shrink: 0; box-shadow: 0 4px 10px rgba(15, 23, 42, 0.05); }
         .t-header { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
-
-        .t-avatar {
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            background: #7c3aed;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 800;
-            font-size: 0.75rem;
-            color: #fff;
-        }
-
+        .t-avatar { width: 30px; height: 30px; border-radius: 50%; background: #7c3aed; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.75rem; color: #fff; }
         .t-meta h5 { font-size: 0.85rem; font-weight: 800; color: var(--text-main); }
         .t-meta span { font-size: 0.7rem; color: #7c3aed; font-weight: 700; }
         .t-text { font-size: 0.8rem; color: var(--text-muted); line-height: 1.5; font-weight: 600; }
 
-        /* ACCORDION FAQ STYLING */
-        .faq-box {
-            background: #ffffff;
-            border: 2px solid #cbd5e1;
-            border-radius: 16px;
-            padding: 16px;
-            box-shadow: 0 4px 10px rgba(15, 23, 42, 0.05);
-        }
-
+        .faq-box { background: #ffffff; border: 2px solid #cbd5e1; border-radius: 16px; padding: 16px; box-shadow: 0 4px 10px rgba(15, 23, 42, 0.05); }
         .faq-item { border-bottom: 1px solid #cbd5e1; }
         .faq-item:last-child { border-bottom: none; }
-
         .faq-question {
-            width: 100%;
-            background: none;
-            border: none;
-            padding: 14px 4px;
-            text-align: left;
-            font-family: inherit;
-            font-size: 0.92rem;
-            font-weight: 800;
-            color: var(--text-main);
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+            width: 100%; background: none; border: none; padding: 14px 4px; text-align: left; font-family: inherit; font-size: 0.92rem; font-weight: 800; color: var(--text-main); cursor: pointer; display: flex; align-items: center; justify-content: space-between;
         }
-
-        .faq-question:hover { color: #7c3aed; }
-
-        .faq-icon {
-            font-size: 1rem;
-            transition: transform 0.2s ease;
-            font-weight: 800;
-        }
-
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease, padding 0.3s ease;
-            font-size: 0.83rem;
-            color: var(--text-muted);
-            line-height: 1.6;
-            font-weight: 600;
-            padding: 0 4px;
-        }
-
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease; font-size: 0.83rem; color: var(--text-muted); line-height: 1.6; font-weight: 600; padding: 0 4px; }
         .faq-item.active .faq-answer { max-height: 150px; padding-bottom: 14px; }
         .faq-item.active .faq-icon { transform: rotate(45deg); color: #7c3aed; }
 
-        footer.site-footer {
-            text-align: center;
-            padding: 16px;
-            font-size: 0.78rem;
-            color: var(--text-muted);
-            font-weight: 700;
-            border-top: 2px solid #cbd5e1;
-            margin-top: 10px;
-        }
+        footer.site-footer { text-align: center; padding: 16px; font-size: 0.78rem; color: var(--text-muted); font-weight: 700; border-top: 2px solid #cbd5e1; margin-top: 10px; }
     </style>
 </head>
 <body>
@@ -677,7 +325,7 @@
             <p class="subtitle">Quick fun checks to discover your daily energy, love compatibility, tarot card, and secret initial!</p>
         </header>
 
-        <!-- CARD 1: MAIN AURA SCANNER (Clean White & Violet Theme) -->
+        <!-- CARD 1: MAIN AURA SCANNER -->
         <main class="card aura-card">
             <span class="card-badge">⚡ 1. Energy & Vibe Check</span>
             
@@ -691,18 +339,9 @@
                     <label for="birthMonth">Select Your Birth Month</label>
                     <select id="birthMonth">
                         <option value="" disabled selected>Choose Month</option>
-                        <option value="1">January</option>
-                        <option value="2">February</option>
-                        <option value="3">March</option>
-                        <option value="4">April</option>
-                        <option value="5">May</option>
-                        <option value="6">June</option>
-                        <option value="7">July</option>
-                        <option value="8">August</option>
-                        <option value="9">September</option>
-                        <option value="10">October</option>
-                        <option value="11">November</option>
-                        <option value="12">December</option>
+                        <option value="1">January</option><option value="2">February</option><option value="3">March</option><option value="4">April</option>
+                        <option value="5">May</option><option value="6">June</option><option value="7">July</option><option value="8">August</option>
+                        <option value="9">September</option><option value="10">October</option><option value="11">November</option><option value="12">December</option>
                     </select>
                 </div>
 
@@ -726,9 +365,7 @@
                 <div style="text-align: center;">
                     <span class="result-badge" id="resultAuraType">YOUR VIBE: SOLAR GLOW</span>
                     <h2 class="result-title" id="resultHeading">High Energy & Good Luck Active</h2>
-                    <p class="result-desc" id="resultBody">
-                        Your energy today is super positive! People around you will naturally feel your great mood and good things are coming your way.
-                    </p>
+                    <p class="result-desc" id="resultBody">Your energy today is super positive! People around you will naturally feel your great mood and good things are coming your way.</p>
                 </div>
                 <div class="action-grid">
                     <button class="btn" style="background:#7c3aed;" onclick="resetAura()">🔄 Check Again</button>
@@ -743,7 +380,7 @@
             <span>↓ Enter names in the Compatibility Match below ↓</span>
         </div>
 
-        <!-- CARD 2: COMPATIBILITY MATCH (Soft Rose Gradient Theme) -->
+        <!-- CARD 2: COMPATIBILITY MATCH -->
         <section class="card compatibility-card">
             <span class="card-badge" style="color: #e11d48;">❤️ 2. Soulmate & Compatibility Match</span>
             
@@ -779,9 +416,7 @@
                 <div style="text-align: center;">
                     <span class="result-badge" style="background: rgba(225, 29, 72, 0.1); color: #e11d48; border-color: rgba(225, 29, 72, 0.3);">COMPATIBILITY SCORE: 94% (EXCELLENT VIBE)</span>
                     <h2 class="result-title" id="bondResultHeading">Amazing Connection Found!</h2>
-                    <p class="result-desc" id="bondResultBody">
-                        You two share a wonderful emotional understanding and great chemistry. A stellar match for friendship or romance!
-                    </p>
+                    <p class="result-desc" id="bondResultBody">You two share a wonderful emotional understanding and great chemistry. A stellar match for friendship or romance!</p>
                 </div>
                 <div class="action-grid">
                     <button class="btn btn-social" onclick="shareMatch()">💬 Share Compatibility on WhatsApp</button>
@@ -796,7 +431,7 @@
             <span>↓ Pick 1 Mystical Tarot Card below ↓</span>
         </div>
 
-        <!-- CARD 3: DAILY TAROT DRAW (Dark Mystical Indigo Theme) -->
+        <!-- CARD 3: DAILY TAROT DRAW -->
         <section class="card tarot-card-section" style="text-align: center;">
             <span class="card-badge">✨ 3. Daily Tarot Draw</span>
             <h3 style="font-size: 1.15rem; margin-bottom: 6px; font-family: 'Cinzel', serif;">Pick 1 Card for Today's Guidance</h3>
@@ -837,7 +472,7 @@
             <span>↓ Find your Secret Crush Initial below ↓</span>
         </div>
 
-        <!-- CARD 4: SECRET INITIAL FINDER (Sky Blue Theme) -->
+        <!-- CARD 4: SECRET INITIAL FINDER -->
         <section class="card initial-card">
             <span class="card-badge" style="color: #0284c7;">💌 4. Secret Initial Finder</span>
 
@@ -868,9 +503,7 @@
                 <div style="text-align: center;">
                     <span class="result-badge" style="background: rgba(2, 132, 199, 0.1); color: #0284c7; border-color: rgba(2, 132, 199, 0.3);">SECRET ADMIRER FOUND</span>
                     <h2 class="result-title" id="viralHeading">Your Secret Letter is [ M ]</h2>
-                    <p class="result-desc">
-                        Someone with the initial M, S, or J has a secret soft spot for you and loves spending time around you!
-                    </p>
+                    <p class="result-desc">Someone with the initial M, S, or J has a secret soft spot for you and loves spending time around you!</p>
                 </div>
                 <div class="action-grid">
                     <button class="btn btn-social" onclick="shareViral()">📤 Send to Friends on WhatsApp</button>
@@ -885,7 +518,7 @@
             <span>↓ Tap below to unlock ↓</span>
         </div>
 
-        <!-- CARD 5: LUCKY CODE GENERATOR (Golden Amber Theme) -->
+        <!-- CARD 5: LUCKY CODE GENERATOR -->
         <section class="card lucky-card">
             <span class="card-badge" style="color: #d97706;">✨ 5. Daily Lucky Code</span>
             <h3 style="font-size: 1.05rem; margin-bottom: 6px; color: var(--text-main); font-family: 'Cinzel', serif;">Today's Lucky Color & Number</h3>
@@ -900,14 +533,45 @@
             </button>
         </section>
 
+        <!-- ================= CARD 6: AI GIRL CHAT (JESSICA) ================= -->
+        <section class="card chat-card">
+            <div class="chat-header">
+                <div class="avatar">👩🏻</div>
+                <div>
+                    <h3 style="font-size: 1rem; font-weight: 700; color: #ffffff;">Jessica ✨</h3>
+                    <div class="status"><span class="status-dot"></span> Online & Ready to Chat</div>
+                </div>
+            </div>
+
+            <div class="chat-messages" id="chatMessages">
+                <div class="message incoming">
+                    Hi there! 👋 I'm Jessica. Tap any quick question below or type to chat with me!
+                </div>
+            </div>
+
+            <div class="quick-replies">
+                <span class="quick-title">Quick Questions:</span>
+                <div class="chips-grid">
+                    <button class="chip" onclick="sendPreset('Hello! How are you?')">👋 Hello! How are you?</button>
+                    <button class="chip" onclick="sendPreset('What is your favorite hobby?')">🎨 What is your hobby?</button>
+                    <button class="chip" onclick="sendPreset('Can you tell me a fun fact?')">💡 Tell me a fun fact</button>
+                    <button class="chip" onclick="sendPreset('What do you think about astrology?')">🔮 Do you like astrology?</button>
+                </div>
+            </div>
+
+            <div class="chat-input-area">
+                <input type="text" id="userInput" placeholder="Type a message..." autocomplete="off" onkeypress="handleKey(event)" />
+                <button class="chat-send-btn" onclick="sendMessage()">Send</button>
+            </div>
+        </section>
+        <!-- ========================================================== -->
+
         <!-- EXPERT PSYCHIC PROFILE -->
         <section class="expert-card">
             <div class="expert-avatar">🔮</div>
             <h3 class="expert-name">Elena Vance</h3>
             <span class="expert-title">Tarot Reader & Energy Guide</span>
-            <p class="expert-bio">
-                Hi! I'm Elena. For over 12 years, I've loved helping people discover their daily positive energy, relationship compatibility matches, and fun insights with a smile.
-            </p>
+            <p class="expert-bio">Hi! I'm Elena. For over 12 years, I've loved helping people discover their daily positive energy, relationship compatibility matches, and fun insights with a smile.</p>
             <div class="expert-tagline">✨ "Keep your vibe high and wonderful things will happen!"</div>
         </section>
 
@@ -986,7 +650,6 @@
         <!-- SECTION: GLOBAL USER TESTIMONIALS (SINGLE ROW MARQUEE) -->
         <section class="testimonials-section">
             <h3 class="section-title" style="margin-bottom: 14px;">🌟 Loved by People Worldwide</h3>
-            
             <div class="marquee-wrapper">
                 <div class="marquee-row">
                     <div class="marquee-track" id="track1"></div>
@@ -999,82 +662,52 @@
             <h3 class="section-title" style="font-size: 1rem; margin-bottom: 10px;">💡 Frequently Asked Questions</h3>
             
             <div class="faq-item">
-                <button class="faq-question">
-                    <span>1. Are these checks free to use?</span>
-                    <span class="faq-icon">+</span>
-                </button>
+                <button class="faq-question"><span>1. Are these checks free to use?</span><span class="faq-icon">+</span></button>
                 <div class="faq-answer">Yes! All energy checks, love matches, and lucky code generators are 100% free with no hidden charges.</div>
             </div>
             
             <div class="faq-item">
-                <button class="faq-question">
-                    <span>2. Do I need to create an account?</span>
-                    <span class="faq-icon">+</span>
-                </button>
+                <button class="faq-question"><span>2. Do I need to create an account?</span><span class="faq-icon">+</span></button>
                 <div class="faq-answer">No signup or login is needed. You can use all features instantly in your browser.</div>
             </div>
 
             <div class="faq-item">
-                <button class="faq-question">
-                    <span>3. Is my personal info private?</span>
-                    <span class="faq-icon">+</span>
-                </button>
+                <button class="faq-question"><span>3. Is my personal info private?</span><span class="faq-icon">+</span></button>
                 <div class="faq-answer">Completely private! Everything runs right inside your phone or computer. We don't save any names.</div>
             </div>
 
             <div class="faq-item">
-                <button class="faq-question">
-                    <span>4. How do I check my relationship compatibility?</span>
-                    <span class="faq-icon">+</span>
-                </button>
+                <button class="faq-question"><span>4. How do I check my relationship compatibility?</span><span class="faq-icon">+</span></button>
                 <div class="faq-answer">Just type your name and your crush or friend's name in the Compatibility card and tap check!</div>
             </div>
 
             <div class="faq-item">
-                <button class="faq-question">
-                    <span>5. Can I use this every day?</span>
-                    <span class="faq-icon">+</span>
-                </button>
+                <button class="faq-question"><span>5. Can I use this every day?</span><span class="faq-icon">+</span></button>
                 <div class="faq-answer">Yes, you can come back every single day to check your new daily lucky code and energy vibe.</div>
             </div>
 
             <div class="faq-item">
-                <button class="faq-question">
-                    <span>6. How do I share results with friends?</span>
-                    <span class="faq-icon">+</span>
-                </button>
+                <button class="faq-question"><span>6. How do I share results with friends?</span><span class="faq-icon">+</span></button>
                 <div class="faq-answer">Every result has a green WhatsApp button so you can instantly share your results with your best friends.</div>
             </div>
 
             <div class="faq-item">
-                <button class="faq-question">
-                    <span>7. What is the Secret Initial finder?</span>
-                    <span class="faq-icon">+</span>
-                </button>
+                <button class="faq-question"><span>7. What is the Secret Initial finder?</span><span class="faq-icon">+</span></button>
                 <div class="faq-answer">It's a fun interactive tool that shows you a playful secret letter of someone who might be thinking about you.</div>
             </div>
 
             <div class="faq-item">
-                <button class="faq-question">
-                    <span>8. Are these results accurate?</span>
-                    <span class="faq-icon">+</span>
-                </button>
+                <button class="faq-question"><span>8. Are these results accurate?</span><span class="faq-icon">+</span></button>
                 <div class="faq-answer">These tools are designed purely for entertainment, fun, and positive daily motivation.</div>
             </div>
 
             <div class="faq-item">
-                <button class="faq-question">
-                    <span>9. Does this work on mobile phones?</span>
-                    <span class="faq-icon">+</span>
-                </button>
+                <button class="faq-question"><span>9. Does this work on mobile phones?</span><span class="faq-icon">+</span></button>
                 <div class="faq-answer">Yes! It is fully optimized for smooth, fast scrolling on all Android and iPhone devices.</div>
             </div>
 
             <div class="faq-item">
-                <button class="faq-question">
-                    <span>10. Who created this platform?</span>
-                    <span class="faq-icon">+</span>
-                </button>
+                <button class="faq-question"><span>10. Who created this platform?</span><span class="faq-icon">+</span></button>
                 <div class="faq-answer">It was built to give users worldwide a fast, clean, and enjoyable daily entertainment experience.</div>
             </div>
         </section>
@@ -1093,9 +726,7 @@
                 const item = question.parentElement;
                 const isActive = item.classList.contains('active');
                 document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
-                if (!isActive) {
-                    item.classList.add('active');
-                }
+                if (!isActive) { item.classList.add('active'); }
             });
         });
 
@@ -1103,14 +734,10 @@
         function updateGlobalClock() {
             const now = new Date();
             const dateOptions = { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric' };
-            const dateStr = now.toLocaleDateString('en-US', dateOptions);
             const timeOptions = { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
-            const timeStr = now.toLocaleTimeString('en-US', timeOptions);
-
-            document.getElementById('liveDate').textContent = dateStr;
-            document.getElementById('liveTime').textContent = timeStr;
+            document.getElementById('liveDate').textContent = now.toLocaleDateString('en-US', dateOptions);
+            document.getElementById('liveTime').textContent = now.toLocaleTimeString('en-US', timeOptions);
         }
-
         setInterval(updateGlobalClock, 1000);
         updateGlobalClock();
 
@@ -1123,29 +750,22 @@
 
         function pickTarotCard(index) {
             const todayKey = new Date().toDateString();
-            const lastPicked = localStorage.getItem('tarot_date');
-            
-            if (lastPicked === todayKey) {
+            if (localStorage.getItem('tarot_date') === todayKey) {
                 alert('You have already drawn your daily tarot card today! Come back tomorrow for a new card.');
                 return;
             }
-
             for (let i = 0; i < 3; i++) {
-                const cardInner = document.getElementById(`cardInner${i}`);
-                cardInner.parentElement.classList.add('flipped');
+                document.getElementById(`cardInner${i}`).parentElement.classList.add('flipped');
                 document.getElementById(`cardFront${i}`).innerHTML = `${tarotData[i].name} <small>Revealed</small>`;
             }
-
             localStorage.setItem('tarot_date', todayKey);
-
             document.getElementById('tarotTitle').textContent = tarotData[index].name + " — Your Daily Guidance";
             document.getElementById('tarotDesc').textContent = tarotData[index].desc;
             document.getElementById('tarotResultBox').style.display = 'block';
         }
 
         function shareTarot() {
-            const text = encodeURIComponent("I just drew my Daily Tarot Card on Vibe Check! Check yours here: " + window.location.href);
-            window.open(`https://api.whatsapp.com/send?text=${text}`, '_blank');
+            window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent("I just drew my Daily Tarot Card on Vibe Check! Check yours here: " + window.location.href)}`, '_blank');
         }
 
         /* === 1. MAIN AURA SCANNER LOGIC === */
@@ -1156,14 +776,7 @@
         const auraProgress = document.getElementById('auraProgress');
         const auraStatus = document.getElementById('auraStatus');
 
-        const auraStatusMsgs = [
-            "Scanning your energy...",
-            "Checking daily mood index...",
-            "Mixing cosmic vibes...",
-            "Calculating luck score...",
-            "Finalizing your energy result..."
-        ];
-
+        const auraStatusMsgs = ["Scanning your energy...", "Checking daily mood index...", "Mixing cosmic vibes...", "Calculating luck score...", "Finalizing your energy result..."];
         const auraResults = [
             { type: "YOUR VIBE: SOLAR GLOW", title: "High Energy & Good Luck Active", desc: "Your energy today is super positive! People around you will naturally feel your great mood and good things are coming your way." },
             { type: "YOUR VIBE: OCEAN BREEZE", title: "Calm & Creative Flow", desc: "You are experiencing a peaceful, clear-minded vibe today. Perfect for solving problems or relaxing with friends." },
@@ -1171,22 +784,16 @@
         ];
 
         startScanBtn.addEventListener('click', () => {
-            const monthInput = document.getElementById('birthMonth').value;
-            if (!monthInput) { alert('Please select your birth month.'); return; }
+            if (!document.getElementById('birthMonth').value) { alert('Please select your birth month.'); return; }
             const nameInput = document.getElementById('userName').value.trim();
-
             auraForm.classList.remove('active');
             auraScanner.classList.add('active');
 
-            let progress = 0;
-            let msgIdx = 0;
+            let progress = 0, msgIdx = 0;
             const timer = setInterval(() => {
                 progress += 1;
                 auraProgress.style.width = progress + '%';
-                if (progress % 20 === 0 && msgIdx < auraStatusMsgs.length) {
-                    auraStatus.textContent = auraStatusMsgs[msgIdx];
-                    msgIdx++;
-                }
+                if (progress % 20 === 0 && msgIdx < auraStatusMsgs.length) { auraStatus.textContent = auraStatusMsgs[msgIdx]; msgIdx++; }
                 if (progress >= 100) {
                     clearInterval(timer);
                     auraScanner.classList.remove('active');
@@ -1207,13 +814,12 @@
             auraProgress.style.width = '0%';
         }
 
-        /* === 2. COMPATIBILITY / SYNERGY SCANNER LOGIC === */
+        /* === 2. COMPATIBILITY SCANNER LOGIC === */
         const startBondBtn = document.getElementById('startBondBtn');
         const bondForm = document.getElementById('bond-form');
         const bondScanner = document.getElementById('bond-scanner');
         const bondResult = document.getElementById('bond-result');
         const bondProgress = document.getElementById('bondProgress');
-        const bondStatus = document.getElementById('bondStatus');
 
         startBondBtn.addEventListener('click', () => {
             const p1 = document.getElementById('p1Name').value.trim();
@@ -1245,11 +851,10 @@
         }
 
         function shareMatch() {
-            const text = encodeURIComponent("I just checked our compatibility match score and got an amazing result! Check yours here: " + window.location.href);
-            window.open(`https://api.whatsapp.com/send?text=${text}`, '_blank');
+            window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent("I just checked our compatibility match score and got an amazing result! Check yours here: " + window.location.href)}`, '_blank');
         }
 
-        /* === 3. VIRAL SECRET INITIAL DETECTOR LOGIC === */
+        /* === 3. SECRET INITIAL LOGIC === */
         const startViralBtn = document.getElementById('startViralBtn');
         const viralForm = document.getElementById('viral-form');
         const viralScanner = document.getElementById('viral-scanner');
@@ -1272,8 +877,7 @@
                     viralScanner.classList.remove('active');
                     viralResult.classList.add('active');
                     const initials = ['A', 'M', 'S', 'J', 'K', 'R', 'D', 'E'];
-                    const randomLetter = initials[Math.floor(Math.random() * initials.length)];
-                    document.getElementById('viralHeading').textContent = `${vName}, Your Secret Letter is [ ${randomLetter} ]`;
+                    document.getElementById('viralHeading').textContent = `${vName}, Your Secret Letter is [ ${initials[Math.floor(Math.random() * initials.length)]} ]`;
                 }
             }, 80);
         });
@@ -1286,11 +890,10 @@
         }
 
         function shareViral() {
-            const text = encodeURIComponent("I found out my secret admirer initial on Vibe Check! Try your name here: " + window.location.href);
-            window.open(`https://api.whatsapp.com/send?text=${text}`, '_blank');
+            window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent("I found out my secret admirer initial on Vibe Check! Try your name here: " + window.location.href)}`, '_blank');
         }
 
-        /* === 4. INSTANT LUCKY CODE GENERATOR === */
+        /* === 4. LUCKY CODE GENERATOR === */
         const luckyCodes = [
             "🎨 Lucky Color: Sapphire Blue | 🔢 Power Number: 7",
             "🌟 Lucky Color: Solar Gold | 🔢 Power Number: 3",
@@ -1302,15 +905,56 @@
             const el = document.getElementById('luckyResultText');
             el.textContent = "Extracting lucky details...";
             setTimeout(() => {
-                const randomCode = luckyCodes[Math.floor(Math.random() * luckyCodes.length)];
-                el.textContent = randomCode;
+                el.textContent = luckyCodes[Math.floor(Math.random() * luckyCodes.length)];
             }, 400);
         }
 
-        /* === BOOKMARK & MARQUEE === */
-        function bookmarkPrompt() {
-            alert('Press Ctrl+D (or Cmd+D on Mac) to bookmark this page and return for your daily updates!');
+        /* === AI CHAT LOGIC (JESSICA) === */
+        const predefinedAnswers = {
+            "hello! how are you?": "I'm doing wonderful today, thanks for asking! 😊 How are things with you?",
+            "what is your favorite hobby?": "I love painting digital art, listening to music, and trying out new coffee recipes! ☕🎨",
+            "can you tell me a fun fact?": "Did you know that honey never spoils? Archaeologists found 3,000-year-old honey in Egyptian tombs that is still edible! 🍯",
+            "what do you think about astrology?": "I think astrology is super fascinating! It's so cool how star signs connect with our daily energy. ✨"
+        };
+        const defaultFallback = "That's so interesting! Tell me more about that. 😊";
+
+        function appendChatMessage(text, sender) {
+            const chatMessages = document.getElementById('chatMessages');
+            const msgDiv = document.createElement('div');
+            msgDiv.className = `message ${sender}`;
+            msgDiv.textContent = text;
+            chatMessages.appendChild(msgDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
         }
+
+        function handleKey(e) {
+            if (e.key === 'Enter') { sendMessage(); }
+        }
+
+        function sendPreset(questionText) {
+            appendChatMessage(questionText, 'outgoing');
+            setTimeout(() => {
+                const reply = predefinedAnswers[questionText.toLowerCase()] || defaultFallback;
+                appendChatMessage(reply, 'incoming');
+            }, 300);
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('userInput');
+            const text = input.value.trim();
+            if (!text) return;
+
+            appendChatMessage(text, 'outgoing');
+            input.value = '';
+
+            setTimeout(() => {
+                const reply = predefinedAnswers[text.toLowerCase()] || defaultFallback;
+                appendChatMessage(reply, 'incoming');
+            }, 300);
+        }
+
+        /* === BOOKMARK & MARQUEE === */
+        function bookmarkPrompt() { alert('Press Ctrl+D (or Cmd+D on Mac) to bookmark this page and return for your daily updates!'); }
 
         const globalReviews = [
             { name: "Sarah L.", loc: "United Kingdom", text: "The compatibility match is super fun and accurate!" },
@@ -1318,9 +962,7 @@
             { name: "Priya K.", loc: "India", text: "Zero sign up needed, clean design and instant fun. Amazing!" },
             { name: "Carlos M.", loc: "Brazil", text: "My lucky color result gave me great daily motivation." },
             { name: "Yuki S.", loc: "Japan", text: "Very relaxing and entertaining to check every Monday morning." },
-            { name: "Liam B.", loc: "Australia", text: "Clean layout, fast loading, and highly addictive vibe checks." },
-            { name: "Elena R.", loc: "Spain", text: "I check my relationship compatibility with my friends every weekend!" },
-            { name: "Omar K.", loc: "Egypt", text: "Such a cool website for quick daily insights. Highly recommended." }
+            { name: "Liam B.", loc: "Australia", text: "Clean layout, fast loading, and highly addictive vibe checks." }
         ];
 
         function populateSingleMarquee() {
@@ -1329,11 +971,10 @@
             let htmlContent = '';
             for (let i = 0; i < 6; i++) {
                 globalReviews.forEach((r) => {
-                    const initials = r.name.split(' ').map(n => n[0]).join('');
                     htmlContent += `
                         <div class="t-card">
                             <div class="t-header">
-                                <div class="t-avatar">${initials}</div>
+                                <div class="t-avatar">${r.name.split(' ').map(n => n[0]).join('')}</div>
                                 <div class="t-meta">
                                     <h5>${r.name}</h5>
                                     <span>📍 ${r.loc}</span>
