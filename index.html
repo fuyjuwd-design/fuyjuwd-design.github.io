@@ -521,40 +521,41 @@
         </section>
 
         <!-- ================= CARD 5: SOCIAL TRAFFIC ANGEL NUMBER CLAIMER ================= -->
-        <section class="card angel-card">
-            <span class="card-badge" style="color: #b45309;">🌟 5. Claim Your Angel Number</span>
-            
-            <div id="angel-form" class="view active">
-                <h3 style="font-size: 1.15rem; margin-bottom: 6px; color: var(--text-main); font-family: 'Cinzel', serif;">Saw an Angel Number Today? (888, 777, 111...)</h3>
-                <p class="subtitle" style="margin-bottom: 14px; font-size: 0.85rem;">Enter the 2 or 3 digit angel number you saw on your clock or phone to claim its secret message!</p>
-                
-                <div class="input-group">
-                    <label for="angelNumberInput">Enter Angel Number (e.g., 11, 777, 888, 555)</label>
-                    <input type="text" id="angelNumberInput" maxlength="3" placeholder="e.g. 777" autocomplete="off" />
-                </div>
-                <div class="input-group">
-                    <label for="visitorName">Your Name</label>
-                    <input type="text" id="visitorName" placeholder="e.g. Alex" autocomplete="off" />
-                </div>
-                <button class="btn" style="background: #ca8a04;" onclick="claimAngelNumber()">
-                    Claim My Angel Message <span class="btn-arrow">➔</span>
-                </button>
-            </div>
+<section class="card angel-card" id="claim-angel-number">
+    <span class="card-badge" style="color: #b45309;">🌟 5. Claim Your Angel Number</span>
+    
+    <div id="angel-form" class="view active">
+        <h3 style="font-size: 1.15rem; margin-bottom: 6px; color: var(--text-main); font-family: 'Cinzel', serif;">Saw an Angel Number Today? (888, 777, 111...)</h3>
+        <p class="subtitle" style="margin-bottom: 14px; font-size: 0.85rem;">Enter the 2 or 3 digit angel number you saw on your clock or phone to claim its secret message!</p>
+        
+        <div class="input-group">
+            <label for="angelNumberInput">Enter Angel Number (e.g., 11, 777, 888, 555)</label>
+            <input type="text" id="angelNumberInput" maxlength="3" placeholder="e.g. 777" autocomplete="off" />
+        </div>
+        <div class="input-group">
+            <label for="visitorName">Your Name</label>
+            <input type="text" id="visitorName" placeholder="e.g. Alex" autocomplete="off" />
+        </div>
+        <button class="btn" style="background: #ca8a04;" onclick="claimAngelNumber()">
+            Claim My Angel Message <span class="btn-arrow">➔</span>
+        </button>
+    </div>
 
-            <div id="angel-result" class="view">
-                <div style="text-align: center;">
-                    <span class="result-badge" style="background: rgba(202, 138, 4, 0.15); color: #b45309; border-color: rgba(202, 138, 4, 0.4);" id="angelResultBadge">ANGEL NUMBER CLAIMED: 777</span>
-                    <h2 class="result-title" id="angelResultHeading">Cosmic Wealth & Fortune Incoming!</h2>
-                    <p class="result-desc" id="angelResultBody">
-                        Your guardian angels are aligning massive financial luck and positive breakthroughs for you right now. Get ready for a major blessing!
-                    </p>
-                </div>
-                <div class="action-grid">
-                    <button class="btn btn-social" onclick="shareAngelNumber()">💬 Share My Claimed Number on WhatsApp</button>
-                    <button class="btn-secondary" onclick="resetAngel()">🔄 Claim Another Number</button>
-                </div>
-            </div>
-        </section>
+    <div id="angel-result" class="view">
+        <div style="text-align: center;">
+            <span class="result-badge" style="background: rgba(202, 138, 4, 0.15); color: #b45309; border-color: rgba(202, 138, 4, 0.4);" id="angelResultBadge">ANGEL NUMBER CLAIMED: 777</span>
+            <h2 class="result-title" id="angelResultHeading">Cosmic Wealth & Fortune Incoming!</h2>
+            <p class="result-desc" id="angelResultBody">
+                Your guardian angels are aligning massive financial luck and positive breakthroughs for you right now. Get ready for a major blessing!
+            </p>
+        </div>
+        <div class="action-grid">
+            <button class="btn btn-social" onclick="shareAngelNumber()">💬 Share My Claimed Number on WhatsApp</button>
+            <button class="btn-secondary" onclick="resetAngel()">🔄 Claim Another Number</button>
+        </div>
+    </div>
+</section>
+        
         <!-- ====================================================================== -->
 
         <!-- CARD 6: LUCKY CODE GENERATOR -->
