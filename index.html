@@ -172,7 +172,7 @@
             box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.12);
         }
 
-        /* SMALLER, SLEEKER BUTTONS WITH VISIBLE ARROWS */
+        /* BUTTONS WITH VISIBLE ARROWS */
         .btn {
             width: 100%;
             padding: 12px 16px;
@@ -326,7 +326,7 @@
             background: #e4e4e7;
         }
 
-        /* CURIOSITY BRIDGE BOXES (Between Cards) */
+        /* CURIOSITY BRIDGE BOXES */
         .bridge-box {
             background: linear-gradient(135deg, rgba(124, 58, 237, 0.05), rgba(2, 132, 199, 0.05));
             border: 1px dashed rgba(124, 58, 237, 0.3);
@@ -345,6 +345,65 @@
         .bridge-box span {
             font-size: 0.75rem;
             color: var(--text-muted);
+        }
+
+        /* EXPERT PSYCHIC READER PROFILE CARD */
+        .expert-card {
+            background: var(--bg-card);
+            border: 1px solid #e4e4e7;
+            border-radius: 20px;
+            padding: 24px;
+            text-align: center;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+        }
+
+        .expert-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            margin: 0 auto 14px;
+            box-shadow: 0 6px 16px rgba(124, 58, 237, 0.25);
+            border: 3px solid #fff;
+        }
+
+        .expert-name {
+            font-family: 'Cinzel', serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 4px;
+        }
+
+        .expert-title {
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--primary);
+            font-weight: 700;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .expert-bio {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+
+        .expert-tagline {
+            background: #f1f0ea;
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 0.78rem;
+            color: var(--text-main);
+            font-weight: 600;
+            border: 1px solid #e4e4e7;
         }
 
         /* LONG SCROLL SECTIONS */
@@ -382,7 +441,7 @@
             line-height: 1.5;
         }
 
-        /* SINGLE ROW TESTIMONIALS INFINITE MARQUEE (600s Speed) */
+        /* SINGLE ROW TESTIMONIALS INFINITE MARQUEE */
         .testimonials-section {
             margin: 10px -16px;
             overflow: hidden;
@@ -453,7 +512,7 @@
             line-height: 1.4;
         }
 
-        /* FAQ Section */
+        /* ACCORDION FAQ STYLING */
         .faq-box {
             background: var(--bg-card);
             border: 1px solid #e4e4e7;
@@ -462,23 +521,57 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
         }
 
-        .faq-item + .faq-item {
-            margin-top: 10px;
-            padding-top: 10px;
-            border-top: 1px solid #f4f4f5;
+        .faq-item {
+            border-bottom: 1px solid #f4f4f5;
         }
 
-        .faq-item h5 {
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            padding: 12px 4px;
+            text-align: left;
+            font-family: inherit;
             font-size: 0.88rem;
             font-weight: 600;
-            margin-bottom: 4px;
             color: var(--text-main);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
 
-        .faq-item p {
+        .faq-question:hover {
+            color: var(--primary);
+        }
+
+        .faq-icon {
+            font-size: 1rem;
+            transition: transform 0.2s ease;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
             font-size: 0.78rem;
             color: var(--text-muted);
             line-height: 1.5;
+            padding: 0 4px;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 150px;
+            padding-bottom: 12px;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+            color: var(--primary);
         }
 
         footer.site-footer {
@@ -703,6 +796,17 @@
             </button>
         </section>
 
+        <!-- EXPERT PSYCHIC & TAROT READER PROFILE -->
+        <section class="expert-card">
+            <div class="expert-avatar">🔮</div>
+            <h3 class="expert-name">Elena Vance</h3>
+            <span class="expert-title">Master Tarot Reader & Energy Intuitive</span>
+            <p class="expert-bio">
+                With over 12 years of experience decoding astral harmonics and universal energy matrices, Elena helps seekers navigate pivotal life choices with clarity, positivity, and spiritual alignment.
+            </p>
+            <div class="expert-tagline">✨ "Your frequency shapes your reality. Tune into your highest potential today."</div>
+        </section>
+
         <!-- SECTION 5: DAILY COSMIC HIGHLIGHTS -->
         <section>
             <h3 class="section-title">🔮 2026 Energy Matrix Highlights</h3>
@@ -733,58 +837,88 @@
             </div>
         </section>
 
-        <!-- SECTION 7: 10 COMPREHENSIVE FREQUENTLY ASKED QUESTIONS -->
+        <!-- SECTION 7: 10 ACCORDION FREQUENTLY ASKED QUESTIONS -->
         <section class="faq-box">
             <h3 class="section-title" style="font-size: 1rem; margin-bottom: 10px;">💡 Frequently Asked Questions</h3>
             
             <div class="faq-item">
-                <h5>1. How does the Aura Frequency Scan work?</h5>
-                <p>The system analyzes your chosen birth cycle harmonics and name input against universal cyclical matrices to generate lighthearted personal insights for entertainment.</p>
+                <button class="faq-question">
+                    <span>1. How does the Aura Frequency Scan work?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">The system analyzes your chosen birth cycle harmonics and name input against universal cyclical matrices to generate lighthearted personal insights for entertainment.</div>
             </div>
             
             <div class="faq-item">
-                <h5>2. Is this service 100% free?</h5>
-                <p>Yes, all scans, synergy checks, and daily lucky code generators are completely free with zero hidden charges or subscriptions.</p>
+                <button class="faq-question">
+                    <span>2. Is this service 100% free?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">Yes, all scans, synergy checks, and daily lucky code generators are completely free with zero hidden charges or subscriptions.</div>
             </div>
 
             <div class="faq-item">
-                <h5>3. Do I need to register or create an account?</h5>
-                <p>No login or sign-up is required. You can instantly run scans and check compatibility without sharing personal credentials.</p>
+                <button class="faq-question">
+                    <span>3. Do I need to register or create an account?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">No login or sign-up is required. You can instantly run scans and check compatibility without sharing personal credentials.</div>
             </div>
 
             <div class="faq-item">
-                <h5>4. Is my personal data stored or private?</h5>
-                <p>Completely private! All calculations run directly inside your browser session, and no personal names or inputs are saved on our servers.</p>
+                <button class="faq-question">
+                    <span>4. Is my personal data stored or private?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">Completely private! All calculations run directly inside your browser session, and no personal names or inputs are saved on our servers.</div>
             </div>
 
             <div class="faq-item">
-                <h5>5. How often can I check my frequency matrix?</h5>
-                <p>You can run new scans as often as you like. Many users check at the start of every week or month to track shifting energy alignments.</p>
+                <button class="faq-question">
+                    <span>5. How often can I check my frequency matrix?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">You can run new scans as often as you like. Many users check at the start of every week or month to track shifting energy alignments.</div>
             </div>
 
             <div class="faq-item">
-                <h5>6. What does the Relationship Synergy Match measure?</h5>
-                <p>It calculates fun, lighthearted harmonic resonance between two names or signs to highlight emotional flow and mutual compatibility.</p>
+                <button class="faq-question">
+                    <span>6. What does the Relationship Synergy Match measure?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">It calculates fun, lighthearted harmonic resonance between two names or signs to highlight emotional flow and mutual compatibility.</div>
             </div>
 
             <div class="faq-item">
-                <h5>7. How do I unlock my Secret Admirer Initial?</h5>
-                <p>Simply enter your full name in the viral detector section, let the karmic scanner run, and discover your connected alphabetical frequency.</p>
+                <button class="faq-question">
+                    <span>7. How do I unlock my Secret Admirer Initial?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">Simply enter your full name in the viral detector section, let the karmic scanner run, and discover your connected alphabetical frequency.</div>
             </div>
 
             <div class="faq-item">
-                <h5>8. Can I share my results with friends?</h5>
-                <p>Yes! Every result screen features a direct one-tap WhatsApp share button so you can challenge or compare matches with your friends instantly.</p>
+                <button class="faq-question">
+                    <span>8. Can I share my results with friends?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">Yes! Every result screen features a direct one-tap WhatsApp share button so you can challenge or compare matches with your friends instantly.</div>
             </div>
 
             <div class="faq-item">
-                <h5>9. What are the Daily Lucky Codes based on?</h5>
-                <p>They are generated dynamically based on daily cyclical algorithms designed to provide positive daily motivation and focused mindset cues.</p>
+                <button class="faq-question">
+                    <span>9. What are the Daily Lucky Codes based on?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">They are generated dynamically based on daily cyclical algorithms designed to provide positive daily motivation and focused mindset cues.</div>
             </div>
 
             <div class="faq-item">
-                <h5>10. Is this platform meant for official guidance?</h5>
-                <p>This platform is designed strictly for entertainment, personal reflection, and positive daily inspiration purposes.</p>
+                <button class="faq-question">
+                    <span>10. Is this platform meant for official guidance?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">This platform is designed strictly for entertainment, personal reflection, and positive daily inspiration purposes.</div>
             </div>
         </section>
 
@@ -795,6 +929,23 @@
     </div>
 
     <script>
+        /* === ACCORDION FAQ LOGIC === */
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                const isActive = item.classList.contains('active');
+                
+                // Close all items
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+                
+                // If it wasn't active, open it
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
         /* === LIVE LOCAL TIME & DATE DETECTOR === */
         function updateGlobalClock() {
             const now = new Date();
