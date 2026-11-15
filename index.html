@@ -9,14 +9,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Cinzel:wght@600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-deep: #f7f6f2;       /* Cozy warm paper tone - zero eye strain day & night */
+            --bg-deep: #f7f6f2;       /* Cozy warm paper tone */
             --bg-card: #ffffff;       /* Crisp white cards */
-            --border-glow: rgba(124, 58, 237, 0.15);
+            --border-glow: rgba(124, 58, 237, 0.18);
             --primary: #7c3aed;       /* Rich violet */
             --primary-hover: #6d28d9;
             --accent: #0284c7;        /* Soft sky blue */
-            --text-main: #18181b;     /* Deep charcoal for smooth reading */
-            --text-muted: #71717a;    /* Balanced professional gray */
+            --text-main: #18181b;     /* Deep charcoal */
+            --text-muted: #71717a;    /* Professional gray */
             --transition: all 0.2s ease;
         }
 
@@ -28,7 +28,9 @@
 
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: var(--bg-deep);
+            /* Mystical Spiritual Aura Background Glow (Lightweight & Fast) */
+            background: radial-gradient(circle at 50% 0%, rgba(124, 58, 237, 0.12) 0%, rgba(2, 132, 199, 0.06) 35%, var(--bg-deep) 75%);
+            background-attachment: fixed;
             color: var(--text-main);
             min-height: 100vh;
             display: flex;
@@ -51,6 +53,17 @@
         header {
             text-align: center;
             padding-top: 10px;
+            position: relative;
+        }
+
+        /* Subtle Astrological Floating Symbols Vibe */
+        header::before {
+            content: "✨ 🌙 🔮 🌟";
+            display: block;
+            font-size: 1.1rem;
+            letter-spacing: 8px;
+            margin-bottom: 6px;
+            opacity: 0.75;
         }
 
         .brand-tag {
@@ -121,13 +134,13 @@
             border: 1px solid #e4e4e7;
         }
 
-        /* Card Container */
+        /* Card Container with Mystical Glow Border */
         .card {
             background: var(--bg-card);
-            border: 1px solid #e4e4e7;
+            border: 1px solid var(--border-glow);
             border-radius: 20px;
             padding: 22px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+            box-shadow: 0 10px 30px rgba(124, 58, 237, 0.06);
             position: relative;
         }
 
@@ -244,10 +257,10 @@
         .pulse-orb {
             width: 70px;
             height: 70px;
-            background: var(--primary);
+            background: radial-gradient(circle, var(--accent) 0%, var(--primary) 100%);
             border-radius: 50%;
             margin: 0 auto 16px;
-            box-shadow: 0 0 20px rgba(124, 58, 237, 0.3);
+            box-shadow: 0 0 25px rgba(124, 58, 237, 0.4);
             animation: pulseAnim 1.5s infinite ease-in-out;
         }
 
@@ -328,8 +341,8 @@
 
         /* CURIOSITY BRIDGE BOXES */
         .bridge-box {
-            background: linear-gradient(135deg, rgba(124, 58, 237, 0.05), rgba(2, 132, 199, 0.05));
-            border: 1px dashed rgba(124, 58, 237, 0.3);
+            background: linear-gradient(135deg, rgba(124, 58, 237, 0.06), rgba(2, 132, 199, 0.06));
+            border: 1px dashed rgba(124, 58, 237, 0.35);
             border-radius: 14px;
             padding: 14px 16px;
             text-align: center;
@@ -428,11 +441,11 @@
         /* EXPERT PSYCHIC & TAROT READER PROFILE */
         .expert-card {
             background: var(--bg-card);
-            border: 1px solid #e4e4e7;
+            border: 1px solid var(--border-glow);
             border-radius: 20px;
             padding: 24px;
             text-align: center;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+            box-shadow: 0 10px 30px rgba(124, 58, 237, 0.06);
         }
 
         .expert-avatar {
@@ -1094,18 +1107,16 @@
                 return;
             }
 
-            // Flip all cards, highlight chosen one
+            // Flip all cards
             for (let i = 0; i < 3; i++) {
                 const cardInner = document.getElementById(`cardInner${i}`);
                 cardInner.parentElement.classList.add('flipped');
-                
-                // Set specific name on the flipped front of each card
                 document.getElementById(`cardFront${i}`).innerHTML = `${tarotData[i].name} <small>Revealed</small>`;
             }
 
             localStorage.setItem('tarot_date', todayKey);
 
-            // Show clean separate result box below with description of the picked card
+            // Show clean result box below
             document.getElementById('tarotTitle').textContent = tarotData[index].name + " — Your Daily Guidance";
             document.getElementById('tarotDesc').textContent = tarotData[index].desc;
             document.getElementById('tarotResultBox').style.display = 'block';
