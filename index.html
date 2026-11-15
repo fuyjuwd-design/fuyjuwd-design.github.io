@@ -750,11 +750,11 @@
             </div>
         </section>
 
-        <!-- INFINITE FEED CONTAINER (AUTO-LOADS MORE CARDS ON SCROLL) -->
+        <!-- INFINITE FEED CONTAINER (STUNNING DYNAMIC CARDS) -->
         <div id="infiniteFeedContainer" style="display: flex; flex-direction: column; gap: 24px;"></div>
         
         <div id="infiniteLoader" style="text-align: center; padding: 20px; font-weight: 700; color: #6d28d9; font-size: 0.9rem;">
-            ✨ Scrolling for more cosmic vibes... ✨
+            ✨ Loading more cosmic vibrations... ✨
         </div>
 
         <!-- FOOTER -->
@@ -764,13 +764,38 @@
     </div>
 
     <script>
-        /* === INFINITE SCROLL / ENDLESS FEED SYSTEM === */
+        /* === DIVERSE INFINITE FEED SYSTEM === */
         const infinitePool = [
-            { badge: "🌟 SPIRIT ANIMAL", title: "Your Power Animal Today: The Mystical Wolf", desc: "You have strong intuitive instincts today. Trust your inner voice when making major choices." },
-            { badge: "🌙 MOON PHASE ENERGY", title: "Waxing Gibbous Phase Active", desc: "This phase brings high creative momentum. Perfect time to launch new ideas or creative projects." },
-            { badge: "⚡ CHAKRA ALIGNMENT", title: "Third Eye Chakra Opening", desc: "Your mental clarity is peaking. Expect sudden insightful realizations and great problem-solving ability today." },
-            { badge: "💖 DESTINY AFFIRMATION", title: "'Great Love & Abundance Flow to Me Effortlessly'", desc: "Repeat this powerful mantra 3 times today to unlock positive magnetic energy around you." },
-            { badge: "🔮 ANCIENT ZODIAC LUCK", title: "Cosmic Alignment Bonus", desc: "The universe is synchronizing your efforts with unexpected rewards. Keep your eyes open for lucky coincidences!" }
+            { 
+                style: "dark", 
+                badge: "🐺 DARK COSMIC VIBE", 
+                title: "Your Secret Spirit Animal: The Lunar Wolf", 
+                desc: "Your instinctual energy is peaking today. You will easily sense people's true intentions before they even speak." 
+            },
+            { 
+                style: "gold", 
+                badge: "💰 GOLDEN ABUNDANCE", 
+                title: "Unexpected Wealth Portal Unlocked", 
+                desc: "The planetary alignment points towards sudden financial ease or a pleasant monetary surprise in the coming days." 
+            },
+            { 
+                style: "neon", 
+                badge: "🔥 NEON PASSION ENERGY", 
+                title: "Magnetic Aura & High Charisma", 
+                desc: "Your charm factor is off the charts today! People will naturally gravitate towards your energy and ideas." 
+            },
+            { 
+                style: "purple", 
+                badge: "👁️ THIRD EYE AWAKENING", 
+                title: "Deep Intuition & Synchronicity", 
+                desc: "Pay close attention to repeating numbers and coincidences today—the universe is trying to send you a direct message." 
+            },
+            { 
+                style: "clean", 
+                badge: "🌿 PEACE & HARMONY", 
+                title: "Soul Balance & Inner Calm", 
+                desc: "Release past worries. A wave of peaceful, grounding energy is washing away your stress right now." 
+            }
         ];
 
         let poolIndex = 0;
@@ -778,26 +803,48 @@
             const container = document.getElementById('infiniteFeedContainer');
             if (!container) return;
 
-            // Load 2 cards at a time
+            // Load 2 cards with different styling themes per batch
             for (let i = 0; i < 2; i++) {
                 const item = infinitePool[poolIndex % infinitePool.length];
                 poolIndex++;
 
                 const cardDiv = document.createElement('div');
                 cardDiv.className = 'card';
-                cardDiv.style.background = '#ffffff';
-                cardDiv.style.border = '2px solid #8b5cf6';
+                
+                // Assign gorgeous distinct themes
+                if (item.style === 'dark') {
+                    cardDiv.style.background = 'linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%)';
+                    cardDiv.style.color = '#ffffff';
+                    cardDiv.style.border = '2px solid #a855f7';
+                } else if (item.style === 'gold') {
+                    cardDiv.style.background = 'linear-gradient(135deg, #fef9c3 0%, #fef3c7 100%)';
+                    cardDiv.style.color = '#0f172a';
+                    cardDiv.style.border = '2px solid #d97706';
+                } else if (item.style === 'neon') {
+                    cardDiv.style.background = 'linear-gradient(135deg, #4c0519 0%, #881337 100%)';
+                    cardDiv.style.color = '#ffffff';
+                    cardDiv.style.border = '2px solid #fb7185';
+                } else if (item.style === 'purple') {
+                    cardDiv.style.background = 'linear-gradient(135deg, #2e1065 0%, #581c87 100%)';
+                    cardDiv.style.color = '#ffffff';
+                    cardDiv.style.border = '2px solid #c084fc';
+                } else {
+                    cardDiv.style.background = '#ffffff';
+                    cardDiv.style.color = '#0f172a';
+                    cardDiv.style.border = '2px solid #94a3b8';
+                }
+
                 cardDiv.innerHTML = `
-                    <span class="card-badge" style="color: #7c3aed;">${item.badge}</span>
-                    <h3 style="font-size: 1.15rem; margin-bottom: 6px; font-family: 'Cinzel', serif; color: var(--text-main);">${item.title}</h3>
-                    <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; font-weight: 600; margin-bottom: 14px;">${item.desc}</p>
-                    <button class="btn" style="background: #7c3aed;" onclick="alert('✨ Vibe locked successfully! Share this energy with a friend.')">✨ Share This Vibe</button>
+                    <span class="card-badge" style="color: ${item.style === 'clean' || item.style === 'gold' ? '#b45309' : '#e2e8f0'};">${item.badge}</span>
+                    <h3 style="font-size: 1.15rem; margin-bottom: 6px; font-family: 'Cinzel', serif;">${item.title}</h3>
+                    <p style="font-size: 0.9rem; line-height: 1.6; font-weight: 600; margin-bottom: 14px; opacity: 0.95;">${item.desc}</p>
+                    <button class="btn" style="background: ${item.style === 'gold' ? '#d97706' : '#7c3aed'};" onclick="alert('✨ Vibe locked & saved! Keep scrolling for more cosmic surprises.')">✨ Claim This Vibe</button>
                 `;
                 container.appendChild(cardDiv);
             }
         }
 
-        // Detect when user scrolls near the bottom
+        // Detect scroll near bottom for endless feed
         window.addEventListener('scroll', () => {
             if ((window.innerHeight + window.scrollY) >= document.documentElement.scrollHeight - 300) {
                 loadMoreContent();
