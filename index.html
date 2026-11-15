@@ -5,15 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daily Vibe & Compatibility Check 2026</title>
     <meta name="description" content="Discover your daily tarot reading, love compatibility match, secret initial, and energy vibe. Instant, fun, and 100% free.">
-    <!-- Google Fonts - Professional Mystical Font Pairing Formula -->
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Google Fonts - Bold, Clear & Catchy Font Pairing Formula -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@700;800;900&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg-deep: #f2f1ec;
             --text-main: #0f172a;
-            --text-muted: #334155;
+            --text-muted: #1e293b; /* Darker & sharper for high readability */
             --transition: all 0.2s ease;
-            --font-heading: 'Cormorant Garamond', serif;
+            --font-heading: 'Outfit', sans-serif;
             --font-body: 'Plus Jakarta Sans', sans-serif;
         }
 
@@ -33,20 +33,23 @@
             flex-direction: column;
             justify-content: space-between;
             overflow-x: hidden;
+            font-weight: 600; /* Crisp body default */
         }
 
-        /* FONT PAIRING FORMULA: HEADINGS & TITLES */
+        /* BOLD & CATCHY HEADINGS FORMULA */
         h1, h2, h3, h4, h5, h6, 
         .expert-name, 
         .result-title, 
         .card-front {
             font-family: var(--font-heading) !important;
-            letter-spacing: 0.5px;
+            font-weight: 800 !important;
+            letter-spacing: -0.5px;
         }
 
-        /* FONT PAIRING FORMULA: PARAGRAPHS & BODY TEXT */
-        p, span, label, input, select, button, .t-text, .faq-answer, .expert-bio {
+        /* CLEAR & BOLD PARAGRAPHS FORMULA */
+        p, span, label, input, select, button, .t-text, .faq-answer, .expert-bio, .result-desc {
             font-family: var(--font-body) !important;
+            font-weight: 600 !important; /* Thick and easy to read */
         }
 
         .container {
@@ -74,28 +77,28 @@
         }
 
         .brand-tag {
-            font-size: 0.78rem;
+            font-size: 0.8rem;
             text-transform: uppercase;
             letter-spacing: 2px;
             color: #6d28d9;
-            font-weight: 800;
+            font-weight: 900;
             margin-bottom: 8px;
             display: block;
         }
 
         h1 {
-            font-size: 1.8rem;
-            font-weight: 700;
+            font-size: 1.7rem;
+            font-weight: 900 !important;
             color: var(--text-main);
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             line-height: 1.25;
         }
 
         p.subtitle {
             color: var(--text-muted);
-            font-size: 0.95rem;
-            line-height: 1.5;
-            font-weight: 600;
+            font-size: 0.98rem;
+            line-height: 1.55;
+            font-weight: 700 !important;
             margin-bottom: 14px;
         }
 
@@ -103,7 +106,7 @@
             background: #ffffff;
             border: 2px solid #cbd5e1;
             border-radius: 14px;
-            padding: 10px 14px;
+            padding: 12px 16px;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -118,16 +121,16 @@
         }
 
         .live-date {
-            font-size: 0.78rem;
+            font-size: 0.8rem;
             color: #6d28d9;
-            font-weight: 800;
+            font-weight: 900;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
 
         .live-time {
-            font-size: 0.95rem;
-            font-weight: 700;
+            font-size: 0.98rem;
+            font-weight: 800;
             color: var(--text-main);
             font-family: monospace;
             background: #f1f5f9;
@@ -187,50 +190,50 @@
         }
         .avatar {
             width: 45px; height: 45px; background: #ffffff; color: #7c3aed;
-            border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; font-weight: 700;
+            border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; font-weight: 800;
         }
-        .status { font-size: 0.75rem; color: #e2e8f0; display: flex; align-items: center; gap: 5px; margin-top: 2px; }
+        .status { font-size: 0.78rem; color: #e2e8f0; display: flex; align-items: center; gap: 5px; margin-top: 2px; font-weight: 700; }
         .status-dot { width: 8px; height: 8px; background: #22c55e; border-radius: 50%; display: inline-block; }
         .chat-messages {
             height: 340px; padding: 16px; overflow-y: auto; display: flex; flex-direction: column; gap: 12px; background: #f8fafc;
         }
-        .message { max-width: 85%; padding: 12px 16px; border-radius: 14px; font-size: 0.88rem; line-height: 1.5; word-wrap: break-word; }
+        .message { max-width: 85%; padding: 12px 16px; border-radius: 14px; font-size: 0.92rem; line-height: 1.55; word-wrap: break-word; font-weight: 700 !important; }
         .message.incoming { background: #ffffff; color: #0f172a; align-self: flex-start; border: 1px solid #cbd5e1; border-bottom-left-radius: 4px; }
         .message.outgoing { background: #7c3aed; color: #ffffff; align-self: flex-end; border-bottom-right-radius: 4px; }
         .quick-replies { padding: 12px; background: #ffffff; border-top: 1px solid #cbd5e1; display: flex; flex-direction: column; gap: 8px; }
-        .quick-title { font-size: 0.75rem; font-weight: 700; color: #64748b; text-transform: uppercase; }
+        .quick-title { font-size: 0.78rem; font-weight: 800; color: #475569; text-transform: uppercase; }
         .chips-grid { display: flex; flex-wrap: wrap; gap: 6px; }
         .chip {
             background: #f1f5f9; border: 1px solid #cbd5e1; padding: 6px 12px; border-radius: 20px;
-            font-size: 0.78rem; font-weight: 600; color: #334155; cursor: pointer; transition: all 0.2s ease;
+            font-size: 0.8rem; font-weight: 700; color: #1e293b; cursor: pointer; transition: all 0.2s ease;
         }
         .chip:hover { background: #7c3aed; color: white; border-color: #7c3aed; }
         .chat-input-area { padding: 12px 16px; background: #ffffff; border-top: 1px solid #cbd5e1; display: flex; gap: 8px; }
         .chat-input-area input {
-            flex: 1; padding: 10px 14px; border: 1px solid #cbd5e1; border-radius: 10px; font-size: 0.9rem; outline: none;
+            flex: 1; padding: 10px 14px; border: 1px solid #cbd5e1; border-radius: 10px; font-size: 0.95rem; font-weight: 700; outline: none;
         }
         .chat-input-area input:focus { border-color: #7c3aed; box-shadow: 0 0 0 2px rgba(124, 58, 237, 0.15); }
-        .chat-send-btn { background: #7c3aed; color: white; border: none; padding: 0 16px; border-radius: 10px; font-weight: 700; cursor: pointer; }
+        .chat-send-btn { background: #7c3aed; color: white; border: none; padding: 0 16px; border-radius: 10px; font-weight: 800; cursor: pointer; }
         .chat-send-btn:hover { background: #6d28d9; }
 
         .card-badge {
-            font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 800; margin-bottom: 10px; display: block;
+            font-size: 0.78rem; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 900; margin-bottom: 10px; display: block;
         }
 
         .input-group { margin-bottom: 16px; }
-        label { display: block; font-size: 0.85rem; font-weight: 700; margin-bottom: 6px; color: var(--text-main); }
+        label { display: block; font-size: 0.88rem; font-weight: 800; margin-bottom: 6px; color: var(--text-main); }
         .tarot-card-section label { color: #f8fafc; }
 
         input, select {
-            width: 100%; padding: 12px 14px; background: #ffffff; border: 1px solid #94a3b8; border-radius: 10px; color: var(--text-main); font-size: 0.95rem; font-weight: 600;
+            width: 100%; padding: 12px 14px; background: #ffffff; border: 1px solid #94a3b8; border-radius: 10px; color: var(--text-main); font-size: 0.98rem; font-weight: 700;
         }
         .tarot-card-section input { background: rgba(255, 255, 255, 0.1); color: white; border-color: #a855f7; }
 
         .btn {
-            width: 100%; padding: 12px 16px; color: white; border: none; border-radius: 10px; font-size: 0.95rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; transition: var(--transition);
+            width: 100%; padding: 12px 16px; color: white; border: none; border-radius: 10px; font-size: 0.98rem; font-weight: 800; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; transition: var(--transition);
         }
         .btn-arrow {
-            display: inline-flex; align-items: center; justify-content: center; font-size: 1.1rem; font-weight: 800; background: rgba(255, 255, 255, 0.25); width: 24px; height: 24px; border-radius: 50%;
+            display: inline-flex; align-items: center; justify-content: center; font-size: 1.1rem; font-weight: 900; background: rgba(255, 255, 255, 0.25); width: 24px; height: 24px; border-radius: 50%;
         }
         .btn-social { background: #16a34a !important; box-shadow: 0 4px 12px rgba(22, 163, 74, 0.3) !important; }
 
@@ -250,22 +253,22 @@
         .tarot-card-section .progress-bar-container { background: rgba(255, 255, 255, 0.2); }
         .progress-bar { width: 0%; height: 100%; background: var(--text-main); transition: width 0.1s linear; }
         .tarot-card-section .progress-bar { background: #ffffff; }
-        .status-text { font-size: 0.88rem; color: var(--text-muted); font-weight: 700; }
+        .status-text { font-size: 0.92rem; color: var(--text-muted); font-weight: 800; }
         .tarot-card-section .status-text { color: #e2e8f0; }
 
         .result-badge {
-            display: inline-block; background: rgba(15, 23, 42, 0.08); color: var(--text-main); padding: 5px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 800; margin-bottom: 12px; border: 1px solid rgba(15, 23, 42, 0.2);
+            display: inline-block; background: rgba(15, 23, 42, 0.08); color: var(--text-main); padding: 5px 12px; border-radius: 20px; font-size: 0.78rem; font-weight: 900; margin-bottom: 12px; border: 1px solid rgba(15, 23, 42, 0.2);
         }
-        .result-title { font-size: 1.35rem; font-weight: 700; margin-bottom: 10px; color: var(--text-main); }
-        .result-desc { font-size: 0.92rem; color: var(--text-muted); line-height: 1.6; font-weight: 600; margin-bottom: 20px; }
+        .result-title { font-size: 1.4rem; font-weight: 900 !important; margin-bottom: 10px; color: var(--text-main); }
+        .result-desc { font-size: 0.98rem; color: var(--text-muted); line-height: 1.6; font-weight: 700 !important; margin-bottom: 20px; }
         .action-grid { display: grid; gap: 10px; }
         .btn-secondary {
-            background: #ffffff; border: 2px solid #94a3b8; color: var(--text-main); padding: 12px; border-radius: 10px; font-weight: 700; font-size: 0.9rem; cursor: pointer; text-align: center;
+            background: #ffffff; border: 2px solid #94a3b8; color: var(--text-main); padding: 12px; border-radius: 10px; font-weight: 800; font-size: 0.95rem; cursor: pointer; text-align: center;
         }
 
-        .bridge-box { background: rgba(255, 255, 255, 0.8); border: 2px dashed #94a3b8; border-radius: 14px; padding: 14px 16px; text-align: center; }
-        .bridge-box p { font-size: 0.88rem; font-weight: 800; color: #6d28d9; margin-bottom: 4px; }
-        .bridge-box span { font-size: 0.78rem; color: var(--text-muted); font-weight: 700; }
+        .bridge-box { background: rgba(255, 255, 255, 0.9); border: 2px dashed #94a3b8; border-radius: 14px; padding: 14px 16px; text-align: center; }
+        .bridge-box p { font-size: 0.92rem; font-weight: 900; color: #6d28d9; margin-bottom: 4px; }
+        .bridge-box span { font-size: 0.8rem; color: var(--text-muted); font-weight: 800; }
 
         .tarot-deck { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 16px 0; perspective: 1000px; }
         .tarot-card { background: transparent; height: 130px; cursor: pointer; perspective: 1000px; }
@@ -277,24 +280,24 @@
             position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 14px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 8px;
         }
         .card-back { background: linear-gradient(135deg, #4f46e5, #312e81); color: white; border: 2px solid rgba(192, 132, 252, 0.4); font-size: 1.5rem; }
-        .card-back span { font-size: 0.68rem; letter-spacing: 1px; text-transform: uppercase; font-weight: 800; margin-top: 4px; color: #e2e8f0; }
-        .card-front { background: #ffffff; color: #1e1b4b; border: 2px solid #c084fc; transform: rotateY(180deg); font-size: 0.95rem; font-weight: 700; gap: 4px; }
-        .card-front small { font-size: 0.68rem; color: #64748b; font-weight: 600; font-family: var(--font-body) !important; }
+        .card-back span { font-size: 0.72rem; letter-spacing: 1px; text-transform: uppercase; font-weight: 900; margin-top: 4px; color: #e2e8f0; }
+        .card-front { background: #ffffff; color: #1e1b4b; border: 2px solid #c084fc; transform: rotateY(180deg); font-size: 0.98rem; font-weight: 900 !important; gap: 4px; }
+        .card-front small { font-size: 0.7rem; color: #475569; font-weight: 800; }
 
         .expert-card { background: #ffffff; border: 2px solid #cbd5e1; border-radius: 20px; padding: 24px; text-align: center; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05); }
         .expert-avatar {
             width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, #7c3aed, #e11d48); display: flex; align-items: center; justify-content: center; font-size: 2.2rem; margin: 0 auto 14px; border: 3px solid #fff;
         }
-        .expert-name { font-size: 1.4rem; font-weight: 700; color: var(--text-main); margin-bottom: 4px; }
-        .expert-title { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 1px; color: #7c3aed; font-weight: 800; margin-bottom: 12px; display: block; }
-        .expert-bio { font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; font-weight: 600; margin-bottom: 16px; }
-        .expert-tagline { background: #f1f5f9; padding: 8px 12px; border-radius: 8px; font-size: 0.8rem; color: var(--text-main); font-weight: 700; border: 1px solid #cbd5e1; }
+        .expert-name { font-size: 1.45rem; font-weight: 900 !important; color: var(--text-main); margin-bottom: 4px; }
+        .expert-title { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: #7c3aed; font-weight: 900; margin-bottom: 12px; display: block; }
+        .expert-bio { font-size: 0.92rem; color: var(--text-muted); line-height: 1.6; font-weight: 700 !important; margin-bottom: 16px; }
+        .expert-tagline { background: #f1f5f9; padding: 8px 12px; border-radius: 8px; font-size: 0.85rem; color: var(--text-main); font-weight: 800; border: 1px solid #cbd5e1; }
 
-        .section-title { font-size: 1.35rem; font-weight: 700; margin-bottom: 12px; color: var(--text-main); text-align: center; }
+        .section-title { font-size: 1.4rem; font-weight: 900 !important; margin-bottom: 12px; color: var(--text-main); text-align: center; }
         .insight-grid { display: grid; gap: 12px; }
         .insight-card { background: #ffffff; border: 2px solid #cbd5e1; border-radius: 12px; padding: 16px; box-shadow: 0 4px 10px rgba(15, 23, 42, 0.04); }
-        .insight-card h4 { font-size: 1.15rem; margin-bottom: 6px; color: #7c3aed; font-weight: 700; }
-        .insight-card p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; font-weight: 600; }
+        .insight-card h4 { font-size: 1.15rem; margin-bottom: 6px; color: #7c3aed; font-weight: 900 !important; }
+        .insight-card p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; font-weight: 700 !important; }
 
         .testimonials-section { margin: 10px -16px; overflow: hidden; }
         .marquee-wrapper { display: flex; flex-direction: column; position: relative; }
@@ -302,22 +305,22 @@
         @keyframes scrollSingle { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
         .t-card { background: #ffffff; border: 2px solid #cbd5e1; border-radius: 12px; padding: 14px; width: 260px; flex-shrink: 0; box-shadow: 0 4px 10px rgba(15, 23, 42, 0.05); }
         .t-header { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
-        .t-avatar { width: 30px; height: 30px; border-radius: 50%; background: #7c3aed; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.75rem; color: #fff; }
-        .t-meta h5 { font-size: 0.95rem; font-weight: 800; color: var(--text-main); }
-        .t-meta span { font-size: 0.7rem; color: #7c3aed; font-weight: 700; }
-        .t-text { font-size: 0.8rem; color: var(--text-muted); line-height: 1.5; font-weight: 600; }
+        .t-avatar { width: 30px; height: 30px; border-radius: 50%; background: #7c3aed; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 0.78rem; color: #fff; }
+        .t-meta h5 { font-size: 0.95rem; font-weight: 900; color: var(--text-main); }
+        .t-meta span { font-size: 0.72rem; color: #7c3aed; font-weight: 800; }
+        .t-text { font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; font-weight: 700 !important; }
 
         .faq-box { background: #ffffff; border: 2px solid #cbd5e1; border-radius: 16px; padding: 16px; box-shadow: 0 4px 10px rgba(15, 23, 42, 0.05); }
         .faq-item { border-bottom: 1px solid #cbd5e1; }
         .faq-item:last-child { border-bottom: none; }
         .faq-question {
-            width: 100%; background: none; border: none; padding: 14px 4px; text-align: left; font-size: 0.95rem; font-weight: 800; color: var(--text-main); cursor: pointer; display: flex; align-items: center; justify-content: space-between;
+            width: 100%; background: none; border: none; padding: 14px 4px; text-align: left; font-size: 0.98rem; font-weight: 900 !important; color: var(--text-main); cursor: pointer; display: flex; align-items: center; justify-content: space-between;
         }
-        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease; font-size: 0.83rem; color: var(--text-muted); line-height: 1.6; font-weight: 600; padding: 0 4px; }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease; font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; font-weight: 700 !important; padding: 0 4px; }
         .faq-item.active .faq-answer { max-height: 150px; padding-bottom: 14px; }
         .faq-item.active .faq-icon { transform: rotate(45deg); color: #7c3aed; }
 
-        footer.site-footer { text-align: center; padding: 16px; font-size: 0.78rem; color: var(--text-muted); font-weight: 700; border-top: 2px solid #cbd5e1; margin-top: 10px; }
+        footer.site-footer { text-align: center; padding: 16px; font-size: 0.82rem; color: var(--text-muted); font-weight: 800; border-top: 2px solid #cbd5e1; margin-top: 10px; }
     </style>
 </head>
 <body>
@@ -368,7 +371,7 @@
             <div id="aura-scanner" class="view">
                 <div class="scanner-box">
                     <div class="pulse-orb"></div>
-                    <h3 style="font-size: 1.15rem; margin-bottom: 6px; font-weight: 700;">Scanning your energy...</h3>
+                    <h3 style="font-size: 1.15rem; margin-bottom: 6px;">Scanning your energy...</h3>
                     <p class="status-text" id="auraStatus">Mixing cosmic vibes...</p>
                     <div class="progress-bar-container">
                         <div class="progress-bar" id="auraProgress"></div>
@@ -400,8 +403,8 @@
             <span class="card-badge" style="color: #e11d48;">❤️ 2. Soulmate & Compatibility Match</span>
             
             <div id="bond-form" class="view active">
-                <h3 style="font-size: 1.25rem; margin-bottom: 6px; color: var(--text-main);">Crush & Relationship Compatibility Match</h3>
-                <p class="subtitle" style="margin-bottom: 14px; font-size: 0.88rem;">Check your emotional synergy percentage with your partner, crush, or best friend instantly.</p>
+                <h3 style="font-size: 1.3rem; margin-bottom: 6px; color: var(--text-main);">Crush & Relationship Compatibility Match</h3>
+                <p class="subtitle" style="margin-bottom: 14px; font-size: 0.92rem;">Check your emotional synergy percentage with your partner, crush, or best friend instantly.</p>
                 
                 <div class="input-group">
                     <label for="p1Name">Your Name</label>
@@ -419,7 +422,7 @@
             <div id="bond-scanner" class="view">
                 <div class="scanner-box">
                     <div class="pulse-orb" style="background: #e11d48; box-shadow: 0 0 25px rgba(225, 29, 72, 0.4);"></div>
-                    <h3 style="font-size: 1.15rem; margin-bottom: 6px; font-weight: 700;">Matching Names...</h3>
+                    <h3 style="font-size: 1.15rem; margin-bottom: 6px;">Matching Names...</h3>
                     <p class="status-text" id="bondStatus">Calculating emotional compatibility...</p>
                     <div class="progress-bar-container">
                         <div class="progress-bar" id="bondProgress" style="background: #e11d48;"></div>
@@ -449,8 +452,8 @@
         <!-- CARD 3: DAILY TAROT DRAW -->
         <section class="card tarot-card-section" style="text-align: center;">
             <span class="card-badge">✨ 3. Daily Tarot Draw</span>
-            <h3 style="font-size: 1.25rem; margin-bottom: 6px;">Pick 1 Card for Today's Guidance</h3>
-            <p class="subtitle" style="margin-bottom: 14px; font-size: 0.88rem;">Tap any mystical card below to reveal your message.</p>
+            <h3 style="font-size: 1.3rem; margin-bottom: 6px; color: #ffffff;">Pick 1 Card for Today's Guidance</h3>
+            <p class="subtitle" style="margin-bottom: 14px; font-size: 0.92rem; color: #e2e8f0;">Tap any mystical card below to reveal your message.</p>
             
             <div class="tarot-deck" id="tarotDeck">
                 <div class="tarot-card" onclick="pickTarotCard(0)">
@@ -475,9 +478,9 @@
 
             <div id="tarotResultBox" style="display: none; margin-top: 14px; background: rgba(255, 255, 255, 0.95); border: 2px solid #c084fc; border-radius: 12px; padding: 16px; text-align: left; color: #0f172a;">
                 <span class="result-badge" style="margin-bottom: 8px;">TAROT INSIGHT UNLOCKED</span>
-                <h4 id="tarotTitle" style="font-size: 1.15rem; font-weight: 700; color: #1e1b4b; margin-bottom: 6px;"></h4>
-                <p id="tarotDesc" style="font-size: 0.85rem; color: #334155; line-height: 1.6; font-weight: 600; margin-bottom: 14px;"></p>
-                <button class="btn btn-social" style="font-size: 0.85rem; padding: 10px;" onclick="shareTarot()">💬 Share Tarot Reading on WhatsApp</button>
+                <h4 id="tarotTitle" style="font-size: 1.15rem; color: #1e1b4b; margin-bottom: 6px;"></h4>
+                <p id="tarotDesc" style="font-size: 0.88rem; color: #334155; line-height: 1.6; margin-bottom: 14px;"></p>
+                <button class="btn btn-social" style="font-size: 0.88rem; padding: 10px;" onclick="shareTarot()">💬 Share Tarot Reading on WhatsApp</button>
             </div>
         </section>
 
@@ -492,8 +495,8 @@
             <span class="card-badge" style="color: #0284c7;">💌 4. Secret Initial Finder</span>
 
             <div id="viral-form" class="view active">
-                <h3 style="font-size: 1.25rem; margin-bottom: 6px; color: var(--text-main);">Secret Crush Initial Detector</h3>
-                <p class="subtitle" style="margin-bottom: 12px; font-size: 0.88rem;">Find out the first letter of the person who has a secret crush on you or thinks of you often.</p>
+                <h3 style="font-size: 1.3rem; margin-bottom: 6px; color: var(--text-main);">Secret Crush Initial Detector</h3>
+                <p class="subtitle" style="margin-bottom: 12px; font-size: 0.92rem;">Find out the first letter of the person who has a secret crush on you or thinks of you often.</p>
                 <div class="input-group">
                     <label for="viralName">Enter Your Full Name</label>
                     <input type="text" id="viralName" placeholder="e.g. Jessica Miller" autocomplete="off" />
@@ -506,7 +509,7 @@
             <div id="viral-scanner" class="view">
                 <div class="scanner-box">
                     <div class="pulse-orb" style="background: #0284c7; box-shadow: 0 0 25px rgba(2, 132, 199, 0.4);"></div>
-                    <h3 style="font-size: 1.15rem; margin-bottom: 6px; font-weight: 700;">Searching Secret Letters...</h3>
+                    <h3 style="font-size: 1.15rem; margin-bottom: 6px;">Searching Secret Letters...</h3>
                     <p class="status-text">Unlocking admirer signals...</p>
                     <div class="progress-bar-container">
                         <div class="progress-bar" id="viralProgress" style="background: #0284c7;"></div>
@@ -532,8 +535,8 @@
             <span class="card-badge" style="color: #b45309;">🌟 5. Claim Your Angel Number</span>
             
             <div id="angel-form" class="view active">
-                <h3 style="font-size: 1.25rem; margin-bottom: 6px; color: var(--text-main);">Saw an Angel Number Today? (888, 777, 111...)</h3>
-                <p class="subtitle" style="margin-bottom: 14px; font-size: 0.88rem;">Enter the 2 or 3 digit angel number you saw on your clock or phone to claim its secret message!</p>
+                <h3 style="font-size: 1.3rem; margin-bottom: 6px; color: var(--text-main);">Saw an Angel Number Today? (888, 777, 111...)</h3>
+                <p class="subtitle" style="margin-bottom: 14px; font-size: 0.92rem;">Enter the 2 or 3 digit angel number you saw on your clock or phone to claim its secret message!</p>
                 
                 <div class="input-group">
                     <label for="angelNumberInput">Enter Angel Number (e.g., 11, 777, 888, 555)</label>
@@ -566,11 +569,11 @@
         <!-- CARD 6: LUCKY CODE GENERATOR -->
         <section class="card lucky-card">
             <span class="card-badge" style="color: #d97706;">✨ 6. Daily Lucky Code</span>
-            <h3 style="font-size: 1.25rem; margin-bottom: 6px; color: var(--text-main);">Today's Lucky Color & Number</h3>
-            <p class="subtitle" style="margin-bottom: 14px; font-size: 0.88rem;">Tap below to instantly get your lucky details for today.</p>
+            <h3 style="font-size: 1.3rem; margin-bottom: 6px; color: var(--text-main);">Today's Lucky Color & Number</h3>
+            <p class="subtitle" style="margin-bottom: 14px; font-size: 0.92rem;">Tap below to instantly get your lucky details for today.</p>
             
             <div id="luckyBox" style="background: #ffffff; border: 2px solid #cbd5e1; border-radius: 10px; padding: 14px; margin-bottom: 14px;">
-                <span id="luckyResultText" style="font-size: 0.95rem; font-weight: 800; color: #d97706;">Tap button to get your lucky code...</span>
+                <span id="luckyResultText" style="font-size: 1rem; font-weight: 900; color: #d97706;">Tap button to get your lucky code...</span>
             </div>
 
             <button class="btn" style="background: #d97706;" onclick="generateLuckyCode()">
@@ -583,7 +586,7 @@
             <div class="chat-header">
                 <div class="avatar">👩🏻</div>
                 <div>
-                    <h3 style="font-size: 1.15rem; font-weight: 700; color: #ffffff;">Jessica ✨ (Astrology & Vibe AI)</h3>
+                    <h3 style="font-size: 1.15rem; color: #ffffff;">Jessica ✨ (Astrology & Vibe AI)</h3>
                     <div class="status"><span class="status-dot"></span> Online & Ready to Answer</div>
                 </div>
             </div>
@@ -703,7 +706,7 @@
 
         <!-- SECTION: 10 ACCORDION FREQUENTLY ASKED QUESTIONS -->
         <section class="faq-box">
-            <h3 class="section-title" style="font-size: 1.15rem; margin-bottom: 10px;">💡 Frequently Asked Questions</h3>
+            <h3 class="section-title" style="font-size: 1.2rem; margin-bottom: 10px;">💡 Frequently Asked Questions</h3>
             
             <div class="faq-item">
                 <button class="faq-question"><span>1. Are these checks free to use?</span><span class="faq-icon">+</span></button>
@@ -759,7 +762,7 @@
         <!-- INFINITE FEED CONTAINER -->
         <div id="infiniteFeedContainer" style="display: flex; flex-direction: column; gap: 24px;"></div>
         
-        <div id="infiniteLoader" style="text-align: center; padding: 20px; font-weight: 700; color: #6d28d9; font-size: 0.9rem;">
+        <div id="infiniteLoader" style="text-align: center; padding: 20px; font-weight: 800; color: #6d28d9; font-size: 0.95rem;">
             ✨ Loading more cosmic checks... ✨
         </div>
 
@@ -831,8 +834,8 @@
                             <span class="card-badge" style="color: ${item.color === '#ffffff' ? '#d8b4fe' : item.btnBg}; margin-bottom: 0;">${item.badge}</span>
                             <span style="font-size: 1.4rem; background: rgba(255,255,255,0.2); padding: 4px 8px; border-radius: 10px;">${item.avatar}</span>
                         </div>
-                        <h3 style="font-size: 1.25rem; margin-bottom: 6px;">${item.title}</h3>
-                        <p style="font-size: 0.88rem; line-height: 1.5; font-weight: 600; margin-bottom: 14px; opacity: 0.95;">${item.desc}</p>
+                        <h3 style="font-size: 1.3rem; margin-bottom: 6px;">${item.title}</h3>
+                        <p style="font-size: 0.92rem; line-height: 1.55; font-weight: 700; margin-bottom: 14px;">${item.desc}</p>
                         
                         <div class="input-group">
                             <label style="color: ${item.color};">${item.input1}</label>
@@ -849,7 +852,7 @@
 
                     <div id="${cardId}_scanner" class="view" style="text-align: center; padding: 20px 0;">
                         <div class="pulse-orb" style="background: ${item.btnBg};"></div>
-                        <h3 style="font-size: 1.15rem; margin-bottom: 6px; font-weight: 700; color: ${item.color};">Scanning cosmic frequency...</h3>
+                        <h3 style="font-size: 1.15rem; margin-bottom: 6px; font-weight: 800; color: ${item.color};">Scanning cosmic frequency...</h3>
                         <div class="progress-bar-container" style="background: rgba(0,0,0,0.1);">
                             <div class="progress-bar" id="${cardId}_bar" style="background: ${item.btnBg}; width: 0%;"></div>
                         </div>
@@ -857,8 +860,8 @@
 
                     <div id="${cardId}_result" class="view" style="text-align: center;">
                         <span class="result-badge" id="${cardId}_rbadge" style="background: rgba(255,255,255,0.2); color: ${item.color};">RESULT UNLOCKED</span>
-                        <h2 class="result-title" id="${cardId}_rtitle" style="color: ${item.color}; font-size: 1.25rem; margin-bottom: 8px;"></h2>
-                        <p class="result-desc" id="${cardId}_rdesc" style="color: ${item.color}; font-size: 0.88rem; margin-bottom: 16px; opacity: 0.95;"></p>
+                        <h2 class="result-title" id="${cardId}_rtitle" style="color: ${item.color}; font-size: 1.3rem; margin-bottom: 8px;"></h2>
+                        <p class="result-desc" id="${cardId}_rdesc" style="color: ${item.color}; font-size: 0.92rem; margin-bottom: 16px; font-weight: 700;"></p>
                         <div class="action-grid">
                             <button class="btn btn-social" onclick="shareLoopResult('${cardId}')">💬 Share Result on WhatsApp</button>
                             <button class="btn-secondary" style="color: #0f172a;" onclick="resetLoopCard('${cardId}')">🔄 Scan Again</button>
