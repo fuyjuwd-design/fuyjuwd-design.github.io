@@ -270,6 +270,49 @@
         .bridge-box p { font-size: 0.92rem; font-weight: 900; color: #6d28d9; margin-bottom: 4px; }
         .bridge-box span { font-size: 0.8rem; color: var(--text-muted); font-weight: 800; }
 
+        /* ZODIAC SIGNS GRID SECTION */
+        .zodiac-section {
+            background: #ffffff;
+            border: 2px solid #8b5cf6;
+            border-radius: 20px;
+            padding: 24px;
+            box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+        }
+        .zodiac-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-top: 14px;
+        }
+        .zodiac-item {
+            background: #f8fafc;
+            border: 2px solid #cbd5e1;
+            border-radius: 14px;
+            padding: 14px;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .zodiac-item:hover {
+            border-color: #7c3aed;
+            background: #f3e8ff;
+            transform: translateY(-2px);
+        }
+        .z-icon { font-size: 2rem; margin-bottom: 4px; display: block; }
+        .z-name { font-size: 1rem; font-weight: 900; color: var(--text-main); }
+        .z-date { font-size: 0.75rem; font-weight: 800; color: #7c3aed; margin-top: 2px; display: block; }
+
+        .zodiac-modal {
+            display: none;
+            background: #f5f3ff;
+            border: 2px solid #7c3aed;
+            border-radius: 14px;
+            padding: 16px;
+            margin-top: 16px;
+            text-align: center;
+        }
+        .zodiac-modal.active { display: block; }
+
         .tarot-deck { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 16px 0; perspective: 1000px; }
         .tarot-card { background: transparent; height: 130px; cursor: pointer; perspective: 1000px; }
         .card-inner {
@@ -340,7 +383,7 @@
             </div>
 
             <h1>What's Your Hidden Energy Vibe & Compatibility Score Today?</h1>
-            <p class="subtitle">Quick fun checks to discover your daily energy, love compatibility, tarot card, and secret initial!</p>
+            <p class="subtitle">Quick fun checks to discover your daily energy, love compatibility, zodiac sign, and tarot card!</p>
         </header>
 
         <!-- CARD 1: MAIN AURA SCANNER -->
@@ -443,7 +486,84 @@
             </div>
         </section>
 
-        <!-- CURIOSITY BRIDGE 2 -->
+        <!-- SECTION: ALL 12 ZODIAC SIGNS & HOROSCOPES -->
+        <section class="zodiac-section">
+            <span class="card-badge" style="color: #7c3aed;">✨ 3. All 12 Zodiac Signs & Horoscopes</span>
+            <h3 style="font-size: 1.3rem; margin-bottom: 6px; color: var(--text-main);">Tap Your Zodiac Sign for Daily Guidance</h3>
+            <p class="subtitle" style="margin-bottom: 12px; font-size: 0.92rem;">Explore your sign's date, element, and daily prediction instantly.</p>
+            
+            <div class="zodiac-grid">
+                <div class="zodiac-item" onclick="openZodiac('Aries ♈', 'March 21 - April 19', '🔥 Fire Sign', 'Your energy is peaking today! Bold actions and leadership will bring wonderful rewards.')">
+                    <span class="z-icon">♈</span>
+                    <span class="z-name">Aries</span>
+                    <span class="z-date">Mar 21 - Apr 19</span>
+                </div>
+                <div class="zodiac-item" onclick="openZodiac('Taurus ♉', 'April 20 - May 20', '🌿 Earth Sign', 'Grounded stability and financial abundance are aligning for you today. Trust your steady pace.')">
+                    <span class="z-icon">♉</span>
+                    <span class="z-name">Taurus</span>
+                    <span class="z-date">Apr 20 - May 20</span>
+                </div>
+                <div class="zodiac-item" onclick="openZodiac('Gemini ♊', 'May 21 - June 20', '💨 Air Sign', 'Your social charm and sharp intellect will open new exciting doors today. Connect with friends!')">
+                    <span class="z-icon">♊</span>
+                    <span class="z-name">Gemini</span>
+                    <span class="z-date">May 21 - Jun 20</span>
+                </div>
+                <div class="zodiac-item" onclick="openZodiac('Cancer ♋', 'June 21 - July 22', '💧 Water Sign', 'Deep emotional intuition guides you today. Nurture your relationships and listen to your gut.')">
+                    <span class="z-icon">♋</span>
+                    <span class="z-name">Cancer</span>
+                    <span class="z-date">Jun 21 - Jul 22</span>
+                </div>
+                <div class="zodiac-item" onclick="openZodiac('Leo ♌', 'July 23 - August 22', '🔥 Fire Sign', 'Royal confidence surrounds you! Shine bright and share your creative vision with the world.')">
+                    <span class="z-icon">♌</span>
+                    <span class="z-name">Leo</span>
+                    <span class="z-date">Jul 23 - Aug 22</span>
+                </div>
+                <div class="zodiac-item" onclick="openZodiac('Virgo ♍', 'August 23 - September 22', '🌿 Earth Sign', 'Clarity and focus are your superpowers today. Perfect time to organize and achieve your goals.')">
+                    <span class="z-icon">♍</span>
+                    <span class="z-name">Virgo</span>
+                    <span class="z-date">Aug 23 - Sep 22</span>
+                </div>
+                <div class="zodiac-item" onclick="openZodiac('Libra ♎', 'September 23 - October 22', '💨 Air Sign', 'Balance and harmony bring peace to your heart today. Love and romance are in a sweet alignment.')">
+                    <span class="z-icon">♎</span>
+                    <span class="z-name">Libra</span>
+                    <span class="z-date">Sep 23 - Oct 22</span>
+                </div>
+                <div class="zodiac-item" onclick="openZodiac('Scorpio ♏', 'October 23 - November 21', '💧 Water Sign', 'Your magnetic passion is extremely powerful today. Transform challenges into great victories.')">
+                    <span class="z-icon">♏</span>
+                    <span class="z-name">Scorpio</span>
+                    <span class="z-date">Oct 23 - Nov 21</span>
+                </div>
+                <div class="zodiac-item" onclick="openZodiac('Sagittarius ♐', 'November 22 - December 21', '🔥 Fire Sign', 'Adventure and good luck are calling your name! Keep an optimistic outlook on every new horizon.')">
+                    <span class="z-icon">♐</span>
+                    <span class="z-name">Sagittarius</span>
+                    <span class="z-date">Nov 22 - Dec 21</span>
+                </div>
+                <div class="zodiac-item" onclick="openZodiac('Capricorn ♑', 'December 22 - January 19', '🌿 Earth Sign', 'Your hard work and steady ambition are paying off brilliantly. Major career progress is near!')">
+                    <span class="z-icon">♑</span>
+                    <span class="z-name">Capricorn</span>
+                    <span class="z-date">Dec 22 - Jan 19</span>
+                </div>
+                <div class="zodiac-item" onclick="openZodiac('Aquarius ♒', 'January 20 - February 18', '💨 Air Sign', 'Your innovative ideas and unique perspective will inspire everyone around you today. Dream big!')">
+                    <span class="z-icon">♒</span>
+                    <span class="z-name">Aquarius</span>
+                    <span class="z-date">Jan 20 - Feb 18</span>
+                </div>
+                <div class="zodiac-item" onclick="openZodiac('Pisces ♓', 'February 19 - March 20', '💧 Water Sign', 'Your spiritual imagination and dreams hold divine messages today. Trust your inner magic.')">
+                    <span class="z-icon">♓</span>
+                    <span class="z-name">Pisces</span>
+                    <span class="z-date">Feb 19 - Mar 20</span>
+                </div>
+            </div>
+
+            <div class="zodiac-modal" id="zodiacModal">
+                <span class="result-badge" id="zModalBadge">ZODIAC FORECAST</span>
+                <h4 id="zModalTitle" style="font-size: 1.2rem; color: #7c3aed; margin-bottom: 6px;"></h4>
+                <p id="zModalDesc" style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 14px;"></p>
+                <button class="btn btn-social" style="font-size: 0.88rem; padding: 10px;" onclick="shareZodiac()">💬 Share Zodiac Forecast on WhatsApp</button>
+            </div>
+        </section>
+
+        <!-- CURIOSITY BRIDGE 1 -->
         <div class="bridge-box">
             <p>🔮 Ready to reveal your daily destiny card?</p>
             <span>↓ Pick 1 Mystical Tarot Card below ↓</span>
@@ -451,7 +571,7 @@
 
         <!-- CARD 3: DAILY TAROT DRAW -->
         <section class="card tarot-card-section" style="text-align: center;">
-            <span class="card-badge">✨ 3. Daily Tarot Draw</span>
+            <span class="card-badge">✨ 4. Daily Tarot Draw</span>
             <h3 style="font-size: 1.3rem; margin-bottom: 6px; color: #ffffff;">Pick 1 Card for Today's Guidance</h3>
             <p class="subtitle" style="margin-bottom: 14px; font-size: 0.92rem; color: #e2e8f0;">Tap any mystical card below to reveal your message.</p>
             
@@ -484,7 +604,7 @@
             </div>
         </section>
 
-        <!-- CURIOSITY BRIDGE 3 -->
+        <!-- CURIOSITY BRIDGE 2 -->
         <div class="bridge-box">
             <p>🤫 Want to know who is thinking about you?</p>
             <span>↓ Find your Secret Crush Initial below ↓</span>
@@ -492,7 +612,7 @@
 
         <!-- CARD 4: SECRET INITIAL FINDER -->
         <section class="card initial-card">
-            <span class="card-badge" style="color: #0284c7;">💌 4. Secret Initial Finder</span>
+            <span class="card-badge" style="color: #0284c7;">💌 5. Secret Initial Finder</span>
 
             <div id="viral-form" class="view active">
                 <h3 style="font-size: 1.3rem; margin-bottom: 6px; color: var(--text-main);">Secret Crush Initial Detector</h3>
@@ -532,7 +652,7 @@
 
         <!-- CARD 5: SOCIAL TRAFFIC ANGEL NUMBER CLAIMER -->
         <section class="card angel-card" id="claim-angel-number">
-            <span class="card-badge" style="color: #b45309;">🌟 5. Claim Your Angel Number</span>
+            <span class="card-badge" style="color: #b45309;">🌟 6. Claim Your Angel Number</span>
             
             <div id="angel-form" class="view active">
                 <h3 style="font-size: 1.3rem; margin-bottom: 6px; color: var(--text-main);">Saw an Angel Number Today? (888, 777, 111...)</h3>
@@ -568,7 +688,7 @@
 
         <!-- CARD 6: LUCKY CODE GENERATOR -->
         <section class="card lucky-card">
-            <span class="card-badge" style="color: #d97706;">✨ 6. Daily Lucky Code</span>
+            <span class="card-badge" style="color: #d97706;">✨ 7. Daily Lucky Code</span>
             <h3 style="font-size: 1.3rem; margin-bottom: 6px; color: var(--text-main);">Today's Lucky Color & Number</h3>
             <p class="subtitle" style="margin-bottom: 14px; font-size: 0.92rem;">Tap below to instantly get your lucky details for today.</p>
             
@@ -759,13 +879,6 @@
             </div>
         </section>
 
-        <!-- INFINITE FEED CONTAINER WITH ZODIAC SIGNS & HOOKS -->
-        <div id="infiniteFeedContainer" style="display: flex; flex-direction: column; gap: 24px;"></div>
-        
-        <div id="infiniteLoader" style="text-align: center; padding: 20px; font-weight: 800; color: #6d28d9; font-size: 0.95rem;">
-            ✨ Loading more cosmic checks & zodiac signs... ✨
-        </div>
-
         <!-- FOOTER -->
         <footer class="site-footer">
             <p>&copy; 2026 Daily Vibe Check. For entertainment purposes only. All rights reserved.</p>
@@ -773,306 +886,21 @@
     </div>
 
     <script>
-        /* === INFINITE LOOP POOL: LOVE MATCH, WEALTH, CRUSH & ALL 12 ZODIAC SIGNS WITH DATES === */
-        const infinitePool = [
-            { 
-                type: "love", 
-                badge: "💖 LIVE LOVE MATCHING HOOK", 
-                title: "Soulmate & Crush Chemistry Scan", 
-                desc: "Type your name and your crush's name to calculate your true emotional connection score.", 
-                input1: "Your Name", input2: "Crush Name",
-                btnText: "Check Compatibility Now ➔", btnBg: "#e11d48",
-                bg: "linear-gradient(135deg, #fff1f2 0%, #ffe4e6 100%)", border: "2px solid #f43f5e", color: "#0f172a", avatar: "👩🏻‍❤️‍👨🏽"
-            },
-            { 
-                type: "zodiac", zodiacName: "Aries ♈", dateRange: "March 21 - April 19",
-                badge: "♈ ARIES HOROSCOPE & VIBE CHECK", 
-                title: "Aries Daily Energy & Fire Sign Forecast", 
-                desc: "Enter your name to unlock your fiery cosmic prediction and daily lucky number.", 
-                input1: "Your Name", input2: "Your Birth Day (1-31)",
-                btnText: "Reveal Aries Forecast ➔", btnBg: "#7c3aed",
-                bg: "linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%)", border: "2px solid #9333ea", color: "#0f172a", avatar: "🔥"
-            },
-            { 
-                type: "zodiac", zodiacName: "Taurus ♉", dateRange: "April 20 - May 20",
-                badge: "♉ TAURUS HOROSCOPE & VIBE CHECK", 
-                title: "Taurus Daily Wealth & Earth Energy", 
-                desc: "Enter your name to discover your grounded stability forecast and financial luck.", 
-                input1: "Your Name", input2: "Your Birth Day (1-31)",
-                btnText: "Reveal Taurus Forecast ➔", btnBg: "#059669",
-                bg: "linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%)", border: "2px solid #10b981", color: "#0f172a", avatar: "🌿"
-            },
-            { 
-                type: "wealth", 
-                badge: "💰 2026 HIGH PAYING WEALTH HOOK", 
-                title: "Cosmic Abundance & Fortune Code", 
-                desc: "Enter your lucky number (1-9) to unlock your incoming financial windfall.", 
-                input1: "Your Name", input2: "Lucky Number (1-9)",
-                btnText: "Claim My Wealth Code ➔", btnBg: "#ca8a04",
-                bg: "linear-gradient(135deg, #fefce8 0%, #fef9c3 100%)", border: "2px solid #ca8a04", color: "#0f172a", avatar: "💎"
-            },
-            { 
-                type: "zodiac", zodiacName: "Gemini ♊", dateRange: "May 21 - June 20",
-                badge: "♊ GEMINI HOROSCOPE & VIBE CHECK", 
-                title: "Gemini Daily Air Energy & Social Vibe", 
-                desc: "Enter your name to unlock your communication superpower and daily lucky color.", 
-                input1: "Your Name", input2: "Your Birth Day (1-31)",
-                btnText: "Reveal Gemini Forecast ➔", btnBg: "#0284c7",
-                bg: "linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%)", border: "2px solid #0284c7", color: "#0f172a", avatar: "💨"
-            },
-            { 
-                type: "zodiac", zodiacName: "Cancer ♋", dateRange: "June 21 - July 22",
-                badge: "♋ CANCER HOROSCOPE & VIBE CHECK", 
-                title: "Cancer Daily Intuition & Water Vibe", 
-                desc: "Enter your name to uncover your emotional alignment and relationship harmony.", 
-                input1: "Your Name", input2: "Your Birth Day (1-31)",
-                btnText: "Reveal Cancer Forecast ➔", btnBg: "#2563eb",
-                bg: "linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%)", border: "2px solid #3b82f6", color: "#0f172a", avatar: "💧"
-            },
-            { 
-                type: "crush", 
-                badge: "🤫 SECRET ADMIRER DETECTOR", 
-                title: "Find Your Secret Admirer Initial", 
-                desc: "Enter your name to discover the first letter of the person who is secretly thinking of you.", 
-                input1: "Your Full Name", input2: "Your Birth Month",
-                btnText: "Reveal Secret Letter ➔", btnBg: "#0284c7",
-                bg: "linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%)", border: "2px solid #0284c7", color: "#0f172a", avatar: "💌"
-            },
-            { 
-                type: "zodiac", zodiacName: "Leo ♌", dateRange: "July 23 - August 22",
-                badge: "♌ LEO HOROSCOPE & VIBE CHECK", 
-                title: "Leo Daily Royal Energy & Success Vibe", 
-                desc: "Enter your name to reveal your leadership power and upcoming success breakthrough.", 
-                input1: "Your Name", input2: "Your Birth Day (1-31)",
-                btnText: "Reveal Leo Forecast ➔", btnBg: "#d97706",
-                bg: "linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%)", border: "2px solid #f59e0b", color: "#0f172a", avatar: "👑"
-            },
-            { 
-                type: "zodiac", zodiacName: "Virgo ♍", dateRange: "August 23 - September 22",
-                badge: "♍ VIRGO HOROSCOPE & VIBE CHECK", 
-                title: "Virgo Daily Clarity & Focus Forecast", 
-                desc: "Enter your name to find your productivity alignment and problem-solving power.", 
-                input1: "Your Name", input2: "Your Birth Day (1-31)",
-                btnText: "Reveal Virgo Forecast ➔", btnBg: "#4f46e5",
-                bg: "linear-gradient(135deg, #eef2ff 0%, #e0e7ff 100%)", border: "2px solid #6366f1", color: "#0f172a", avatar: "📚"
-            },
-            { 
-                type: "zodiac", zodiacName: "Libra ♎", dateRange: "September 23 - October 22",
-                badge: "♎ LIBRA HOROSCOPE & VIBE CHECK", 
-                title: "Libra Daily Balance & Romance Vibe", 
-                desc: "Enter your name to unlock your relationship harmony and aesthetic energy.", 
-                input1: "Your Name", input2: "Your Birth Day (1-31)",
-                btnText: "Reveal Libra Forecast ➔", btnBg: "#db2777",
-                bg: "linear-gradient(135deg, #fdf2f8 0%, #fce7f3 100%)", border: "2px solid #ec4899", color: "#0f172a", avatar: "⚖️"
-            },
-            { 
-                type: "cosmic", 
-                badge: "🔮 MYSTICAL TAROT GUIDANCE", 
-                title: "Instant Destiny & Spirit Guide Vibe", 
-                desc: "Choose your mood to unlock your personalized cosmic message for today.", 
-                input1: "Your Name", input2: "Current Mood / Wish",
-                btnText: "Unlock Cosmic Guidance ➔", btnBg: "#7c3aed",
-                bg: "linear-gradient(135deg, #1e1b4b 0%, #312e81 100%)", border: "2px solid #a855f7", color: "#ffffff", avatar: "✨"
-            },
-            { 
-                type: "zodiac", zodiacName: "Scorpio ♏", dateRange: "October 23 - November 21",
-                badge: "♏ SCORPIO HOROSCOPE & VIBE CHECK", 
-                title: "Scorpio Daily Magnetic & Passion Vibe", 
-                desc: "Enter your name to reveal your intense intuition and transformation energy.", 
-                input1: "Your Name", input2: "Your Birth Day (1-31)",
-                btnText: "Reveal Scorpio Forecast ➔", btnBg: "#991b1b",
-                bg: "linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%)", border: "2px solid #ef4444", color: "#0f172a", avatar: "🦂"
-            },
-            { 
-                type: "zodiac", zodiacName: "Sagittarius ♐", dateRange: "November 22 - December 21",
-                badge: "♐ SAGITTARIUS HOROSCOPE & VIBE CHECK", 
-                title: "Sagittarius Daily Adventure & Luck Vibe", 
-                desc: "Enter your name to unlock your lucky travel and expansion forecast for 2026.", 
-                input1: "Your Name", input2: "Your Birth Day (1-31)",
-                btnText: "Reveal Sagittarius Forecast ➔", btnBg: "#7c2d12",
-                bg: "linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%)", border: "2px solid #f97316", color: "#0f172a", avatar: "🏹"
-            },
-            { 
-                type: "zodiac", zodiacName: "Capricorn ♑", dateRange: "December 22 - January 19",
-                badge: "♑ CAPRICORN HOROSCOPE & VIBE CHECK", 
-                title: "Capricorn Daily Ambition & Wealth Vibe", 
-                desc: "Enter your name to check your career progress and financial abundance score.", 
-                input1: "Your Name", input2: "Your Birth Day (1-31)",
-                btnText: "Reveal Capricorn Forecast ➔", btnBg: "#334155",
-                bg: "linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%)", border: "2px solid #64748b", color: "#0f172a", avatar: "🏔️"
-            },
-            { 
-                type: "zodiac", zodiacName: "Aquarius ♒", dateRange: "January 20 - February 18",
-                badge: "♒ AQUARIUS HOROSCOPE & VIBE CHECK", 
-                title: "Aquarius Daily Innovation & Vision Vibe", 
-                desc: "Enter your name to reveal your creative genius and unique cosmic alignment.", 
-                input1: "Your Name", input2: "Your Birth Day (1-31)",
-                btnText: "Reveal Aquarius Forecast ➔", btnBg: "#0369a1",
-                bg: "linear-gradient(135deg, #f0fdfa 0%, #ccfbf1 100%)", border: "2px solid #14b8a6", color: "#0f172a", avatar: "⚡"
-            },
-            { 
-                type: "zodiac", zodiacName: "Pisces ♓", dateRange: "February 19 - March 20",
-                badge: "♓ PISCES HOROSCOPE & VIBE CHECK", 
-                title: "Pisces Daily Dream & Soulmate Vibe", 
-                desc: "Enter your name to discover your spiritual depth and dream interpretation for today.", 
-                input1: "Your Name", input2: "Your Birth Day (1-31)",
-                btnText: "Reveal Pisces Forecast ➔", btnBg: "#6d28d9",
-                bg: "linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%)", border: "2px solid #8b5cf6", color: "#0f172a", avatar: "🌊"
-            }
-        ];
-
-        let poolIndex = 0;
-        function loadMoreContent() {
-            const container = document.getElementById('infiniteFeedContainer');
-            if (!container) return;
-
-            for (let i = 0; i < 2; i++) {
-                const item = infinitePool[poolIndex % infinitePool.length];
-                const cardId = 'loopCard_' + Math.random().toString(36).substring(2, 9);
-                poolIndex++;
-
-                const cardDiv = document.createElement('div');
-                cardDiv.className = 'card';
-                cardDiv.style.background = item.bg;
-                cardDiv.style.border = item.border;
-                cardDiv.style.color = item.color;
-
-                let dateBadgeHtml = item.dateRange ? `<div style="font-size: 0.82rem; font-weight: 800; color: ${item.btnBg}; margin-bottom: 4px;">📅 ${item.dateRange}</div>` : '';
-
-                cardDiv.innerHTML = `
-                    <div id="${cardId}_form">
-                        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
-                            <span class="card-badge" style="color: ${item.color === '#ffffff' ? '#d8b4fe' : item.btnBg}; margin-bottom: 0;">${item.badge}</span>
-                            <span style="font-size: 1.4rem; background: rgba(255,255,255,0.2); padding: 4px 8px; border-radius: 10px;">${item.avatar}</span>
-                        </div>
-                        ${dateBadgeHtml}
-                        <h3 style="font-size: 1.3rem; margin-bottom: 6px;">${item.title}</h3>
-                        <p style="font-size: 0.92rem; line-height: 1.55; font-weight: 700; margin-bottom: 14px;">${item.desc}</p>
-                        
-                        <div class="input-group">
-                            <label style="color: ${item.color};">${item.input1}</label>
-                            <input type="text" id="${cardId}_in1" placeholder="Type here..." autocomplete="off" style="background: ${item.color === '#ffffff' ? 'rgba(255,255,255,0.1)' : '#ffffff'}; color: ${item.color}; border-color: ${item.btnBg};" />
-                        </div>
-                        <div class="input-group">
-                            <label style="color: ${item.color};">${item.input2}</label>
-                            <input type="text" id="${cardId}_in2" placeholder="Type here..." autocomplete="off" style="background: ${item.color === '#ffffff' ? 'rgba(255,255,255,0.1)' : '#ffffff'}; color: ${item.color}; border-color: ${item.btnBg};" />
-                        </div>
-                        <button class="btn" style="background: ${item.btnBg};" onclick="triggerLoopScan('${cardId}', '${item.type}', '${item.zodiacName || ''}')">
-                            ${item.btnText}
-                        </button>
-                    </div>
-
-                    <div id="${cardId}_scanner" class="view" style="text-align: center; padding: 20px 0;">
-                        <div class="pulse-orb" style="background: ${item.btnBg};"></div>
-                        <h3 style="font-size: 1.15rem; margin-bottom: 6px; font-weight: 800; color: ${item.color};">Scanning cosmic frequency...</h3>
-                        <div class="progress-bar-container" style="background: rgba(0,0,0,0.1);">
-                            <div class="progress-bar" id="${cardId}_bar" style="background: ${item.btnBg}; width: 0%;"></div>
-                        </div>
-                    </div>
-
-                    <div id="${cardId}_result" class="view" style="text-align: center;">
-                        <span class="result-badge" id="${cardId}_rbadge" style="background: rgba(255,255,255,0.2); color: ${item.color};">RESULT UNLOCKED</span>
-                        <h2 class="result-title" id="${cardId}_rtitle" style="color: ${item.color}; font-size: 1.3rem; margin-bottom: 8px;"></h2>
-                        <p class="result-desc" id="${cardId}_rdesc" style="color: ${item.color}; font-size: 0.92rem; margin-bottom: 16px; font-weight: 700;"></p>
-                        <div class="action-grid">
-                            <button class="btn btn-social" onclick="shareLoopResult('${cardId}')">💬 Share Result on WhatsApp</button>
-                            <button class="btn-secondary" style="color: #0f172a;" onclick="resetLoopCard('${cardId}')">🔄 Scan Again</button>
-                        </div>
-                    </div>
-                `;
-                container.appendChild(cardDiv);
-            }
+        /* ZODIAC INTERACTIVE SCRIPT */
+        function openZodiac(name, dates, element, forecast) {
+            const modal = document.getElementById('zodiacModal');
+            document.getElementById('zModalBadge').textContent = `${name} (${dates}) — ${element}`;
+            document.getElementById('zModalTitle').textContent = `${name} Daily Horoscope`;
+            document.getElementById('zModalDesc').textContent = forecast;
+            modal.classList.add('active');
+            modal.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
 
-        function triggerLoopScan(cardId, type, zodiacName) {
-            const val1 = document.getElementById(cardId + '_in1').value.trim();
-            const val2 = document.getElementById(cardId + '_in2').value.trim();
-
-            if (!val1 || !val2) {
-                alert('Please fill in both fields before running the scan!');
-                return;
-            }
-
-            document.getElementById(cardId + '_form').classList.remove('active');
-            document.getElementById(cardId + '_scanner').classList.add('active');
-
-            let progress = 0;
-            const bar = document.getElementById(cardId + '_bar');
-            const timer = setInterval(() => {
-                progress += 5;
-                bar.style.width = progress + '%';
-                if (progress >= 100) {
-                    clearInterval(timer);
-                    document.getElementById(cardId + '_scanner').classList.remove('active');
-                    document.getElementById(cardId + '_result').classList.add('active');
-
-                    let badgeText = "VIBE UNLOCKED";
-                    let titleText = "Amazing Energy Found!";
-                    let descText = "";
-
-                    if (type === 'love') {
-                        badgeText = "LOVE SYNERGY SCORE: 96%";
-                        titleText = `${val1} & ${val2} Share Exceptional Chemistry!`;
-                        descText = `Your emotional compatibility is extraordinarily high. The stars indicate deep mutual understanding and wonderful romantic alignment!`;
-                    } else if (type === 'wealth') {
-                        badgeText = `WEALTH CODE #${val2} ACTIVE`;
-                        titleText = `${val1}, Major Financial Breakthrough Incoming!`;
-                        descText = `Your lucky digit (${val2}) activates massive financial luck and unexpected monetary gains this month. Get ready for abundance!`;
-                    } else if (type === 'crush') {
-                        const letters = ['M', 'S', 'A', 'J', 'K', 'R', 'D'];
-                        const randomLetter = letters[Math.floor(Math.random() * letters.length)];
-                        badgeText = `SECRET ADMIRER: [ ${randomLetter} ]`;
-                        titleText = `${val1}, Someone Special is Thinking of You!`;
-                        descText = `Someone whose name starts with letter [ ${randomLetter} ] has a deep secret crush on you and loves spending time around you!`;
-                    } else if (type === 'zodiac') {
-                        badgeText = `${zodiacName} DAILY HOROSCOPE`;
-                        titleText = `${val1}, Your Star Alignment is Peak Energy!`;
-                        descText = `With birth day [ ${val2} ], your celestial forecast predicts great surprises, strong intuitive breakthroughs, and wonderful luck today!`;
-                    } else {
-                        badgeText = "COSMIC TAROT GUIDANCE";
-                        titleText = `${val1}, Your Manifestation Portal is Open!`;
-                        descText = `Your focus on "${val2}" is aligning with powerful universe energy. Expect positive breakthroughs and wonderful syncs very soon!`;
-                    }
-
-                    document.getElementById(cardId + '_rbadge').textContent = badgeText;
-                    document.getElementById(cardId + '_rtitle').textContent = titleText;
-                    document.getElementById(cardId + '_rdesc').textContent = descText;
-                }
-            }, 60);
-        }
-
-        function resetLoopCard(cardId) {
-            document.getElementById(cardId + '_in1').value = '';
-            document.getElementById(cardId + '_in2').value = '';
-            document.getElementById(cardId + '_result').classList.remove('active');
-            document.getElementById(cardId + '_form').classList.add('active');
-            document.getElementById(cardId + '_bar').style.width = '0%';
-        }
-
-        function shareLoopResult(cardId) {
-            const title = document.getElementById(cardId + '_rtitle').textContent;
-            const text = encodeURIComponent(`I just checked my cosmic result on Vibe Check: "${title}". Check yours here: ` + window.location.href);
+        function shareZodiac() {
+            const title = document.getElementById('zModalTitle').textContent;
+            const text = encodeURIComponent(`I just checked my Zodiac Forecast on Vibe Check: "${title}". Check yours here: ` + window.location.href);
             window.open(`https://api.whatsapp.com/send?text=${text}`, '_blank');
         }
-
-        window.addEventListener('scroll', () => {
-            if ((window.innerHeight + window.scrollY) >= document.documentElement.scrollHeight - 300) {
-                loadMoreContent();
-            }
-        });
-
-        window.addEventListener('DOMContentLoaded', () => {
-            const urlParams = new URLSearchParams(window.location.search);
-            if (urlParams.get('card') === 'angel') {
-                const angelSection = document.getElementById('claim-angel-number');
-                if (angelSection) {
-                    setTimeout(() => {
-                        angelSection.scrollIntoView({ behavior: 'smooth' });
-                    }, 300);
-                }
-            }
-            loadMoreContent();
-        });
 
         const faqQuestions = document.querySelectorAll('.faq-question');
         faqQuestions.forEach(question => {
