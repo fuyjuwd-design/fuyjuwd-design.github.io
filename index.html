@@ -750,6 +750,13 @@
             </div>
         </section>
 
+        <!-- INFINITE FEED CONTAINER (AUTO-LOADS MORE CARDS ON SCROLL) -->
+        <div id="infiniteFeedContainer" style="display: flex; flex-direction: column; gap: 24px;"></div>
+        
+        <div id="infiniteLoader" style="text-align: center; padding: 20px; font-weight: 700; color: #6d28d9; font-size: 0.9rem;">
+            ✨ Scrolling for more cosmic vibes... ✨
+        </div>
+
         <!-- FOOTER -->
         <footer class="site-footer">
             <p>&copy; 2026 Daily Vibe Check. For entertainment purposes only. All rights reserved.</p>
@@ -757,6 +764,46 @@
     </div>
 
     <script>
+        /* === INFINITE SCROLL / ENDLESS FEED SYSTEM === */
+        const infinitePool = [
+            { badge: "🌟 SPIRIT ANIMAL", title: "Your Power Animal Today: The Mystical Wolf", desc: "You have strong intuitive instincts today. Trust your inner voice when making major choices." },
+            { badge: "🌙 MOON PHASE ENERGY", title: "Waxing Gibbous Phase Active", desc: "This phase brings high creative momentum. Perfect time to launch new ideas or creative projects." },
+            { badge: "⚡ CHAKRA ALIGNMENT", title: "Third Eye Chakra Opening", desc: "Your mental clarity is peaking. Expect sudden insightful realizations and great problem-solving ability today." },
+            { badge: "💖 DESTINY AFFIRMATION", title: "'Great Love & Abundance Flow to Me Effortlessly'", desc: "Repeat this powerful mantra 3 times today to unlock positive magnetic energy around you." },
+            { badge: "🔮 ANCIENT ZODIAC LUCK", title: "Cosmic Alignment Bonus", desc: "The universe is synchronizing your efforts with unexpected rewards. Keep your eyes open for lucky coincidences!" }
+        ];
+
+        let poolIndex = 0;
+        function loadMoreContent() {
+            const container = document.getElementById('infiniteFeedContainer');
+            if (!container) return;
+
+            // Load 2 cards at a time
+            for (let i = 0; i < 2; i++) {
+                const item = infinitePool[poolIndex % infinitePool.length];
+                poolIndex++;
+
+                const cardDiv = document.createElement('div');
+                cardDiv.className = 'card';
+                cardDiv.style.background = '#ffffff';
+                cardDiv.style.border = '2px solid #8b5cf6';
+                cardDiv.innerHTML = `
+                    <span class="card-badge" style="color: #7c3aed;">${item.badge}</span>
+                    <h3 style="font-size: 1.15rem; margin-bottom: 6px; font-family: 'Cinzel', serif; color: var(--text-main);">${item.title}</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; font-weight: 600; margin-bottom: 14px;">${item.desc}</p>
+                    <button class="btn" style="background: #7c3aed;" onclick="alert('✨ Vibe locked successfully! Share this energy with a friend.')">✨ Share This Vibe</button>
+                `;
+                container.appendChild(cardDiv);
+            }
+        }
+
+        // Detect when user scrolls near the bottom
+        window.addEventListener('scroll', () => {
+            if ((window.innerHeight + window.scrollY) >= document.documentElement.scrollHeight - 300) {
+                loadMoreContent();
+            }
+        });
+
         /* === AUTO-SCROLL FOR CLEAN URL REDIRECT === */
         window.addEventListener('DOMContentLoaded', () => {
             const urlParams = new URLSearchParams(window.location.search);
@@ -768,6 +815,8 @@
                     }, 300);
                 }
             }
+            // Load initial infinite batch
+            loadMoreContent();
         });
 
         /* === ACCORDION FAQ LOGIC === */
