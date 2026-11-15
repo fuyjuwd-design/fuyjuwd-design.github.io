@@ -163,7 +163,7 @@
         .card.lucky-card .card-badge { color: #d97706; }
         .card.lucky-card .btn { background: #d97706; box-shadow: 0 4px 14px rgba(217, 119, 6, 0.3); }
 
-        /* 7. AI ASTROLOGY CHAT STYLES (JESSICA) */
+        /* 7. SMART ASTROLOGY AI CHAT STYLES (JESSICA) */
         .card.chat-card {
             background: #ffffff;
             border: 2px solid #7c3aed;
@@ -751,7 +751,7 @@
             </div>
         </section>
 
-        <!-- INFINITE FEED CONTAINER (STUNNING DYNAMIC CARDS) -->
+        <!-- INFINITE FEED CONTAINER (STUNNING DIVERSE LOOP CARDS) -->
         <div id="infiniteFeedContainer" style="display: flex; flex-direction: column; gap: 24px;"></div>
         
         <div id="infiniteLoader" style="text-align: center; padding: 20px; font-weight: 700; color: #6d28d9; font-size: 0.9rem;">
@@ -765,37 +765,55 @@
     </div>
 
     <script>
-        /* === DIVERSE INFINITE FEED SYSTEM === */
+        /* === DIVERSE INFINITE LOOP SYSTEM (LOVE MATCH, GIRLS VIBE & HIGH PAYING HOOKS) === */
         const infinitePool = [
             { 
-                style: "dark", 
-                badge: "🐺 DARK COSMIC VIBE", 
-                title: "Your Secret Spirit Animal: The Lunar Wolf", 
-                desc: "Your instinctual energy is peaking today. You will easily sense people's true intentions before they even speak." 
+                type: "love", 
+                badge: "💖 LIVE LOVE MATCHING HOOK", 
+                title: "What is Your True Chemistry & Soulmate Score?", 
+                desc: "Discover whether your relationship has a 99% stellar match rate or needs a little extra romance boost today.", 
+                btnText: "Test Match Now ➔",
+                btnBg: "#e11d48",
+                bg: "linear-gradient(135deg, #fff1f2 0%, #ffe4e6 100%)",
+                border: "2px solid #f43f5e",
+                color: "#0f172a",
+                avatar: "👩🏻‍❤️‍👨🏽"
             },
             { 
-                style: "gold", 
-                badge: "💰 GOLDEN ABUNDANCE", 
-                title: "Unexpected Wealth Portal Unlocked", 
-                desc: "The planetary alignment points towards sudden financial ease or a pleasant monetary surprise in the coming days." 
+                type: "wealth", 
+                badge: "💰 HIGH PAYING WEALTH HOOK", 
+                title: "2026 Financial Luck & Abundance Multiplier", 
+                desc: "The cosmic alignment indicates sudden financial breakthroughs and lucky monetary surprises coming your way.", 
+                btnText: "Claim Wealth Code ➔",
+                btnBg: "#ca8a04",
+                bg: "linear-gradient(135deg, #fefce8 0%, #fef9c3 100%)",
+                border: "2px solid #ca8a04",
+                color: "#0f172a",
+                avatar: "💎"
             },
             { 
-                style: "neon", 
-                badge: "🔥 NEON PASSION ENERGY", 
-                title: "Magnetic Aura & High Charisma", 
-                desc: "Your charm factor is off the charts today! People will naturally gravitate towards your energy and ideas." 
+                type: "crush", 
+                badge: "🤫 SECRET ADMIRER DETECTOR", 
+                title: "Who Has a Secret Crush on You Right Now?", 
+                desc: "Someone special with initials M, S, or A is thinking of you constantly. Let our vibe scanner reveal who they are!", 
+                btnText: "Reveal Secret Admirer ➔",
+                btnBg: "#0284c7",
+                bg: "linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%)",
+                border: "2px solid #0284c7",
+                color: "#0f172a",
+                avatar: "💌"
             },
             { 
-                style: "purple", 
-                badge: "👁️ THIRD EYE AWAKENING", 
-                title: "Deep Intuition & Synchronicity", 
-                desc: "Pay close attention to repeating numbers and coincidences today—the universe is trying to send you a direct message." 
-            },
-            { 
-                style: "clean", 
-                badge: "🌿 PEACE & HARMONY", 
-                title: "Soul Balance & Inner Calm", 
-                desc: "Release past worries. A wave of peaceful, grounding energy is washing away your stress right now." 
+                type: "cosmic", 
+                badge: "🔮 MYSTICAL TAROT GUIDANCE", 
+                title: "Your Weekly Destiny Card & Energy Vibe", 
+                desc: "Unlock hidden spiritual guidance and major positive changes designed specifically for your zodiac element.", 
+                btnText: "Draw Cosmic Card ➔",
+                btnBg: "#7c3aed",
+                bg: "linear-gradient(135deg, #1e1b4b 0%, #312e81 100%)",
+                border: "2px solid #a855f7",
+                color: "#ffffff",
+                avatar: "✨"
             }
         ];
 
@@ -804,45 +822,31 @@
             const container = document.getElementById('infiniteFeedContainer');
             if (!container) return;
 
+            // Load 2 distinct cards per batch to keep scroll endless and varied
             for (let i = 0; i < 2; i++) {
                 const item = infinitePool[poolIndex % infinitePool.length];
                 poolIndex++;
 
                 const cardDiv = document.createElement('div');
                 cardDiv.className = 'card';
-                
-                if (item.style === 'dark') {
-                    cardDiv.style.background = 'linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%)';
-                    cardDiv.style.color = '#ffffff';
-                    cardDiv.style.border = '2px solid #a855f7';
-                } else if (item.style === 'gold') {
-                    cardDiv.style.background = 'linear-gradient(135deg, #fef9c3 0%, #fef3c7 100%)';
-                    cardDiv.style.color = '#0f172a';
-                    cardDiv.style.border = '2px solid #d97706';
-                } else if (item.style === 'neon') {
-                    cardDiv.style.background = 'linear-gradient(135deg, #4c0519 0%, #881337 100%)';
-                    cardDiv.style.color = '#ffffff';
-                    cardDiv.style.border = '2px solid #fb7185';
-                } else if (item.style === 'purple') {
-                    cardDiv.style.background = 'linear-gradient(135deg, #2e1065 0%, #581c87 100%)';
-                    cardDiv.style.color = '#ffffff';
-                    cardDiv.style.border = '2px solid #c084fc';
-                } else {
-                    cardDiv.style.background = '#ffffff';
-                    cardDiv.style.color = '#0f172a';
-                    cardDiv.style.border = '2px solid #94a3b8';
-                }
+                cardDiv.style.background = item.bg;
+                cardDiv.style.border = item.border;
+                cardDiv.style.color = item.color;
 
                 cardDiv.innerHTML = `
-                    <span class="card-badge" style="color: ${item.style === 'clean' || item.style === 'gold' ? '#b45309' : '#e2e8f0'};">${item.badge}</span>
-                    <h3 style="font-size: 1.15rem; margin-bottom: 6px; font-family: 'Cinzel', serif;">${item.title}</h3>
-                    <p style="font-size: 0.9rem; line-height: 1.6; font-weight: 600; margin-bottom: 14px; opacity: 0.95;">${item.desc}</p>
-                    <button class="btn" style="background: ${item.style === 'gold' ? '#d97706' : '#7c3aed'};" onclick="alert('✨ Vibe locked & saved! Keep scrolling for more cosmic surprises.')">✨ Claim This Vibe</button>
+                    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;">
+                        <span class="card-badge" style="color: ${item.color === '#ffffff' ? '#d8b4fe' : item.btnBg}; margin-bottom: 0;">${item.badge}</span>
+                        <span style="font-size: 1.5rem; background: rgba(255,255,255,0.2); padding: 6px 10px; border-radius: 12px;">${item.avatar}</span>
+                    </div>
+                    <h3 style="font-size: 1.15rem; margin-bottom: 8px; font-family: 'Cinzel', serif;">${item.title}</h3>
+                    <p style="font-size: 0.9rem; line-height: 1.6; font-weight: 600; margin-bottom: 16px; opacity: 0.95;">${item.desc}</p>
+                    <button class="btn" style="background: ${item.btnBg};" onclick="alert('✨ Vibe locked & saved! Keep scrolling for more endless cosmic surprises.')">${item.btnText}</button>
                 `;
                 container.appendChild(cardDiv);
             }
         }
 
+        // Detect scroll near bottom for endless feed
         window.addEventListener('scroll', () => {
             if ((window.innerHeight + window.scrollY) >= document.documentElement.scrollHeight - 300) {
                 loadMoreContent();
@@ -1107,32 +1111,26 @@
         function getJessicaAstrologyReply(text) {
             text = text.toLowerCase();
             
-            // 1. Angel Numbers
             if (text.includes('angel') || text.includes('111') || text.includes('222') || text.includes('333') || text.includes('444') || text.includes('555') || text.includes('777') || text.includes('888') || text.includes('999') || text.includes('number')) {
                 return "✨ Ah, angel numbers carry deep cosmic vibrations! If you're seeing repeating numbers or asking about one, your guardian angels are sending you a divine sign of abundance or awakening. Try entering your number in our 'Claim Your Angel Number' card above for a full detailed breakdown! 🌟";
             }
             
-            // 2. Love Compatibility & Matchmaking
             if (text.includes('match') || text.includes('compatib') || text.includes('love') || text.includes('crush') || text.includes('partner') || text.includes('relationship') || text.includes('shadi')) {
                 return "💖 Love chemistry is deeply influenced by your zodiac element (Fire, Earth, Air, Water)! Use our Soulmate & Compatibility Match card above by typing both names to reveal your emotional synergy score instantly! ✨";
             }
             
-            // 3. Tarot Readings
             if (text.includes('tarot') || text.includes('card') || text.includes('future') || text.includes('destiny')) {
                 return "🔮 The tarot cards never lie! They reflect your subconscious path and upcoming energies. Scroll up to our Daily Tarot Draw section and pick a card to reveal your custom guidance for today! 🌙";
             }
             
-            // 4. Life Problems / Guidance / Tension
             if (text.includes('problem') || text.includes('issue') || text.includes('sad') || text.includes('stuck') || text.includes('life') || text.includes('help') || text.includes('tension') || text.includes('pareshan')) {
                 return "🌟 I hear you, friend. Every soul goes through heavy planetary cycles and tough phases. Remember that after every dark night comes a brilliant sunrise. Take a deep breath—your energy is shifting towards a positive breakthrough very soon! 💫";
             }
             
-            // 5. Zodiac & Horoscope
             if (text.includes('zodiac') || text.includes('horoscope') || text.includes('sign') || text.includes('aries') || text.includes('leo') || text.includes('taurus') || text.includes('gemini') || text.includes('scorpio') || text.includes('pisces') || text.includes('virgo')) {
                 return "🌙 The stars are in a fascinating alignment right now! Your zodiac sign holds unique traits that connect with today's cosmic energy. Focus on your strengths and keep your vibe positive today! ✨";
             }
             
-            // Default intelligent conversational fallback
             return "✨ That is so interesting! As your cosmic guide, I sense a lot of unique energy around your query today. Feel free to explore our Tarot readings, Angel Number claimer, or compatibility match above to unlock more insights! 🔮";
         }
 
