@@ -805,10 +805,9 @@
                 src: 'https://bicea.org/22/8811055e18082850d00b265e579197fc'
             },
 
-            // [2] Social Bar Ad (Future Use: Change enabled to true & add your script URL)
+            // [2] Social Bar Ad (Active)
             socialBar: {
                 enabled: true,
-                key: 'd67721c8a684400da97f5c8cc25b8059' ,
                 src: 'https://bicea.org/14/d67721c8a684400da97f5c8cc25b8059'
             },
 
@@ -841,6 +840,7 @@
             // Inject Social Bar
             if (AD_SETTINGS.socialBar.enabled && AD_SETTINGS.socialBar.src) {
                 const sb = document.createElement('script');
+                sb.setAttribute('data-cfasync', 'false');
                 sb.src = AD_SETTINGS.socialBar.src;
                 document.head.appendChild(sb);
             }
