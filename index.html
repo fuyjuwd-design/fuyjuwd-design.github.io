@@ -34,6 +34,7 @@
             justify-content: space-between;
             overflow-x: hidden;
             font-weight: 600;
+            padding-bottom: 70px; /* Sticky ad space ke liye */
         }
 
         /* BOLD & CATCHY HEADINGS FORMULA */
@@ -335,6 +336,22 @@
         }
         .t-text { font-size: 0.75rem; color: #1e293b; line-height: 1.4; font-weight: 700 !important; }
 
+        /* STICKY BOTTOM MOBILE AD BANNER (320*50 FIXED TO BOTTOM) */
+        .sticky-bottom-ad {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 55px;
+            background: #ffffff;
+            border-top: 2px solid #cbd5e1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 99999;
+            box-shadow: 0 -4px 15px rgba(0,0,0,0.1);
+        }
+
         footer.site-footer { text-align: center; padding: 16px; font-size: 0.82rem; color: var(--text-muted); font-weight: 800; border-top: 2px solid #cbd5e1; margin-top: 10px; }
     </style>
 </head>
@@ -356,9 +373,6 @@
 
             <h1>What's Your Hidden Energy Vibe & Compatibility Score Today?</h1>
             <p class="subtitle">Quick fun checks to discover your daily energy, love compatibility, zodiac sign, and tarot card!</p>
-            
-            <!-- TOP HEADER AD SLOT -->
-            <!-- Paste your Top Header / Banner Ad Script here -->
         </header>
 
         <!-- CARD 1: MAIN AURA SCANNER -->
@@ -460,18 +474,6 @@
             </div>
         </section>
 
-        <!-- DISPLAY / 320x250 AD SLOT -->
-        <!-- Paste your 320x250 Display Ad Script here -->
-<script>
-  atOptions = {
-    'key' : '632e193dff900446d3f426a201b7604c',
-    'format' : 'iframe',
-    'height' : 250,
-    'width' : 300,
-    'params' : {}
-  };
-</script>
-<script src="https://bicea.org/22/632e193dff900446d3f426a201b7604c"></script>
         <!-- SECTION: ALL 12 ZODIAC SIGNS & HOROSCOPES -->
         <section class="zodiac-section">
             <span class="card-badge" style="color: #7c3aed;">✨ 3. All 12 Zodiac Signs & Horoscopes</span>
@@ -687,10 +689,6 @@
             </button>
         </section>
 
-        <!-- SOCIAL / NATIVE AD SLOT -->
-        <!-- Paste your Social / Native Ad Script here -->
-<script async="async" data-cfasync="false" src="https://bicea.org/21/11c1c07c9b5cf7009ed4ae4a3ac45996"></script>
-<div id="container-11c1c07c9b5cf7009ed4ae4a3ac45996"></div>
         <!-- EXPERT PSYCHIC PROFILE -->
         <section class="expert-card">
             <div class="expert-avatar">🔮</div>
@@ -788,28 +786,12 @@
         </footer>
     </div>
 
-    <!-- STICKY BOTTOM 320x50 AD SLOT (COMMENT ONLY) -->
-    <script>
-  atOptions = {
-    'key' : '8811055e18082850d00b265e579197fc',
-    'format' : 'iframe',
-    'height' : 50,
-    'width' : 320,
-    'params' : {}
-  };
-</script>
-<script src="https://bicea.org/22/8811055e18082850d00b265e579197fc"></script>
-    <!-- Paste your 320x50 Sticky Bottom Ad Script here -->
-    <script>
-  atOptions = {
-    'key' : '9da53d462fcced695e26ec3b16efd816',
-    'format' : 'iframe',
-    'height' : 50,
-    'width' : 320,
-    'params' : {}
-  };
-</script>
-<script src="https://bauval.org/22/9da53d462fcced695e26ec3b16efd816"></script>
+    <!-- ======================================================= -->
+    <!-- 🌟 STICKY BOTTOM 320x50 MOBILE AD SLOT (ONLY AD SLOT)  -->
+    <!-- ======================================================= -->
+    <div class="sticky-bottom-ad">
+        <!-- Paste your 320x50 Sticky Bottom Ad Script here -->
+    </div>
 
     <script>
         /* ZODIAC INTERACTIVE SCRIPT */
@@ -1036,7 +1018,7 @@
             { name: "Sarah L.", loc: "United Kingdom", text: "The compatibility match is super fun and accurate!" },
             { name: "Marcus T.", loc: "United States", text: "Super fun interactive tools, loved checking my match score." },
             { name: "Priya K.", loc: "India", text: "Zero sign up needed, clean design and instant fun. Amazing!" },
-            { name: "Carlos M.", loc: "Brazil", text: "My lucky color result gave me great daily motivation." },
+            { name: "Carlos M.", loc: "Brazil", text: "Your lucky color result gave me great daily motivation." },
             { name: "Yuki S.", loc: "Japan", text: "Very relaxing and entertaining to check every Monday morning." },
             { name: "Liam B.", loc: "Australia", text: "Clean layout, fast loading, and highly addictive vibe checks." }
         ];
