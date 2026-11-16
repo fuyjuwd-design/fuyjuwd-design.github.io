@@ -787,46 +787,71 @@
     </div>
 
     <!-- ===================================================================== -->
-    <!-- 🌟 STICKY BOTTOM 320x50 AD SLOT (TRANSPARENT BACKGROUND)              -->
+    <!-- 🌟 STICKY BOTTOM 320x50 CONTAINER (MANAGED CENTRALLY)                 -->
     <!-- ===================================================================== -->
-    <div class="sticky-bottom-ad">
-        <script>
-          atOptions = {
-            'key' : '8811055e18082850d00b265e579197fc',
-            'format' : 'iframe',
-            'height' : 50,
-            'width' : 320,
-            'params' : {}
-          };
-        </script>
-        <script src="https://bicea.org/22/8811055e18082850d00b265e579197fc"></script>
-    </div>
+    <div class="sticky-bottom-ad" id="stickyAdContainer"></div>
 
 
     <!-- ===================================================================== -->
     <!-- 🎛️ CENTRALIZED AD MANAGEMENT CONTROL CENTER                           -->
-    <!-- Manage all your future and current ad scripts in one single place.    -->
+    <!-- Manage, update, or add all your ad scripts in one single place below. -->
     <!-- ===================================================================== -->
-    <div id="centralized-ad-control-center" style="display:none !important;">
-        
-        <!-- [1] 320x50 STICKY BOTTOM BANNER AD SCRIPT (Currently Active above) -->
-        <div data-ad-slot="sticky-320x50">
-            <!-- Active script is currently rendered in the .sticky-bottom-ad container above -->
-        </div>
+    <script>
+        const AD_SETTINGS = {
+            // [1] 320x50 Sticky Bottom Banner Ad
+            stickyBanner: {
+                enabled: true,
+                key: '8811055e18082850d00b265e579197fc',
+                src: 'https://bicea.org/22/8811055e18082850d00b265e579197fc'
+            },
 
-        <!-- [2] SOCIAL BAR AD SCRIPT SLOT (Future Use) -->
-        <div data-ad-slot="social-bar">
-            <!-- Paste your Adsterra Social Bar script here when you want to enable it -->
-            <!-- Example: <script type="text/javascript" src="//pl123456..."></script> -->
-        </div>
+            // [2] Social Bar Ad (Future Use: Change enabled to true & add your script URL)
+            socialBar: {
+                enabled: false,
+                src: '' // e.g. 'https://pl.../tag.min.js'
+            },
 
-        <!-- [3] POPUNDER AD SCRIPT SLOT (Future Use) -->
-        <div data-ad-slot="popunder">
-            <!-- Paste your Adsterra Popunder script here when you want to enable it -->
-            <!-- Example: <script type="text/javascript" src="//pl123456..."></script> -->
-        </div>
+            // [3] Popunder Ad (Future Use: Change enabled to true & add your script URL)
+            popunder: {
+                enabled: false,
+                src: '' // e.g. 'https://pl.../pop.js'
+            }
+        };
 
-    </div>
+        // Automatic Ad Injection Engine (Keeps scripts organized & prevents mix-ups)
+        document.addEventListener('DOMContentLoaded', () => {
+            // Inject Sticky Bottom Banner
+            if (AD_SETTINGS.stickyBanner.enabled && AD_SETTINGS.stickyBanner.key) {
+                const container = document.getElementById('stickyAdContainer');
+                if (container) {
+                    window.atOptions = {
+                        'key' : AD_SETTINGS.stickyBanner.key,
+                        'format' : 'iframe',
+                        'height' : 50,
+                        'width' : 320,
+                        'params' : {}
+                    };
+                    const s = document.createElement('script');
+                    s.src = AD_SETTINGS.stickyBanner.src;
+                    container.appendChild(s);
+                }
+            }
+
+            // Inject Social Bar
+            if (AD_SETTINGS.socialBar.enabled && AD_SETTINGS.socialBar.src) {
+                const sb = document.createElement('script');
+                sb.src = AD_SETTINGS.socialBar.src;
+                document.head.appendChild(sb);
+            }
+
+            // Inject Popunder
+            if (AD_SETTINGS.popunder.enabled && AD_SETTINGS.popunder.src) {
+                const po = document.createElement('script');
+                po.src = AD_SETTINGS.popunder.src;
+                document.head.appendChild(po);
+            }
+        });
+    </script>
     <!-- ===================================================================== -->
 
 
