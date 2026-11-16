@@ -34,6 +34,7 @@
             justify-content: space-between;
             overflow-x: hidden;
             font-weight: 600;
+            padding-bottom: 60px; /* Sticky ad space ke liye */
         }
 
         /* BOLD & CATCHY HEADINGS FORMULA */
@@ -193,7 +194,6 @@
         .btn-arrow {
             display: inline-flex; align-items: center; justify-content: center; font-size: 1.1rem; font-weight: 900; background: rgba(255, 255, 255, 0.25); width: 24px; height: 24px; border-radius: 50%;
         }
-        .btn-social { background: #16a34a !important; box-shadow: 0 4px 12px rgba(22, 163, 74, 0.3) !important; }
 
         .view { display: none; }
         .view.active { display: block; }
@@ -300,14 +300,14 @@
         .insight-card h4 { font-size: 1.15rem; margin-bottom: 6px; color: #7c3aed; font-weight: 900 !important; }
         .insight-card p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; font-weight: 700 !important; }
 
-        /* COMPACT TESTIMONIALS WITH DARK & LIGHT COMBINATION */
+        /* TESTIMONIALS (DARK & LIGHT MIX) */
         .testimonials-section { margin: 10px -16px; overflow: hidden; }
         .marquee-wrapper { display: flex; flex-direction: column; position: relative; }
         .marquee-track { display: flex; gap: 10px; width: max-content; animation: scrollSingle 600s linear infinite; }
         @keyframes scrollSingle { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
         
         .t-card { 
-            background: #ffffff; /* Light body base */
+            background: #ffffff; 
             border: 2px solid #7c3aed; 
             border-radius: 10px; 
             width: 210px; 
@@ -316,7 +316,7 @@
             box-shadow: 0 4px 12px rgba(15, 23, 42, 0.1); 
         }
         .t-header { 
-            background: #0f172a; /* Dark header strip */
+            background: #0f172a; 
             padding: 8px 10px; 
             display: flex; 
             align-items: center; 
@@ -332,9 +332,25 @@
         .t-meta span { font-size: 0.6rem; color: #c084fc; font-weight: 800; }
         .t-body {
             padding: 10px;
-            background: #ffffff; /* Light content area */
+            background: #ffffff; 
         }
         .t-text { font-size: 0.75rem; color: #1e293b; line-height: 1.4; font-weight: 700 !important; }
+
+        /* STICKY BOTTOM MOBILE AD BANNER (320*50) */
+        .sticky-bottom-ad {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 55px;
+            background: #ffffff;
+            border-top: 2px solid #cbd5e1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 99999;
+            box-shadow: 0 -4px 15px rgba(0,0,0,0.1);
+        }
 
         footer.site-footer { text-align: center; padding: 16px; font-size: 0.82rem; color: var(--text-muted); font-weight: 800; border-top: 2px solid #cbd5e1; margin-top: 10px; }
     </style>
@@ -357,6 +373,13 @@
 
             <h1>What's Your Hidden Energy Vibe & Compatibility Score Today?</h1>
             <p class="subtitle">Quick fun checks to discover your daily energy, love compatibility, zodiac sign, and tarot card!</p>
+            
+            <!-- ========================================== -->
+            <!-- 🌟 TOP HEADER AD SLOT (PASTE AD CODE HERE) -->
+            <!-- ========================================== -->
+            <div style="margin: 15px 0; text-align: center;">
+                <!-- Paste your Top Header / Banner Ad Script here -->
+            </div>
         </header>
 
         <!-- CARD 1: MAIN AURA SCANNER -->
@@ -452,12 +475,18 @@
                     <p class="result-desc" id="bondResultBody">You two share a wonderful emotional understanding and great chemistry. A stellar match for friendship or romance!</p>
                 </div>
                 <div class="action-grid">
-                    <!-- Yahan apna direct link lagain (e.g. href="https://yourlink.com") -->
                     <a href="https://example.com" target="_blank" class="btn-link" style="background: #16a34a; box-shadow: 0 4px 12px rgba(22, 163, 74, 0.3);">📥 Download / Visit Link <span class="btn-arrow">➔</span></a>
                     <button class="btn-secondary" onclick="resetBond()">🔄 Check Another Match</button>
                 </div>
             </div>
         </section>
+
+        <!-- ========================================== -->
+        <!-- 🌟 DISPLAY / 320x250 AD SLOT (BETWEEN SECTIONS) -->
+        <!-- ========================================== -->
+        <div style="text-align: center; margin: 10px 0;">
+            <!-- Paste your 320x250 Display Ad Script here -->
+        </div>
 
         <!-- SECTION: ALL 12 ZODIAC SIGNS & HOROSCOPES -->
         <section class="zodiac-section">
@@ -532,7 +561,6 @@
                 <span class="result-badge" id="zModalBadge">ZODIAC FORECAST</span>
                 <h4 id="zModalTitle" style="font-size: 1.2rem; color: #7c3aed; margin-bottom: 6px;"></h4>
                 <p id="zModalDesc" style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 14px;"></p>
-                <!-- Yahan apna direct link lagain (e.g. href="https://yourlink.com") -->
                 <a href="https://example.com" target="_blank" class="btn-link" style="background: #16a34a; font-size: 0.88rem; padding: 10px;">📥 Download / Visit Link <span class="btn-arrow">➔</span></a>
             </div>
         </section>
@@ -574,7 +602,6 @@
                 <span class="result-badge" style="margin-bottom: 8px;">TAROT INSIGHT UNLOCKED</span>
                 <h4 id="tarotTitle" style="font-size: 1.15rem; color: #1e1b4b; margin-bottom: 6px;"></h4>
                 <p id="tarotDesc" style="font-size: 0.88rem; color: #334155; line-height: 1.6; margin-bottom: 14px;"></p>
-                <!-- Yahan apna direct link lagain (e.g. href="https://yourlink.com") -->
                 <a href="https://example.com" target="_blank" class="btn-link" style="background: #16a34a; font-size: 0.88rem; padding: 10px;">📥 Download / Visit Link <span class="btn-arrow">➔</span></a>
             </div>
         </section>
@@ -619,7 +646,6 @@
                     <p class="result-desc">Someone with the initial M, S, or J has a secret soft spot for you and loves spending time around you!</p>
                 </div>
                 <div class="action-grid">
-                    <!-- Yahan apna direct link lagain (e.g. href="https://yourlink.com") -->
                     <a href="https://example.com" target="_blank" class="btn-link" style="background: #16a34a; box-shadow: 0 4px 12px rgba(22, 163, 74, 0.3);">📥 Download / Visit Link <span class="btn-arrow">➔</span></a>
                     <button class="btn-secondary" onclick="resetViral()">🔄 Test Another Name</button>
                 </div>
@@ -656,7 +682,6 @@
                     </p>
                 </div>
                 <div class="action-grid">
-                    <!-- Yahan apna direct link lagain (e.g. href="https://yourlink.com") -->
                     <a href="https://example.com" target="_blank" class="btn-link" style="background: #16a34a; box-shadow: 0 4px 12px rgba(22, 163, 74, 0.3);">📥 Download / Visit Link <span class="btn-arrow">➔</span></a>
                     <button class="btn-secondary" onclick="resetAngel()">🔄 Claim Another Number</button>
                 </div>
@@ -677,6 +702,13 @@
                 ⚡ Get My Lucky Code <span class="btn-arrow">➔</span>
             </button>
         </section>
+
+        <!-- ========================================== -->
+        <!-- 🌟 SOCIAL / NATIVE AD SLOT (NEAR BOTTOM)  -->
+        <!-- ========================================== -->
+        <div style="text-align: center; margin: 15px 0;">
+            <!-- Paste your Social / Native Ad Script here -->
+        </div>
 
         <!-- EXPERT PSYCHIC PROFILE -->
         <section class="expert-card">
@@ -773,6 +805,14 @@
         <footer class="site-footer">
             <p>&copy; 2026 Daily Vibe Check. For entertainment purposes only. All rights reserved.</p>
         </footer>
+    </div>
+
+    <!-- ======================================================= -->
+    <!-- 🌟 STICKY BOTTOM MOBILE AD BANNER (320*50 FIXED TO BOTTOM) -->
+    <!-- ======================================================= -->
+    <div class="sticky-bottom-ad">
+        <!-- Paste your 320x50 Mobile Sticky Banner Ad Script here -->
+        <span style="font-size: 0.75rem; color: #94a3b8; font-weight: 800;">[ 320x50 Sticky Bottom Ad Slot ]</span>
     </div>
 
     <script>
@@ -978,7 +1018,7 @@
         const luckyCodes = [
             "🎨 Lucky Color: Sapphire Blue | 🔢 Power Number: 7",
             "🌟 Lucky Color: Solar Gold | 🔢 Power Number: 3",
-            "🌿 Lucky Color: Emerald Green | 🔢 Code Number: 9",
+            "🌿 Lucky Color: Emerald Green | 🔢 Power Number: 9",
             "🔥 Lucky Color: Crimson Violet | 🔢 Power Number: 5",
             "⚡ Lucky Color: Cobalt Silver | 🔢 Power Number: 8"
         ];
@@ -995,7 +1035,7 @@
             { name: "Marcus T.", loc: "United States", text: "Super fun interactive tools, loved checking my match score." },
             { name: "Priya K.", loc: "India", text: "Zero sign up needed, clean design and instant fun. Amazing!" },
             { name: "Carlos M.", loc: "Brazil", text: "My lucky color result gave me great daily motivation." },
-            { name: "Yuki S.", loc: "Japan", code: "Very relaxing and entertaining to check every Monday morning." },
+            { name: "Yuki S.", loc: "Japan", text: "Very relaxing and entertaining to check every Monday morning." },
             { name: "Liam B.", loc: "Australia", text: "Clean layout, fast loading, and highly addictive vibe checks." }
         ];
 
