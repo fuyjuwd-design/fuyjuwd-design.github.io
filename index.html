@@ -187,8 +187,8 @@
         }
         .tarot-card-section input { background: rgba(255, 255, 255, 0.1); color: white; border-color: #a855f7; }
 
-        .btn {
-            width: 100%; padding: 12px 16px; color: white; border: none; border-radius: 10px; font-size: 0.98rem; font-weight: 800; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; transition: var(--transition);
+        .btn, .btn-link {
+            width: 100%; padding: 12px 16px; color: white; border: none; border-radius: 10px; font-size: 0.98rem; font-weight: 800; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; transition: var(--transition); text-decoration: none; text-align: center;
         }
         .btn-arrow {
             display: inline-flex; align-items: center; justify-content: center; font-size: 1.1rem; font-weight: 900; background: rgba(255, 255, 255, 0.25); width: 24px; height: 24px; border-radius: 50%;
@@ -452,7 +452,8 @@
                     <p class="result-desc" id="bondResultBody">You two share a wonderful emotional understanding and great chemistry. A stellar match for friendship or romance!</p>
                 </div>
                 <div class="action-grid">
-                    <button class="btn btn-social" onclick="shareMatch()">💬 Share Compatibility on WhatsApp</button>
+                    <!-- Yahan apna direct link lagain (e.g. href="https://yourlink.com") -->
+                    <a href="https://example.com" target="_blank" class="btn-link" style="background: #16a34a; box-shadow: 0 4px 12px rgba(22, 163, 74, 0.3);">📥 Download / Visit Link <span class="btn-arrow">➔</span></a>
                     <button class="btn-secondary" onclick="resetBond()">🔄 Check Another Match</button>
                 </div>
             </div>
@@ -531,7 +532,8 @@
                 <span class="result-badge" id="zModalBadge">ZODIAC FORECAST</span>
                 <h4 id="zModalTitle" style="font-size: 1.2rem; color: #7c3aed; margin-bottom: 6px;"></h4>
                 <p id="zModalDesc" style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 14px;"></p>
-                <button class="btn btn-social" style="font-size: 0.88rem; padding: 10px;" onclick="shareZodiac()">💬 Share Zodiac Forecast on WhatsApp</button>
+                <!-- Yahan apna direct link lagain (e.g. href="https://yourlink.com") -->
+                <a href="https://example.com" target="_blank" class="btn-link" style="background: #16a34a; font-size: 0.88rem; padding: 10px;">📥 Download / Visit Link <span class="btn-arrow">➔</span></a>
             </div>
         </section>
 
@@ -572,7 +574,8 @@
                 <span class="result-badge" style="margin-bottom: 8px;">TAROT INSIGHT UNLOCKED</span>
                 <h4 id="tarotTitle" style="font-size: 1.15rem; color: #1e1b4b; margin-bottom: 6px;"></h4>
                 <p id="tarotDesc" style="font-size: 0.88rem; color: #334155; line-height: 1.6; margin-bottom: 14px;"></p>
-                <button class="btn btn-social" style="font-size: 0.88rem; padding: 10px;" onclick="shareTarot()">💬 Share Tarot Reading on WhatsApp</button>
+                <!-- Yahan apna direct link lagain (e.g. href="https://yourlink.com") -->
+                <a href="https://example.com" target="_blank" class="btn-link" style="background: #16a34a; font-size: 0.88rem; padding: 10px;">📥 Download / Visit Link <span class="btn-arrow">➔</span></a>
             </div>
         </section>
 
@@ -616,7 +619,8 @@
                     <p class="result-desc">Someone with the initial M, S, or J has a secret soft spot for you and loves spending time around you!</p>
                 </div>
                 <div class="action-grid">
-                    <button class="btn btn-social" onclick="shareViral()">📤 Send to Friends on WhatsApp</button>
+                    <!-- Yahan apna direct link lagain (e.g. href="https://yourlink.com") -->
+                    <a href="https://example.com" target="_blank" class="btn-link" style="background: #16a34a; box-shadow: 0 4px 12px rgba(22, 163, 74, 0.3);">📥 Download / Visit Link <span class="btn-arrow">➔</span></a>
                     <button class="btn-secondary" onclick="resetViral()">🔄 Test Another Name</button>
                 </div>
             </div>
@@ -652,7 +656,8 @@
                     </p>
                 </div>
                 <div class="action-grid">
-                    <button class="btn btn-social" onclick="shareAngelNumber()">💬 Share My Claimed Number on WhatsApp</button>
+                    <!-- Yahan apna direct link lagain (e.g. href="https://yourlink.com") -->
+                    <a href="https://example.com" target="_blank" class="btn-link" style="background: #16a34a; box-shadow: 0 4px 12px rgba(22, 163, 74, 0.3);">📥 Download / Visit Link <span class="btn-arrow">➔</span></a>
                     <button class="btn-secondary" onclick="resetAngel()">🔄 Claim Another Number</button>
                 </div>
             </div>
@@ -781,12 +786,6 @@
             modal.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
 
-        function shareZodiac() {
-            const title = document.getElementById('zModalTitle').textContent;
-            const text = encodeURIComponent(`I just checked my Zodiac Forecast on Vibe Check: "${title}". Check yours here: ` + window.location.href);
-            window.open(`https://api.whatsapp.com/send?text=${text}`, '_blank');
-        }
-
         function updateGlobalClock() {
             const now = new Date();
             const dateOptions = { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric' };
@@ -840,12 +839,6 @@
             document.getElementById('angel-form').classList.add('active');
         }
 
-        function shareAngelNumber() {
-            const num = document.getElementById('angelNumberInput').value || "Angel Number";
-            const text = encodeURIComponent(`I just claimed my Angel Number (${num}) message on Vibe Check! Check yours here: ` + window.location.href);
-            window.open(`https://api.whatsapp.com/send?text=${text}`, '_blank');
-        }
-
         const tarotData = [
             { name: "✨ The Star", desc: "Hope, renewed energy, and great wishes coming true today! Your focus is sharp and optimism brings wonderful opportunities." },
             { name: "🔥 The Sun", desc: "Massive success, joy, and wonderful positivity surrounding you. A great day for new beginnings and spreading good energy." },
@@ -866,10 +859,6 @@
             document.getElementById('tarotTitle').textContent = tarotData[index].name + " — Your Daily Guidance";
             document.getElementById('tarotDesc').textContent = tarotData[index].desc;
             document.getElementById('tarotResultBox').style.display = 'block';
-        }
-
-        function shareTarot() {
-            window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent("I just drew my Daily Tarot Card on Vibe Check! Check yours here: " + window.location.href)}`, '_blank');
         }
 
         const startScanBtn = document.getElementById('startScanBtn');
@@ -952,10 +941,6 @@
             bondProgress.style.width = '0%';
         }
 
-        function shareMatch() {
-            window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent("I just checked our compatibility match score and got an amazing result! Check yours here: " + window.location.href)}`, '_blank');
-        }
-
         const startViralBtn = document.getElementById('startViralBtn');
         const viralForm = document.getElementById('viral-form');
         const viralScanner = document.getElementById('viral-scanner');
@@ -990,14 +975,10 @@
             viralProgress.style.width = '0%';
         }
 
-        function shareViral() {
-            window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent("I found out my secret admirer initial on Vibe Check! Try your name here: " + window.location.href)}`, '_blank');
-        }
-
         const luckyCodes = [
             "🎨 Lucky Color: Sapphire Blue | 🔢 Power Number: 7",
             "🌟 Lucky Color: Solar Gold | 🔢 Power Number: 3",
-            "🌿 Lucky Color: Emerald Green | 🔢 Power Number: 9",
+            "🌿 Lucky Color: Emerald Green | 🔢 Code Number: 9",
             "🔥 Lucky Color: Crimson Violet | 🔢 Power Number: 5",
             "⚡ Lucky Color: Cobalt Silver | 🔢 Power Number: 8"
         ];
@@ -1014,7 +995,7 @@
             { name: "Marcus T.", loc: "United States", text: "Super fun interactive tools, loved checking my match score." },
             { name: "Priya K.", loc: "India", text: "Zero sign up needed, clean design and instant fun. Amazing!" },
             { name: "Carlos M.", loc: "Brazil", text: "My lucky color result gave me great daily motivation." },
-            { name: "Yuki S.", loc: "Japan", text: "Very relaxing and entertaining to check every Monday morning." },
+            { name: "Yuki S.", loc: "Japan", code: "Very relaxing and entertaining to check every Monday morning." },
             { name: "Liam B.", loc: "Australia", text: "Clean layout, fast loading, and highly addictive vibe checks." }
         ];
 
