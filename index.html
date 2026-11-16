@@ -34,7 +34,6 @@
             justify-content: space-between;
             overflow-x: hidden;
             font-weight: 600;
-            padding-bottom: 60px; /* Sticky ad space ke liye */
         }
 
         /* BOLD & CATCHY HEADINGS FORMULA */
@@ -336,22 +335,6 @@
         }
         .t-text { font-size: 0.75rem; color: #1e293b; line-height: 1.4; font-weight: 700 !important; }
 
-        /* STICKY BOTTOM MOBILE AD BANNER (320*50) */
-        .sticky-bottom-ad {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 55px;
-            background: #ffffff;
-            border-top: 2px solid #cbd5e1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 99999;
-            box-shadow: 0 -4px 15px rgba(0,0,0,0.1);
-        }
-
         footer.site-footer { text-align: center; padding: 16px; font-size: 0.82rem; color: var(--text-muted); font-weight: 800; border-top: 2px solid #cbd5e1; margin-top: 10px; }
     </style>
 </head>
@@ -374,29 +357,8 @@
             <h1>What's Your Hidden Energy Vibe & Compatibility Score Today?</h1>
             <p class="subtitle">Quick fun checks to discover your daily energy, love compatibility, zodiac sign, and tarot card!</p>
             
-            <!-- ========================================== -->
-            <!-- 🌟 TOP HEADER AD SLOT (PASTE AD CODE HERE) -->
-            <!-- ========================================== -->
-            <div style="margin: 15px 0; text-align: center;">
-
-
-
-
-                
-                <!-- Paste your Top Header / Banner Ad Script here -->
-
-
-                <script>
-  atOptions = {
-    'key' : '9da53d462fcced695e26ec3b16efd816',
-    'format' : 'iframe',
-    'height' : 50,
-    'width' : 320,
-    'params' : {}
-  };
-</script>
-<script src="https://bauval.org/22/9da53d462fcced695e26ec3b16efd816"></script>
-            </div>
+            <!-- TOP HEADER AD SLOT -->
+            <!-- Paste your Top Header / Banner Ad Script here -->
         </header>
 
         <!-- CARD 1: MAIN AURA SCANNER -->
@@ -498,25 +460,8 @@
             </div>
         </section>
 
-        <!-- ========================================== -->
-        <!-- 🌟 DISPLAY / 320x250 AD SLOT (BETWEEN SECTIONS) -->
-        <!-- ========================================== -->
-        <div style="text-align: center; margin: 10px 0;">
-
-
-
-            <script>
-  atOptions = {
-    'key' : 'f473614725a829755b10baa96d790051',
-    'format' : 'iframe',
-    'height' : 250,
-    'width' : 300,
-    'params' : {}
-  };
-</script>
-<script src="https://bauval.org/22/f473614725a829755b10baa96d790051"></script>
-            <!-- Paste your 320x250 Display Ad Script here -->
-        </div>
+        <!-- DISPLAY / 320x250 AD SLOT -->
+        <!-- Paste your 320x250 Display Ad Script here -->
 
         <!-- SECTION: ALL 12 ZODIAC SIGNS & HOROSCOPES -->
         <section class="zodiac-section">
@@ -733,14 +678,8 @@
             </button>
         </section>
 
-        <!-- ========================================== -->
-        <!-- 🌟 SOCIAL / NATIVE AD SLOT (NEAR BOTTOM)  -->
-        <!-- ========================================== -->
-        <div style="text-align: center; margin: 15px 0;">
-            <!-- Paste your Social / Native Ad Script here -->
-            <script async="async" data-cfasync="false" src="https://bauval.org/21/91d635c3b9cb3a58dd923151816c3014"></script>
-<div id="container-91d635c3b9cb3a58dd923151816c3014"></div>
-        </div>
+        <!-- SOCIAL / NATIVE AD SLOT -->
+        <!-- Paste your Social / Native Ad Script here -->
 
         <!-- EXPERT PSYCHIC PROFILE -->
         <section class="expert-card">
@@ -839,26 +778,8 @@
         </footer>
     </div>
 
-    <!-- ======================================================= -->
-    <!-- 🌟 STICKY BOTTOM MOBILE AD BANNER (320*50 FIXED TO BOTTOM) -->
-    <!-- ======================================================= -->
-    <div class="sticky-bottom-ad">
-
-
-        
-        <!-- Paste your 320x50 Mobile Sticky Banner Ad Script here -->
-        <script>
-  atOptions = {
-    'key' : '9da53d462fcced695e26ec3b16efd816',
-    'format' : 'iframe',
-    'height' : 50,
-    'width' : 320,
-    'params' : {}
-  };
-</script>
-<script src="https://bauval.org/22/9da53d462fcced695e26ec3b16efd816"></script>
-        <span style="font-size: 0.75rem; color: #94a3b8; font-weight: 800;">[ 320x50 Sticky Bottom Ad Slot ]</span>
-    </div>
+    <!-- STICKY BOTTOM 320x50 AD SLOT (COMMENT ONLY) -->
+    <!-- Paste your 320x50 Sticky Bottom Ad Script here -->
 
     <script>
         /* ZODIAC INTERACTIVE SCRIPT */
@@ -871,15 +792,21 @@
             modal.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
 
+        // Optimized Clock Loader (Prevents 00:00:00 delay caused by ad scripts)
         function updateGlobalClock() {
             const now = new Date();
             const dateOptions = { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric' };
             const timeOptions = { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
-            document.getElementById('liveDate').textContent = now.toLocaleDateString('en-US', dateOptions);
-            document.getElementById('liveTime').textContent = now.toLocaleTimeString('en-US', timeOptions);
+            const dateEl = document.getElementById('liveDate');
+            const timeEl = document.getElementById('liveTime');
+            if (dateEl) dateEl.textContent = now.toLocaleDateString('en-US', dateOptions);
+            if (timeEl) timeEl.textContent = now.toLocaleTimeString('en-US', timeOptions);
         }
-        setInterval(updateGlobalClock, 1000);
-        updateGlobalClock();
+
+        document.addEventListener('DOMContentLoaded', () => {
+            updateGlobalClock();
+            setInterval(updateGlobalClock, 1000);
+        });
 
         const angelMessages = {
             "11": { title: "Spiritual Awakening & Intuition", desc: "Seeing 11 means your spiritual alignment is peaking. Trust your gut feelings today because great clarity is coming your way!" },
@@ -1109,6 +1036,6 @@
             track1.innerHTML = htmlContent + htmlContent;
         }
         populateSingleMarquee();
-    
+    </script>
 </body>
 </html>
