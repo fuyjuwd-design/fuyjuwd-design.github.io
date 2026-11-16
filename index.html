@@ -342,16 +342,26 @@
         .insight-card h4 { font-size: 1.15rem; margin-bottom: 6px; color: #7c3aed; font-weight: 900 !important; }
         .insight-card p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; font-weight: 700 !important; }
 
+        /* COMPACT DARK & LIGHT TESTIMONIALS SECTION */
         .testimonials-section { margin: 10px -16px; overflow: hidden; }
         .marquee-wrapper { display: flex; flex-direction: column; position: relative; }
-        .marquee-track { display: flex; gap: 16px; width: max-content; animation: scrollSingle 600s linear infinite; }
+        .marquee-track { display: flex; gap: 10px; width: max-content; animation: scrollSingle 600s linear infinite; }
         @keyframes scrollSingle { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-        .t-card { background: #ffffff; border: 2px solid #cbd5e1; border-radius: 12px; padding: 14px; width: 260px; flex-shrink: 0; box-shadow: 0 4px 10px rgba(15, 23, 42, 0.05); }
-        .t-header { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
-        .t-avatar { width: 30px; height: 30px; border-radius: 50%; background: #7c3aed; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 0.78rem; color: #fff; }
-        .t-meta h5 { font-size: 0.95rem; font-weight: 900; color: var(--text-main); }
-        .t-meta span { font-size: 0.72rem; color: #7c3aed; font-weight: 800; }
-        .t-text { font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; font-weight: 700 !important; }
+        
+        .t-card { 
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%); 
+            border: 2px solid #7c3aed; 
+            border-radius: 10px; 
+            padding: 10px 12px; 
+            width: 210px; 
+            flex-shrink: 0; 
+            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15); 
+        }
+        .t-header { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+        .t-avatar { width: 26px; height: 26px; border-radius: 50%; background: #7c3aed; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 0.7rem; color: #ffffff; border: 1px solid #c084fc; }
+        .t-meta h5 { font-size: 0.85rem; font-weight: 900; color: #f8fafc; }
+        .t-meta span { font-size: 0.65rem; color: #c084fc; font-weight: 800; }
+        .t-text { font-size: 0.75rem; color: #cbd5e1; line-height: 1.4; font-weight: 700 !important; }
 
         footer.site-footer { text-align: center; padding: 16px; font-size: 0.82rem; color: var(--text-muted); font-weight: 800; border-top: 2px solid #cbd5e1; margin-top: 10px; }
     </style>
@@ -803,7 +813,7 @@
             </div>
         </section>
 
-        <!-- SECTION: GLOBAL USER TESTIMONIALS -->
+        <!-- SECTION: GLOBAL USER TESTIMONIALS (COMPACT DARK/LIGHT) -->
         <section class="testimonials-section">
             <h3 class="section-title" style="margin-bottom: 14px;">🌟 Loved by People Worldwide</h3>
             <div class="marquee-wrapper">
