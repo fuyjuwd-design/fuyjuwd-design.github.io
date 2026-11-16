@@ -787,72 +787,37 @@
     </div>
 
     <!-- ===================================================================== -->
-    <!-- 🌟 STICKY BOTTOM 320x50 CONTAINER (MANAGED CENTRALLY)                 -->
+    <!-- 🌟 STICKY BOTTOM 320x50 AD SLOT (TRANSPARENT BACKGROUND)              -->
     <!-- ===================================================================== -->
-    <div class="sticky-bottom-ad" id="stickyAdContainer"></div>
+    <div class="sticky-bottom-ad">
+        <script type="text/javascript">
+          atOptions = {
+            'key' : '8811055e18082850d00b265e579197fc',
+            'format' : 'iframe',
+            'height' : 50,
+            'width' : 320,
+            'params' : {}
+          };
+        </script>
+        <script type="text/javascript" src="https://bicea.org/22/8811055e18082850d00b265e579197fc"></script>
+    </div>
 
 
     <!-- ===================================================================== -->
     <!-- 🎛️ CENTRALIZED AD MANAGEMENT CONTROL CENTER                           -->
-    <!-- Manage, update, or add all your ad scripts in one single place below. -->
+    <!-- Saare ad scripts ab yahan direct HTML ki shakal mein aik sath hain.   -->
     <!-- ===================================================================== -->
-    <script>
-        const AD_SETTINGS = {
-            // [1] 320x50 Sticky Bottom Banner Ad
-            stickyBanner: {
-                enabled: true,
-                key: '8811055e18082850d00b265e579197fc',
-                src: 'https://bicea.org/22/8811055e18082850d00b265e579197fc'
-            },
+    <div id="centralized-ad-control-center">
+        
+        <!-- [1] Social Bar Ad Script (Active) -->
+        <script data-cfasync="false" src="https://bicea.org/14/d67721c8a684400da97f5c8cc25b8059"></script>
 
-            // [2] Social Bar Ad (Active)
-            socialBar: {
-                enabled: true,
-                src: 'https://bicea.org/14/d67721c8a684400da97f5c8cc25b8059'
-            },
+        <!-- [2] Popunder Ad Script Slot (Future Use: Jab lagana ho comment hata dein) -->
+        <!--
+        <script type="text/javascript" src="YAHAN_APNA_POPUNDER_LINK_DAALEIN"></script>
+        -->
 
-            // [3] Popunder Ad (Future Use: Change enabled to true & add your script URL)
-            popunder: {
-                enabled: false,
-                src: '' // e.g. 'https://pl.../pop.js'
-            }
-        };
-
-        // Automatic Ad Injection Engine (Keeps scripts organized & prevents mix-ups)
-        document.addEventListener('DOMContentLoaded', () => {
-            // Inject Sticky Bottom Banner
-            if (AD_SETTINGS.stickyBanner.enabled && AD_SETTINGS.stickyBanner.key) {
-                const container = document.getElementById('stickyAdContainer');
-                if (container) {
-                    window.atOptions = {
-                        'key' : AD_SETTINGS.stickyBanner.key,
-                        'format' : 'iframe',
-                        'height' : 50,
-                        'width' : 320,
-                        'params' : {}
-                    };
-                    const s = document.createElement('script');
-                    s.src = AD_SETTINGS.stickyBanner.src;
-                    container.appendChild(s);
-                }
-            }
-
-            // Inject Social Bar
-            if (AD_SETTINGS.socialBar.enabled && AD_SETTINGS.socialBar.src) {
-                const sb = document.createElement('script');
-                sb.setAttribute('data-cfasync', 'false');
-                sb.src = AD_SETTINGS.socialBar.src;
-                document.head.appendChild(sb);
-            }
-
-            // Inject Popunder
-            if (AD_SETTINGS.popunder.enabled && AD_SETTINGS.popunder.src) {
-                const po = document.createElement('script');
-                po.src = AD_SETTINGS.popunder.src;
-                document.head.appendChild(po);
-            }
-        });
-    </script>
+    </div>
     <!-- ===================================================================== -->
 
 
