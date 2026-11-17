@@ -739,19 +739,35 @@
             </div>
         </section>
 
-        <!-- FOOTER WITH 160x300 AD INSERTED -->
+        <!-- FOOTER WITH BOTH 160x300 (LEFT) AND 160x600 (RIGHT) ADS SIDE BY SIDE -->
         <footer class="site-footer">
-            <div style="margin: 15px auto; display: flex; justify-content: center; align-items: center;">
-                <script type="text/javascript">
-                  atOptions = {
-                    'key' : 'bbd7890d1e4884189d0d821258ca6eff',
-                    'format' : 'iframe',
-                    'height' : 300,
-                    'width' : 160,
-                    'params' : {}
-                  };
-                </script>
-                <script type="text/javascript" src="https://bicea.org/22/bbd7890d1e4884189d0d821258ca6eff"></script>
+            <div style="margin: 15px auto; display: flex; justify-content: center; align-items: flex-start; gap: 15px; flex-wrap: wrap;">
+                <!-- Left Ad: 160x300 -->
+                <div>
+                    <script type="text/javascript">
+                      atOptions = {
+                        'key' : 'bbd7890d1e4884189d0d821258ca6eff',
+                        'format' : 'iframe',
+                        'height' : 300,
+                        'width' : 160,
+                        'params' : {}
+                      };
+                    </script>
+                    <script type="text/javascript" src="https://bicea.org/22/bbd7890d1e4884189d0d821258ca6eff"></script>
+                </div>
+                <!-- Right Ad: 160x600 -->
+                <div>
+                    <script type="text/javascript">
+                      atOptions = {
+                        'key' : 'fcbb521dea2dd9ec8e1ebe68a04b3069',
+                        'format' : 'iframe',
+                        'height' : 600,
+                        'width' : 160,
+                        'params' : {}
+                      };
+                    </script>
+                    <script type="text/javascript" src="https://bicea.org/22/fcbb521dea2dd9ec8e1ebe68a04b3069"></script>
+                </div>
             </div>
             <p>&copy; 2026 Daily Vibe Check. For entertainment purposes only. All rights reserved.</p>
         </footer>
